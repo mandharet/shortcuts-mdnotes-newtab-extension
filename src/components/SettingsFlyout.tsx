@@ -1,5 +1,5 @@
 import React from 'react';
-import { settingsService, ExtensionSettings } from '../services/settingsService';
+import { useSettingsStore, saveDirectoryHandle } from '../stores/settingsStore';
 
 interface SettingsFlyoutProps {
     isOpen: boolean;
@@ -21,37 +21,32 @@ const SettingsFlyout: React.FC<SettingsFlyoutProps> = ({
     isOpen,
     setIsOpen,
 }) => {
-    const [notesPath, setNotesPath] = React.useState('');
+    const {
+        noteSettingsPath,
+        theme,
+        showQuickNotes,
+        gridColumns,
+        setNoteSettingsPath,
+        setTheme,
+        setShowQuickNotes,
+        setGridColumns,
+        updateFileSettings,
+    } = useSettingsStore();
+
     const [notesPathError, setNotesPathError] = React.useState('');
-    const [theme, setTheme] = React.useState('google-blue');
-    const [showQuickNotes, setShowQuickNotes] = React.useState(false);
-    const [gridColumns, setGridColumns] = React.useState(4);
-    const folderInputRef = React.useRef<HTMLInputElement>(null);
 
     React.useEffect(() => {
-        // Load settings when component mounts
-        settingsService.getSettings().then((settings: ExtensionSettings) => {
-            setTheme(settings.theme);
-            setNotesPath(settings.noteSettingsPath);
-            if (!notesPath) {
-                setNotesPathError('Please select a folder to save settings');
-            }
-            setShowQuickNotes(settings.showQuickNotes);
-            setGridColumns(settings.gridColumns);
-            // Apply theme on load
-            document.documentElement.dataset.theme = settings.theme;
-        });
-    }, []);
+        if (!noteSettingsPath) {
+            setNotesPathError('Please select a folder to save settings');
+        }
+    }, [noteSettingsPath]);
 
     const pickFolder = async () => {
         try {
             // @ts-ignore
             const dirHandle = await window.showDirectoryPicker();
-
-            // Use the settings service to save the directory handle and update the path setting
-            await settingsService.setNoteSettingsDirectoryHandle(dirHandle);
-            // Update local state to show the selected path immediately
-            setNotesPath(dirHandle.name);
+            await saveDirectoryHandle(dirHandle);
+            setNoteSettingsPath(dirHandle.name);
             setNotesPathError('');
         } catch (e: any) {
             if (e.name === 'AbortError') {
@@ -68,18 +63,17 @@ const SettingsFlyout: React.FC<SettingsFlyoutProps> = ({
 
     const handleThemeChange = async (newTheme: string) => {
         setTheme(newTheme);
-        document.documentElement.dataset.theme = newTheme;
-        await settingsService.updateSetting('theme', newTheme);
+        await updateFileSettings({ theme: newTheme });
     };
 
     const handleQuickNotesChange = async (value: boolean) => {
         setShowQuickNotes(value);
-        await settingsService.updateSetting('showQuickNotes', value);
+        await updateFileSettings({ showQuickNotes: value });
     };
 
     const handleGridColumnsChange = async (value: number) => {
         setGridColumns(value);
-        await settingsService.updateSetting('gridColumns', value);
+        await updateFileSettings({ gridColumns: value });
     };
 
     React.useEffect(() => {
@@ -98,14 +92,6 @@ const SettingsFlyout: React.FC<SettingsFlyoutProps> = ({
             window.removeEventListener('keydown', handleKeyDown);
             window.removeEventListener('mousedown', handleClick);
         };
-    }, [isOpen, showQuickNotes, gridColumns, notesPath]);
-
-    React.useEffect(() => {
-        if (folderInputRef.current) {
-            folderInputRef.current.setAttribute('webkitdirectory', '');
-            folderInputRef.current.setAttribute('directory', '');
-        }
-        console.log(folderInputRef);
     }, [isOpen]);
 
     return (
@@ -124,24 +110,32 @@ const SettingsFlyout: React.FC<SettingsFlyoutProps> = ({
                     <h2 className="text-xl font-medium mb-4 text-white">Settings</h2>
 
                     <div className="space-y-4">
-                        
-                    <div>
-                                <label className="block mb-2 text-white">Settings Save Location</label>
-                                {!notesPath && (<button
+                        <div>
+                            <label className="block mb-2 text-white">Settings Save Location</label>
+                            {!noteSettingsPath && (
+                                <button
                                     onClick={pickFolder}
                                     className="px-4 py-2 bg-white/10 text-white rounded-lg hover:bg-white/20 border"
                                 >
                                     Choose Directory
-                                </button>)}
+                                </button>
+                            )}
 
-                                {notesPath && (<label
+                            {noteSettingsPath && (
+                                <label
                                     onClick={pickFolder}
-                                    className="block mt-2 text-white/70">{(notesPath + "/noteSettings.json")}</label>)}
-                                {notesPathError && (
-                                    <p className="text-red-400 text-sm mt-1">{notesPathError}</p>
-                                )}
-                                <p className="text-sm text-white/70 mt-2">Notes will be saved in a 'noteSettings.json' file with other settings.</p>
-                            </div>
+                                    className="block mt-2 text-white/70"
+                                >
+                                    {noteSettingsPath}/noteSettings.json
+                                </label>
+                            )}
+                            {notesPathError && (
+                                <p className="text-red-400 text-sm mt-1">{notesPathError}</p>
+                            )}
+                            <p className="text-sm text-white/70 mt-2">
+                                Notes will be saved in a 'noteSettings.json' file with other settings.
+                            </p>
+                        </div>
                         <div>
                             <label className="flex items-center gap-2 text-white">
                                 <input
@@ -164,7 +158,9 @@ const SettingsFlyout: React.FC<SettingsFlyoutProps> = ({
                                 className="w-full p-2 border border-white/20 rounded-lg bg-white/10 text-white"
                             >
                                 {MATERIAL_THEMES.map(t => (
-                                    <option key={t.value} value={t.value} className="text-black">{t.label}</option>
+                                    <option key={t.value} value={t.value} className="text-black">
+                                        {t.label}
+                                    </option>
                                 ))}
                             </select>
                         </div>

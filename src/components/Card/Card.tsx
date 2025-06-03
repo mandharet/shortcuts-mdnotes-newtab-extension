@@ -85,6 +85,7 @@ const Card: React.FC<CardProps> = ({
             transition: 'transform 0.2s ease'
           }}
           onKeyDown={handleKeyDown}
+          onClick={handleClick}
           tabIndex={0}
         >
           <div className="flex justify-between">

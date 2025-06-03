@@ -21,8 +21,8 @@ const mockChrome = {
     }
   },
   bookmarks: {
-    getTree: (callback: (bookmarkTreeNodes: any[]) => void) => {
-      callback([
+    getTree: () => {
+      return Promise.resolve([
         {
           id: '1',
           title: 'Bookmarks Bar',
@@ -74,7 +74,9 @@ const mockChrome = {
   }
 };
 
-// Use mock Chrome API in development
-if (process.env.NODE_ENV === 'development') {
+// Apply mock Chrome API if the native one is not available or incomplete
+if (typeof window.chrome === 'undefined' || typeof window.chrome.bookmarks === 'undefined') {
   (window as any).chrome = mockChrome;
+} else if (typeof window.chrome.bookmarks.getTree === 'undefined') {
+  (window as any).chrome.bookmarks = mockChrome.bookmarks;
 } 

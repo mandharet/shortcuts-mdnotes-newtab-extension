@@ -3,11 +3,10 @@ import MdEditor from 'react-markdown-editor-lite';
 import MarkdownIt from 'markdown-it';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import 'react-markdown-editor-lite/lib/index.css';
-import { settingsService } from '../../services/settingsService';
+import { useSettingsStore } from '../../stores/settingsStore';
 
 interface QuickNotesProps {
   enabled: boolean;
-  notesPath: string;
 }
 
 interface NoteObject {
@@ -26,41 +25,35 @@ interface NotesData {
   };
 }
 
-const QuickNotes: React.FC<QuickNotesProps> = ({ enabled, notesPath }) => {
+const QuickNotes: React.FC<QuickNotesProps> = ({ enabled }) => {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
   const [notes, setNotes] = React.useState<string>('');
   const [saveStatus, setSaveStatus] = React.useState<{ type: 'success' | 'error' | 'autosaving' | null; message: string }>({ type: null, message: '' });
   const mdParser = new MarkdownIt();
   const saveTimeout = React.useRef<number | null>(null);
-  const characterLimit = 4000;
+
+  const { noteSettingsPath, notes: storedNotes, setNotes: setStoredNotes, updateFileSettings } = useSettingsStore();
 
   // Load notes for selected date
   React.useEffect(() => {
     if (enabled) {
-      if (!notesPath) {
+      if (!noteSettingsPath) {
         setSaveStatus({ type: 'error', message: 'Please select a folder to save settings' });
+      } else {
+        setSaveStatus({ type: null, message: '🟢' });
       }
-      else
-      setSaveStatus({ type: null, message: '🟢'  });
-      (async () => {
-        try {
-          const data = await loadNotesFromFS();
-          const year = selectedDate.getFullYear().toString();
-          const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
-          const day = selectedDate.getDate().toString().padStart(2, '0');
-          const notesData = data.notes?.[year]?.[month]?.[day]?.notesdata || '';
-          setNotes(notesData);
-        } catch (error) {
-          setNotes('');
-        }
-      })();
+      const year = selectedDate.getFullYear().toString();
+      const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
+      const day = selectedDate.getDate().toString().padStart(2, '0');
+      const notesData = storedNotes?.[year]?.[month]?.[day]?.notesdata || '';
+      setNotes(notesData);
     }
-  }, [enabled, selectedDate, notesPath]);
+  }, [enabled, selectedDate, noteSettingsPath, storedNotes]);
 
   // Debounced auto-save
   React.useEffect(() => {
     if (!enabled) return;
-    if (!notesPath) return;
+    if (!noteSettingsPath) return;
     if (saveTimeout.current) clearTimeout(saveTimeout.current);
     saveTimeout.current = setTimeout(() => {
       saveNotes(notes);
@@ -68,73 +61,33 @@ const QuickNotes: React.FC<QuickNotesProps> = ({ enabled, notesPath }) => {
     return () => {
       if (saveTimeout.current) clearTimeout(saveTimeout.current);
     };
-    // eslint-disable-next-line
-  }, [notes, selectedDate, enabled]);
-
-  const getNotesFileHandle = async () => {
-    return new Promise<any>((resolve, reject) => {
-      if (!('indexedDB' in window)) return reject('IndexedDB not supported');
-      const dbOpen = indexedDB.open('notesHandles', 1);
-      dbOpen.onupgradeneeded = () => dbOpen.result.createObjectStore('handles');
-      dbOpen.onsuccess = async () => {
-        const db = dbOpen.result;
-        const tx = db.transaction('handles', 'readonly');
-        const req = tx.objectStore('handles').get('notesDirHandle');
-        req.onsuccess = async () => {
-          const dirHandle = req.result;
-          if (dirHandle && dirHandle.getFileHandle) {
-            const fileHandle = await dirHandle.getFileHandle('noteSettings.json', { create: true });
-            resolve(fileHandle);
-          } else {
-            reject('No directory handle found');
-          }
-          db.close();
-        };
-        req.onerror = () => reject('Failed to get handle');
-      };
-    });
-  };
-
-  const loadNotesFromFS = async () => {
-    try {
-      const fileHandle = await getNotesFileHandle();
-      const file = await fileHandle.getFile();
-      const text = await file.text();
-      return JSON.parse(text);
-    } catch {
-      return { notes: {} };
-    }
-  };
-
-  const saveNotesToFS = async (data: any) => {
-    try {
-      const fileHandle = await getNotesFileHandle();
-      const writable = await fileHandle.createWritable();
-      await writable.write(JSON.stringify(data));
-      await writable.close();
-    } catch { }
-  };
+  }, [notes, selectedDate, enabled, noteSettingsPath]);
 
   const saveNotes = async (content: string) => {
     try {
       setSaveStatus({ type: 'autosaving', message: 'AutoSaving 🟡' });
 
-      const data = await loadNotesFromFS();
       const year = selectedDate.getFullYear().toString();
       const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
       const day = selectedDate.getDate().toString().padStart(2, '0');
 
-      if (!data.notes) data.notes = {};
-      if (!data.notes[year]) data.notes[year] = {};
-      if (!data.notes[year][month]) data.notes[year][month] = {};
-
-      data.notes[year][month][day] = {
-        notesdata: content,
-        lastModified: new Date().toISOString(),
-        characterCount: content.length
+      const updatedNotes = {
+        ...storedNotes,
+        [year]: {
+          ...(storedNotes?.[year] || {}),
+          [month]: {
+            ...(storedNotes?.[year]?.[month] || {}),
+            [day]: {
+              notesdata: content,
+              lastModified: new Date().toISOString(),
+              characterCount: content.length
+            }
+          }
+        }
       };
 
-      await saveNotesToFS(data);
+      setStoredNotes(updatedNotes);
+      await updateFileSettings({ notes: updatedNotes });
       setSaveStatus({ type: 'success', message: 'Saved 🟢' });
       // Clear success message after 2 seconds
       setTimeout(() => setSaveStatus({ type: null, message: '🟢' }), 2000);
@@ -144,9 +97,7 @@ const QuickNotes: React.FC<QuickNotesProps> = ({ enabled, notesPath }) => {
   };
 
   const handleEditorChange = ({ text }: { text: string }) => {
-    if (text.length <= characterLimit) {
       setNotes(text);
-    }
   };
 
   const changeDay = (delta: number) => {
@@ -160,7 +111,7 @@ const QuickNotes: React.FC<QuickNotesProps> = ({ enabled, notesPath }) => {
   return (
     <div className="max-w-4xl mx-auto mb-8">
       <div className="flex items-center justify-between mb-4">
-        {notesPath && (
+        {noteSettingsPath && (
           <div className="relative flex items-center gap-2">
             <button
               onClick={() => changeDay(-1)}
@@ -192,54 +143,23 @@ const QuickNotes: React.FC<QuickNotesProps> = ({ enabled, notesPath }) => {
           <span className={`text-sm ${saveStatus.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
             {saveStatus.message}
           </span>
-          {notesPath && (<div className="text-sm text-secondary">
-            {notes.length}/{characterLimit}
-          </div>
-          )}
         </div>
       </div>
-      {notesPath && (
+      {noteSettingsPath && (
         <MdEditor
-        value={notes}
-        style={{ height: '45vh' }}
-        renderHTML={(text) => mdParser.render(text)}
-        onChange={handleEditorChange}
-        config={{
-          view: {
-            menu: true,
-            md: true,
-            html: true
-          }
-        }}
-      />
+          value={notes}
+          style={{ height: '45vh' }}
+          renderHTML={(text) => mdParser.render(text)}
+          onChange={handleEditorChange}
+          config={{
+            view: {
+              menu: true,
+              md: true,
+              html: true
+            }
+          }}
+        />
       )}
-      {/* <style>{`
-        .md-editor, .md-editor .rc-md-editor, .md-editor .section-container, .md-editor .editor-container, .md-editor .editor-container textarea, .md-editor .editor-container .sec-html {
-          background-color: var(--bg-surface) !important;
-          color: var(--text-primary) !important;
-          border-color: var(--border-color) !important;
-        }
-        .md-editor .editor-toolbar {
-          background-color: var(--bg-primary) !important;
-          border-bottom: 1px solid var(--border-color) !important;
-        }
-        .md-editor .editor-toolbar .button {
-          color: var(--text-primary) !important;
-        }
-        .md-editor .editor-toolbar .button.active,
-        .md-editor .editor-toolbar .button:hover {
-          background-color: var(--hover-bg) !important;
-        }
-        .md-editor .editor-container .sec-md {
-          background-color: var(--bg-surface) !important;
-          color: var(--text-primary) !important;
-        }
-        .rc-md-editor .editor-container .sec-html .custom-html-style {
-          background-color: var(--bg-surface) !important;
-          color: red !important;
-          border-color: var(--border-color) !important;
-        }
-      `}</style> */}
     </div>
   );
 };

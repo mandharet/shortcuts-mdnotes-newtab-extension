@@ -2,7 +2,7 @@ import React from 'react';
 import { Droppable, DragDropContext, DropResult, Draggable } from 'react-beautiful-dnd';
 import Card from '../Card/Card';
 import { PlusIcon, Cog6ToothIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { settingsService, ExtensionSettings } from '../../services/settingsService';
+import { useSettingsStore } from '../../stores/settingsStore';
 
 export interface CardData {
   id: string;
@@ -21,24 +21,17 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
   const [isEditMode, setIsEditMode] = React.useState(false);
   const [newCard, setNewCard] = React.useState<Partial<CardData>>({});
   const [editingCardId, setEditingCardId] = React.useState<string | null>(null);
+  const { shortcuts, setShortcuts, updateFileSettings } = useSettingsStore();
 
   // Load shortcuts on mount
   React.useEffect(() => {
-    const loadShortcuts = async () => {
-      try {
-        const settings = await settingsService.getSettings();
-        // Assuming 'shortcuts' in settings corresponds to cards
-        setCards(settings.shortcuts || []);
-      } catch (error) {
-        console.error('Failed to load cards (shortcuts) from settings:', error);
-      }
-    };
-    loadShortcuts();
-  }, []);
+    setCards(shortcuts || []);
+  }, [shortcuts]);
 
   const saveShortcuts = async (updatedCards: CardData[]) => {
     try {
-      await settingsService.saveSettings({ shortcuts: updatedCards });
+      setShortcuts(updatedCards);
+      await updateFileSettings({ shortcuts: updatedCards });
     } catch (error) {
       console.error('Failed to save cards (shortcuts) to settings:', error);
     }
@@ -183,7 +176,6 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
       {isAddingCard ? (
         <div className="fixed inset-0 modal-overlay flex items-center justify-center z-50">
           <div id="add-edit-card-modal" className="modal p-6 rounded-lg w-96">
-            <h3 className="text-lg font-medium mb-4">{editingCardId ? 'Edit Card' : 'Add New Card'}</h3>
             <input
               type="text"
               placeholder="Title"
@@ -200,42 +192,46 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
               className="w-full mb-4 p-2 border rounded"
               onKeyDown={e => { if (e.key === 'Enter') handleAddOrEditCard(); }}
             />
+            <input
+              type="color"
+              value={newCard.backgroundColor || '#ffffff'}
+              onChange={(e) => setNewCard({ ...newCard, backgroundColor: e.target.value })}
+              className="w-full mb-4 border rounded"
+            />
             <div className="flex justify-end gap-2">
               <button
-                onClick={() => { setIsAddingCard(false); setEditingCardId(null); }}
-                className="px-4 py-2 btn-secondary rounded"
+                onClick={() => setIsAddingCard(false)}
+                className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded"
               >
                 Cancel
               </button>
               <button
                 onClick={handleAddOrEditCard}
-                className="px-4 py-2 btn-primary rounded"
+                className="px-4 py-2 bg-primary rounded hover:bg-primary/90"
               >
-                Save
+                {editingCardId ? 'Save' : 'Add'}
               </button>
             </div>
           </div>
         </div>
       ) : (
-        <div className="fixed bottom-4 left-4 flex gap-2">
-          <button
-            onClick={() => setIsAddingCard(true)}
-            className="p-4 btn-primary rounded-full shadow-lg"
-            title="Add New Card"
-          >
-            <PlusIcon className="w-6 h-6" />
-          </button>
+        <div className="flex justify-end mt-4 gap-2">
           <button
             onClick={() => setIsEditMode(!isEditMode)}
-            className={`p-4 rounded-full shadow-lg transition-colors ${isEditMode ? 'btn-close' : 'btn-secondary'}`}
+            className="p-2 rounded-full hover:bg-gray-100"
             title={isEditMode ? 'Exit Edit Mode' : 'Enter Edit Mode'}
           >
-            {isEditMode ? (
-              <XMarkIcon className="w-6 h-6" />
-            ) : (
-              <Cog6ToothIcon className="w-6 h-6" />
-            )}
+            <Cog6ToothIcon className="w-6 h-6" />
           </button>
+          {isEditMode && (
+            <button
+              onClick={() => setIsAddingCard(true)}
+              className="p-2 rounded-full hover:bg-gray-100"
+              title="Add New Card"
+            >
+              <PlusIcon className="w-6 h-6" />
+            </button>
+          )}
         </div>
       )}
     </div>
