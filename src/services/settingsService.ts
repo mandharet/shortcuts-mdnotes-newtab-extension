@@ -239,7 +239,7 @@ export const settingsService = {
 
     // 3. Merge settings: Default -> Local Storage -> File
     const finalSettings = { ...DEFAULT_SETTINGS, ...localSettings, ...fileSettings };
-
+    console.log("FinalSettings", finalSettings);
     return finalSettings;
   },
 

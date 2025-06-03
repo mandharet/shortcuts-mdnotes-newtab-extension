@@ -1,13 +1,13 @@
 import React from 'react';
 import MdEditor from 'react-markdown-editor-lite';
 import MarkdownIt from 'markdown-it';
-import { CalendarIcon } from '@heroicons/react/24/outline';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import 'react-markdown-editor-lite/lib/index.css';
 import { settingsService } from '../../services/settingsService';
 
 interface QuickNotesProps {
   enabled: boolean;
+  notesPath: string;
 }
 
 interface NoteObject {
@@ -26,28 +26,22 @@ interface NotesData {
   };
 }
 
-const QuickNotes: React.FC<QuickNotesProps> = ({ enabled }) => {
+const QuickNotes: React.FC<QuickNotesProps> = ({ enabled, notesPath }) => {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
   const [notes, setNotes] = React.useState<string>('');
   const [saveStatus, setSaveStatus] = React.useState<{ type: 'success' | 'error' | 'autosaving' | null; message: string }>({ type: null, message: '' });
   const mdParser = new MarkdownIt();
   const saveTimeout = React.useRef<number | null>(null);
-  const [noteSettingsPath, setNoteSettingsPath] = React.useState('');
   const characterLimit = 4000;
-
-  React.useEffect(() => {
-    // Load settings when component mounts
-    settingsService.getSettings().then((settings) => {
-      setNoteSettingsPath(settings.noteSettingsPath);
-    });
-  }, []);
 
   // Load notes for selected date
   React.useEffect(() => {
     if (enabled) {
-      if (!noteSettingsPath) {
+      if (!notesPath) {
         setSaveStatus({ type: 'error', message: 'Please select a folder to save settings' });
       }
+      else
+      setSaveStatus({ type: null, message: '🟢'  });
       (async () => {
         try {
           const data = await loadNotesFromFS();
@@ -61,12 +55,12 @@ const QuickNotes: React.FC<QuickNotesProps> = ({ enabled }) => {
         }
       })();
     }
-  }, [enabled, selectedDate, noteSettingsPath]);
+  }, [enabled, selectedDate, notesPath]);
 
   // Debounced auto-save
   React.useEffect(() => {
     if (!enabled) return;
-    if (!noteSettingsPath) return;
+    if (!notesPath) return;
     if (saveTimeout.current) clearTimeout(saveTimeout.current);
     saveTimeout.current = setTimeout(() => {
       saveNotes(notes);
@@ -166,7 +160,7 @@ const QuickNotes: React.FC<QuickNotesProps> = ({ enabled }) => {
   return (
     <div className="max-w-4xl mx-auto mb-8">
       <div className="flex items-center justify-between mb-4">
-        {noteSettingsPath && (
+        {notesPath && (
           <div className="relative flex items-center gap-2">
             <button
               onClick={() => changeDay(-1)}
@@ -198,13 +192,13 @@ const QuickNotes: React.FC<QuickNotesProps> = ({ enabled }) => {
           <span className={`text-sm ${saveStatus.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
             {saveStatus.message}
           </span>
-          {noteSettingsPath && (<div className="text-sm text-secondary">
+          {notesPath && (<div className="text-sm text-secondary">
             {notes.length}/{characterLimit}
           </div>
           )}
         </div>
       </div>
-      {noteSettingsPath && (
+      {notesPath && (
         <MdEditor
         value={notes}
         style={{ height: '45vh' }}

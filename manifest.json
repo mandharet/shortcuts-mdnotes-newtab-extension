@@ -3,10 +3,6 @@
   "name": "Productivity New Tab",
   "version": "1.0",
   "description": "A customizable new tab page with URL cards, bookmarks, and quick notes",
-  "options_ui": {
-    "page": "options.html",
-    "open_in_tab": true
-  },
   "permissions": [
     "bookmarks",
     "storage",

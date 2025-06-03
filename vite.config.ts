@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [react()],
@@ -7,9 +8,21 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        main: 'index.html',
-        options: 'options.html',
+        main: resolve(__dirname, 'index.html'),
+        popup: resolve(__dirname, 'popup.html'),
       },
+      output: {
+        entryFileNames: (chunkInfo) => {
+          return chunkInfo.name === 'popup' ? 'popup/[name].js' : '[name].js';
+        },
+        chunkFileNames: 'assets/[name].js',
+        assetFileNames: 'assets/[name].[ext]'
+      }
+    },
+  },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'),
     },
   },
 }); 
