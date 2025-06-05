@@ -1,12 +1,12 @@
 import { create } from 'zustand';
 import { persist, StateStorage, PersistStorage, StorageValue } from 'zustand/middleware';
 
-
+// Data that should always be in the file (currently just notes)
 export interface FileSettings {
   notes: any;
 }
 
-
+// Data stored in Local Storage (chrome.storage.local) via persist middleware, and also in the file
 export interface PersistedSettings {
   shortcuts: any[];
   theme: string;
@@ -14,16 +14,12 @@ export interface PersistedSettings {
   showShortcuts: boolean;
   isPinnedBookMarkFlyout: boolean;
   gridColumns: number;
-}
-
-
-export interface PersistedPathSetting {
   noteSettingsPath: string;
 }
 
-
-export interface SettingsState extends PersistedSettings, FileSettings, PersistedPathSetting {
-
+// Combined state for the Zustand store
+export interface SettingsState extends PersistedSettings, FileSettings {
+  // Actions
   setNoteSettingsPath: (path: string) => void;
   setTheme: (theme: string) => void;
   setShowQuickNotes: (show: boolean) => void;
@@ -34,46 +30,33 @@ export interface SettingsState extends PersistedSettings, FileSettings, Persiste
   setShortcuts: (shortcuts: any[]) => void;
   updateFileSettings: (settings: Partial<PersistedSettings & FileSettings>) => Promise<void>;
   loadFileSettings: () => Promise<void>;
+  _hasHydrated: boolean; // Add hydration flag
+  _setHasHydrated: (hydrated: boolean) => void; // Action to set hydration flag
 }
 
-const DEFAULT_DATA_SETTINGS: PersistedSettings & FileSettings & PersistedPathSetting = {
-
+const DEFAULT_DATA_SETTINGS: PersistedSettings & FileSettings = {
+  // Default PersistedSettings
   shortcuts: [],
   theme: 'google-blue',
   showQuickNotes: true,
   showShortcuts: true,
   isPinnedBookMarkFlyout: false,
   gridColumns: 4,
-
-  notes: {},
-
   noteSettingsPath: '',
+  // Default FileSettings
+  notes: {},
 };
 
-
-const getPersistDb = (): Promise<IDBDatabase> => {
-  return new Promise((resolve, reject) => {
-    const dbOpen = indexedDB.open('productivityExtension', 1);
-    dbOpen.onupgradeneeded = (event) => {
-      const db = dbOpen.result;
-      if (!db.objectStoreNames.contains('settings-store')) {
-        db.createObjectStore('settings-store');
-      }
-    };
-    dbOpen.onsuccess = () => resolve(dbOpen.result);
-    dbOpen.onerror = () => reject(dbOpen.error);
-  });
-};
-
-
+// Helper functions for file system operations (Directory Handle) - Keep these for file access
+// Note: The directory handle is still stored in IndexedDB separately, as chrome.storage cannot store handles.
 const getHandleDb = (): Promise<IDBDatabase> => {
   return new Promise((resolve, reject) => {
     const dbOpen = indexedDB.open('notesHandlesDb', 1);
     dbOpen.onupgradeneeded = (event) => {
-      const db = dbOpen.result;
-      if (!db.objectStoreNames.contains('handles')) {
-        db.createObjectStore('handles');
-      }
+        const db = dbOpen.result;
+         if (!db.objectStoreNames.contains('handles')) {
+             db.createObjectStore('handles');
+         }
     };
     dbOpen.onsuccess = () => resolve(dbOpen.result);
     dbOpen.onerror = () => reject(dbOpen.error);
@@ -133,7 +116,7 @@ const writeSettingsToFile = async (handle: FileSystemDirectoryHandle, settings: 
   }
 };
 
-
+// Function to save the directory handle to IndexedDB
 export const saveDirectoryHandle = async (handle: FileSystemDirectoryHandle): Promise<void> => {
   if (!('indexedDB' in window)) {
     console.warn('IndexedDB not available. Directory handle not saved.');
@@ -150,45 +133,60 @@ export const saveDirectoryHandle = async (handle: FileSystemDirectoryHandle): Pr
   }
 };
 
+// Define the subset of state to be persisted
+type PersistedStateSubset = PersistedSettings;
 
-type PersistedStateSubset = PersistedSettings & PersistedPathSetting;
-
-const indexedDbStorage: PersistStorage<PersistedStateSubset> = {
+// Custom storage adapter for chrome.storage.local
+const chromeStorage: PersistStorage<PersistedStateSubset> = {
     getItem: async (name: string): Promise<StorageValue<PersistedStateSubset> | null> => {
-        const db = await getPersistDb();
-        const tx = db.transaction('settings-store', 'readonly');
-        const request = tx.objectStore('settings-store').get(name);
-        return new Promise((resolve, reject) => {
-            request.onsuccess = () => {
-                const result = request.result;
-                if (result) {
-                    try {
-                        const parsedResult = JSON.parse(result);
-                        resolve(parsedResult as StorageValue<PersistedStateSubset>);
-                    } catch (e) {
-                        console.error(`Failed to parse stored state for ${name}:`, e);
+        if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local) {
+            return new Promise((resolve) => {
+                chrome.storage.local.get(name, (result) => {
+                    const storedValue = result?.[name];
+                    if (storedValue !== undefined) {
+                        try {
+                            resolve(storedValue as StorageValue<PersistedStateSubset>);
+                        } catch (e) {
+                            console.error(`Failed to retrieve or parse stored state for ${name}:`, e);
+                            resolve(null);
+                        }
+                    } else {
                         resolve(null);
                     }
-                } else {
-                    resolve(null);
-                }
-            };
-            request.onerror = () => reject(request.error);
-        });
+                });
+            });
+        } else {
+            console.warn('chrome.storage.local not available.');
+            return null;
+        }
     },
     setItem: async (name: string, value: StorageValue<PersistedStateSubset>): Promise<void> => {
-        const db = await getPersistDb();
-        const tx = db.transaction('settings-store', 'readwrite');
-        await tx.objectStore('settings-store').put(JSON.stringify(value), name);
-        await tx.commit();
-         db.close();
+        if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local) {
+            return new Promise((resolve) => {
+                chrome.storage.local.set({ [name]: value }, () => {
+                    // Notify other contexts about the change
+                    if (chrome.runtime) {
+                        chrome.runtime.sendMessage({ type: 'SETTINGS_UPDATED', data: value });
+                    }
+                    resolve();
+                });
+            });
+        } else {
+            console.warn('chrome.storage.local not available.');
+            return Promise.resolve();
+        }
     },
     removeItem: async (name: string): Promise<void> => {
-         const db = await getPersistDb();
-        const tx = db.transaction('settings-store', 'readwrite');
-        await tx.objectStore('settings-store').delete(name);
-        await tx.commit();
-         db.close();
+        if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local) {
+            return new Promise((resolve) => {
+                chrome.storage.local.remove(name, () => {
+                    resolve();
+                });
+            });
+        } else {
+            console.warn('chrome.storage.local not available.');
+            return Promise.resolve();
+        }
     },
 };
 
@@ -196,8 +194,9 @@ export const useSettingsStore = create<SettingsState>()(
   persist(
     (set, get) => ({
       ...DEFAULT_DATA_SETTINGS,
+      _hasHydrated: false,
 
-
+      // Actions
       setNoteSettingsPath: (path: string) => set({ noteSettingsPath: path }),
       setTheme: (theme: string) => set({ theme }),
       setShowQuickNotes: (show: boolean) => set({ showQuickNotes: show }),
@@ -207,45 +206,47 @@ export const useSettingsStore = create<SettingsState>()(
       setNotes: (notes: any) => set({ notes }),
       setShortcuts: (shortcuts: any[]) => set({ shortcuts }),
 
+      // Hydration action
+      _setHasHydrated: (hydrated: boolean) => set({ _hasHydrated: hydrated }),
 
-
+      // File system operations
+      // This action saves ALL persisted settings and notes to the file.
       updateFileSettings: async (settings: Partial<PersistedSettings & FileSettings>) => {
         const handle = await getDirectoryHandle();
         if (!handle) {
           console.warn('Directory handle not available. File settings not saved.');
+           // If file handle is not available, we still want to update the store state for persisted settings
+           set(settings); // This will trigger local storage persistence (chrome.storage.local)
           return;
         }
 
-
-        const existingContent = await readSettingsFromFile(handle) || {};
-
-
+        // Get the current state from the store (which includes data loaded by persist from local storage and current notes)
         const currentState = get();
 
-
-
-
+        // Prepare the content to write to the file.
+        // We want the file to contain ALL persisted settings and notes from the current store state,
+        // plus any specific updates passed to this function.
         const contentToWriteToFile: PersistedSettings & FileSettings = {
-
-          shortcuts: currentState.shortcuts,
-          theme: currentState.theme,
-          showQuickNotes: currentState.showQuickNotes,
-          showShortcuts: currentState.showShortcuts,
-          isPinnedBookMarkFlyout: currentState.isPinnedBookMarkFlyout,
-          gridColumns: currentState.gridColumns,
-          notes: currentState.notes,
-
-          ...settings,
-        };
+            // Start with current state for all properties intended for the file
+            shortcuts: currentState.shortcuts,
+            theme: currentState.theme,
+            showQuickNotes: currentState.showQuickNotes,
+            showShortcuts: currentState.showShortcuts,
+            isPinnedBookMarkFlyout: currentState.isPinnedBookMarkFlyout,
+            gridColumns: currentState.gridColumns,
+            noteSettingsPath: currentState.noteSettingsPath,
+            notes: currentState.notes,
+            // Overlay with any specific settings passed to this function
+            ...settings,
+          };
 
         await writeSettingsToFile(handle, contentToWriteToFile);
 
-
-
+        // No need to call set() here, as the store state is already updated by individual setters or persist middleware.
       },
 
-
-
+      // This action loads settings primarily from the file (currently only notes).
+      // Persisted settings are loaded automatically by the persist middleware on store initialization from local storage.
       loadFileSettings: async () => {
         const handle = await getDirectoryHandle();
         if (!handle) {
@@ -255,23 +256,26 @@ export const useSettingsStore = create<SettingsState>()(
 
         const content = await readSettingsFromFile(handle);
         if (content) {
-
-
-
-          if (content.hasOwnProperty('notes')) {
-            set({ notes: content.notes });
-          }
-
-
+             // Update only FileSettings (notes) from the file content.
+             // Persisted settings (theme, shortcuts, etc.) are handled by the persist middleware loading from local storage.
+             // We should NOT overwrite the state loaded by persist with potentially older data from the file here.
+            if (content.hasOwnProperty('notes')) {
+                 set({ notes: content.notes });
+            }
+             // Note: If the file schema evolves to include new properties not in PersistedSettings,
+             // we might need merging logic here to update the state from the file for those properties.
         }
       },
     }),
     {
       name: 'local-settings',
-      storage: indexedDbStorage,
-
-      partialize: (state): PersistedStateSubset => ({
-
+      storage: typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local ? chromeStorage : undefined,
+      onRehydrateStorage: (state) => {
+        return (state) => {
+          state?._setHasHydrated(true);
+        };
+      },
+      partialize: (state) => ({
         shortcuts: state.shortcuts,
         theme: state.theme,
         showQuickNotes: state.showQuickNotes,
@@ -281,8 +285,17 @@ export const useSettingsStore = create<SettingsState>()(
         noteSettingsPath: state.noteSettingsPath,
       }),
       version: 1,
-
-
     }
   )
-); 
+);
+
+// Listen for settings updates from other contexts
+if (typeof chrome !== 'undefined' && chrome.runtime) {
+  chrome.runtime.onMessage.addListener((message) => {
+    if (message.type === 'SETTINGS_UPDATED') {
+      const store = useSettingsStore.getState();
+      store._setHasHydrated(true);
+      // The store will automatically rehydrate from storage
+    }
+  });
+} 
