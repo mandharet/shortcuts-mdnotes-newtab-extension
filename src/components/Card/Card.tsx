@@ -9,8 +9,6 @@ interface CardProps {
   url: string;
   backgroundColor: string;
   onEdit: (id: string) => void;
-  onDelete: (id: string) => void;
-  onColorChange: (id: string, color: string) => void;
   isEditMode: boolean;
 }
 
@@ -21,11 +19,8 @@ const Card: React.FC<CardProps> = ({
   url,
   backgroundColor,
   onEdit,
-  onDelete,
-  onColorChange,
   isEditMode,
 }) => {
-  const [showMenu, setShowMenu] = React.useState(false);
 
   const getSafeUrl = (url: string) => {
     if (!/^https?:\/\//i.test(url)) {
@@ -46,27 +41,10 @@ const Card: React.FC<CardProps> = ({
     }
   };
 
-  React.useEffect(() => {
-    if (!showMenu) return;
-    const handleOutsideClick = (e: MouseEvent) => {
-      const menu = document.getElementById(`card-menu-${id}`);
-      if (menu && !menu.contains(e.target as Node)) setShowMenu(false);
-    };
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setShowMenu(false);
-    };
-    window.addEventListener('mousedown', handleOutsideClick);
-    window.addEventListener('keydown', handleEsc);
-    return () => {
-      window.removeEventListener('mousedown', handleOutsideClick);
-      window.removeEventListener('keydown', handleEsc);
-    };
-  }, [showMenu, id]);
-
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      setShowMenu(false);
+      onEdit(id);
     }
   };
 
@@ -106,7 +84,7 @@ const Card: React.FC<CardProps> = ({
                   className="p-1 rounded-full "
                   onClick={(e) => {
                     e.stopPropagation();
-                    setShowMenu(!showMenu);
+                    onEdit(id);
                   }}
                 >
                   <PencilSquareIcon className="w-5 h-5" />
@@ -114,46 +92,6 @@ const Card: React.FC<CardProps> = ({
               </div>
             )}
           </div>
-
-          {showMenu && isEditMode && (
-            <div
-              id={`card-menu-${id}`}
-              className="modal absolute right-0 mt-2 w-48 rounded-md z-10"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="py-1">
-                <button
-                  className="block w-full text-left px-4 py-2 text-sm hover:bg-hover-bg "
-                  onClick={() => onEdit(id)}
-                >
-                  Edit
-                </button>
-                <button
-                  className="block w-full text-left px-4 py-2 text-sm hover:bg-hover-bg "
-                  onClick={() => onDelete(id)}
-                >
-                  Delete
-                </button>
-                <div className="px-4 py-2 border-t border-border-color">
-                  <label className="block text-sm mb-1 ">Background Color</label>
-                  <div className="flex gap-2">
-                    <input
-                      type="color"
-                      value={backgroundColor}
-                      onChange={(e) => onColorChange(id, e.target.value)}
-                      className="w-full h-8 border border-border-color rounded"
-                    />
-                    <button
-                      onClick={() => onColorChange(id, 'var(--bg-surface)')}
-                      className="px-2 py-1 text-xs border border-border-color rounded hover:bg-hover-bg"
-                    >
-                      Reset
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       )}
     </Draggable>

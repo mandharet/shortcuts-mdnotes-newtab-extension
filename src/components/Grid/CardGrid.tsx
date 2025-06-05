@@ -99,6 +99,15 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
     await saveShortcuts(updatedCards);
   };
 
+  const handleConfirmDeleteFromModal = async () => {
+    if (editingCardId) {
+      await handleDeleteCard(editingCardId);
+      setIsAddingCard(false); // Close the modal
+      setEditingCardId(null); // Clear editing state
+      setNewCard({}); // Clear new card state
+    }
+  };
+
   React.useEffect(() => {
     if (!isAddingCard) return;
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -149,8 +158,6 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
                       url={card.url}
                       backgroundColor={card.backgroundColor}
                       onEdit={handleEditCard}
-                      onDelete={handleDeleteCard}
-                      onColorChange={handleColorChange}
                       isEditMode={isEditMode}
                     />
                   ) : (
@@ -161,14 +168,15 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
                         onClick={() => setIsAddingCard(true)}
                       > <PlusIcon className="w-6 h-6" />&nbsp;&nbsp;Create shortcut
                       </div>
-                      <div
-                        key={`empty-${index}`}
-                        className={`h-16 text-lg cursor-pointer border border-dashed rounded flex items-center justify-center ${snapshot.isDraggingOver ? 'bg-surface/10' : ''}`}
-                        onClick={() => setIsEditMode(!isEditMode)}
-                      >
-                        <Cog6ToothIcon className="w-6 h-6" />&nbsp;&nbsp;
-                        Settings
-                      </div>
+                      {(totalCards > 0 &&
+                        <div
+                          key={`empty-${index}`}
+                          className={`h-16 text-lg cursor-pointer border border-dashed rounded flex items-center justify-center ${snapshot.isDraggingOver ? 'bg-surface/10' : ''}`}
+                          onClick={() => setIsEditMode(!isEditMode)}
+                        >
+                          <Cog6ToothIcon className="w-6 h-6" />&nbsp;&nbsp;
+                          Settings
+                        </div>)}
                     </>
                   )
                 )
@@ -208,6 +216,12 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
               />
             </div>
             <div className="flex justify-end gap-2">
+              {editingCardId && <button
+                onClick={handleConfirmDeleteFromModal}
+                className="px-4 py-2 rounded btn-close"
+              >
+                Delete
+              </button>}
               <button
                 onClick={() => setIsAddingCard(false)}
                 className="px-4 py-2 rounded"
