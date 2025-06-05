@@ -1,13 +1,7 @@
 import React from 'react';
-import MdEditor from 'react-markdown-editor-lite';
-import MarkdownIt from 'markdown-it';
+import MDEditor from '@uiw/react-md-editor';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
-import 'react-markdown-editor-lite/lib/index.css';
 import { useSettingsStore } from '../../stores/settingsStore';
-
-interface QuickNotesProps {
-  enabled: boolean;
-}
 
 interface NoteObject {
   notesdata: string;
@@ -25,34 +19,31 @@ interface NotesData {
   };
 }
 
-const QuickNotes: React.FC<QuickNotesProps> = ({ enabled }) => {
+const QuickNotes: React.FC = () => {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
   const [notes, setNotes] = React.useState<string>('');
   const [saveStatus, setSaveStatus] = React.useState<{ type: 'success' | 'error' | 'autosaving' | null; message: string }>({ type: null, message: '' });
-  const mdParser = new MarkdownIt();
   const saveTimeout = React.useRef<number | null>(null);
 
   const { noteSettingsPath, notes: storedNotes, setNotes: setStoredNotes, updateFileSettings } = useSettingsStore();
 
   // Load notes for selected date
   React.useEffect(() => {
-    if (enabled) {
-      if (!noteSettingsPath) {
-        setSaveStatus({ type: 'error', message: 'Please select a folder to save settings' });
-      } else {
-        setSaveStatus({ type: null, message: '🟢' });
-      }
-      const year = selectedDate.getFullYear().toString();
-      const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
-      const day = selectedDate.getDate().toString().padStart(2, '0');
-      const notesData = storedNotes?.[year]?.[month]?.[day]?.notesdata || '';
-      setNotes(notesData);
+    if (!noteSettingsPath) {
+      setSaveStatus({ type: 'error', message: 'Please select a folder to save settings' });
+    } else {
+      setSaveStatus({ type: null, message: '🟢' });
     }
-  }, [enabled, selectedDate, noteSettingsPath, storedNotes]);
+    const year = selectedDate.getFullYear().toString();
+    const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
+    const day = selectedDate.getDate().toString().padStart(2, '0');
+    const notesData = storedNotes?.[year]?.[month]?.[day]?.notesdata || '';
+    setNotes(notesData);
+
+  }, [selectedDate, noteSettingsPath, storedNotes]);
 
   // Debounced auto-save
   React.useEffect(() => {
-    if (!enabled) return;
     if (!noteSettingsPath) return;
     if (saveTimeout.current) clearTimeout(saveTimeout.current);
     saveTimeout.current = setTimeout(() => {
@@ -61,7 +52,7 @@ const QuickNotes: React.FC<QuickNotesProps> = ({ enabled }) => {
     return () => {
       if (saveTimeout.current) clearTimeout(saveTimeout.current);
     };
-  }, [notes, selectedDate, enabled, noteSettingsPath]);
+  }, [notes, selectedDate, noteSettingsPath]);
 
   const saveNotes = async (content: string) => {
     try {
@@ -96,8 +87,8 @@ const QuickNotes: React.FC<QuickNotesProps> = ({ enabled }) => {
     }
   };
 
-  const handleEditorChange = ({ text }: { text: string }) => {
-      setNotes(text);
+  const handleEditorChange = (value?: string) => {
+    setNotes(value || '');
   };
 
   const changeDay = (delta: number) => {
@@ -106,33 +97,32 @@ const QuickNotes: React.FC<QuickNotesProps> = ({ enabled }) => {
     setSelectedDate(newDate);
   };
 
-  if (!enabled) return null;
 
   return (
-    <div className="max-w-4xl mx-auto mb-8">
+    <div className="max-w-5xl mx-auto mb-2 ">
       <div className="flex items-center justify-between mb-4">
         {noteSettingsPath && (
           <div className="relative flex items-center gap-2">
             <button
               onClick={() => changeDay(-1)}
-              className="p-2 rounded hover:bg-gray-100 bg-surface text-primary border"
+              className="p-2 rounded border border-border-color"
               title="Previous Day"
             >
               <ChevronLeftIcon className="w-5 h-5" />
             </button>
-            <div className="rounded-lg bg-surface text-primary ">
+            <div className="rounded-lg border border-border-color">
               <input
                 type="date"
                 value={selectedDate.toISOString().split('T')[0]}
                 onChange={(e) => {
                   setSelectedDate(new Date(e.target.value));
                 }}
-                className="w-full p-2 rounded-lg"
+                className="w-full p-2 rounded-lg border border-border-color"
               />
             </div>
             <button
               onClick={() => changeDay(1)}
-              className="p-2 rounded hover:bg-gray-100 bg-surface text-primary border"
+              className="p-2 rounded border border-border-color"
               title="Next Day"
             >
               <ChevronRightIcon className="w-5 h-5" />
@@ -146,18 +136,13 @@ const QuickNotes: React.FC<QuickNotesProps> = ({ enabled }) => {
         </div>
       </div>
       {noteSettingsPath && (
-        <MdEditor
+        <MDEditor
           value={notes}
-          style={{ height: '45vh' }}
-          renderHTML={(text) => mdParser.render(text)}
+          height={"50vh"}
           onChange={handleEditorChange}
-          config={{
-            view: {
-              menu: true,
-              md: true,
-              html: true
-            }
-          }}
+          autoFocus={true}
+          autoFocusEnd={true}
+
         />
       )}
     </div>

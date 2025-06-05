@@ -1,7 +1,7 @@
 import React from 'react';
 import { Droppable, DragDropContext, DropResult, Draggable } from 'react-beautiful-dnd';
 import Card from '../Card/Card';
-import { PlusIcon, Cog6ToothIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { PlusIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 import { useSettingsStore } from '../../stores/settingsStore';
 
 export interface CardData {
@@ -121,7 +121,7 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
   const cellsPerRow = columns;
   const rows = Math.ceil(totalCards / cellsPerRow);
   const maxRows = rows + 1;
-  const totalCells = maxRows * cellsPerRow;
+  const totalCells = cards.length + 1;//maxRows * cellsPerRow;
   const gridItems = Array.from({ length: totalCells }, (_, i) => cards[i] || null);
 
   return (
@@ -133,12 +133,12 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
               ref={provided.innerRef}
               {...provided.droppableProps}
               className={`grid gap-4 transition-colors duration-200 ${snapshot.isDraggingOver ? 'bg-surface/20' : ''}`}
-              style={{ 
+              style={{
                 gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-                minHeight: '100px'
+                minHeight: '50px'
               }}
             >
-              {cards.length > 0 ? (
+              {
                 gridItems.map((card, index) =>
                   card ? (
                     <Card
@@ -154,26 +154,32 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
                       isEditMode={isEditMode}
                     />
                   ) : (
-                    <div 
-                      key={`empty-${index}`} 
-                      className={`h-24 bg-transparent border border-dashed border-gray-200 rounded flex items-center justify-center opacity-50 ${snapshot.isDraggingOver ? 'bg-surface/10' : ''}`}
-                    >
-                      {isEditMode && (
-                        <span className="text-sm text-gray-400">Drop here</span>
-                      )}
-                    </div>
+                    <>
+                      <div
+                        key={`empty-${index}`}
+                        className={`h-16 text-lg cursor-pointer border border-dashed rounded flex items-center justify-center ${snapshot.isDraggingOver ? 'bg-surface/10' : ''}`}
+                        onClick={() => setIsAddingCard(true)}
+                      > <PlusIcon className="w-6 h-6" />&nbsp;&nbsp;Create shortcut
+                      </div>
+                      <div
+                        key={`empty-${index}`}
+                        className={`h-16 text-lg cursor-pointer border border-dashed rounded flex items-center justify-center ${snapshot.isDraggingOver ? 'bg-surface/10' : ''}`}
+                        onClick={() => setIsEditMode(!isEditMode)}
+                      >
+                        <Cog6ToothIcon className="w-6 h-6" />&nbsp;&nbsp;
+                        Settings
+                      </div>
+                    </>
                   )
                 )
-              ) : (
-                isEditMode && <div className="text-white">Loading cards...</div>
-              )}
+              }
               {provided.placeholder}
             </div>
           )}
         </Droppable>
       </DragDropContext>
 
-      {isAddingCard ? (
+      {isAddingCard && (
         <div className="fixed inset-0 modal-overlay flex items-center justify-center z-50">
           <div id="add-edit-card-modal" className="modal p-6 rounded-lg w-96">
             <input
@@ -192,47 +198,32 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
               className="w-full mb-4 p-2 border rounded"
               onKeyDown={e => { if (e.key === 'Enter') handleAddOrEditCard(); }}
             />
-            <input
-              type="color"
-              value={newCard.backgroundColor || '#ffffff'}
-              onChange={(e) => setNewCard({ ...newCard, backgroundColor: e.target.value })}
-              className="w-full mb-4 border rounded"
-            />
+            <div className='flex flex-col'>
+              <div>Background Color: </div>
+              <input
+                type="color"
+                value={newCard.backgroundColor || '#ffffff'}
+                onChange={(e) => setNewCard({ ...newCard, backgroundColor: e.target.value })}
+                className="w-full mb-4 border rounded"
+              />
+            </div>
             <div className="flex justify-end gap-2">
               <button
                 onClick={() => setIsAddingCard(false)}
-                className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded"
+                className="px-4 py-2 rounded"
               >
                 Cancel
               </button>
               <button
                 onClick={handleAddOrEditCard}
-                className="px-4 py-2 bg-primary rounded hover:bg-primary/90"
+                className="px-4 py-2 rounded card"
               >
                 {editingCardId ? 'Save' : 'Add'}
               </button>
             </div>
           </div>
         </div>
-      ) : (
-        <div className="flex justify-end mt-4 gap-2">
-          <button
-            onClick={() => setIsEditMode(!isEditMode)}
-            className="p-2 rounded-full hover:bg-gray-100"
-            title={isEditMode ? 'Exit Edit Mode' : 'Enter Edit Mode'}
-          >
-            <Cog6ToothIcon className="w-6 h-6" />
-          </button>
-          {isEditMode && (
-            <button
-              onClick={() => setIsAddingCard(true)}
-              className="p-2 rounded-full hover:bg-gray-100"
-              title="Add New Card"
-            >
-              <PlusIcon className="w-6 h-6" />
-            </button>
-          )}
-        </div>
+
       )}
     </div>
   );

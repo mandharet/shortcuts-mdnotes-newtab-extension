@@ -131,7 +131,7 @@ const BookmarksFlyout: React.FC = () => {
       key={bookmark.id}
       href={bookmark.url}
       rel="noopener noreferrer"
-      className="block px-4 py-2 text-sm hover:bg-hover-bg text-primary"
+      className="block px-4 py-2 text-sm hover:bg-hover-bg "
     >
       {bookmark.title}
     </a>
@@ -159,7 +159,7 @@ const BookmarksFlyout: React.FC = () => {
       <div key={folder.id} className="mb-2">
         <button
           onClick={() => toggleFolder(folder.id)}
-          className="flex items-center w-full px-4 py-2 text-sm hover:bg-hover-bg text-primary"
+          className="flex items-center w-full px-4 py-2 text-sm hover:bg-hover-bg "
         >
           <svg
             className={`w-4 h-4 mr-2 transform transition-transform ${isFolderExpanded ? 'rotate-90' : ''} text-secondary`}
@@ -184,22 +184,37 @@ const BookmarksFlyout: React.FC = () => {
 
   return (
     <div
-      className={`fixed top-0 right-0 h-full bg-surface/50 backdrop-blur-md shadow-lg z-50 transform transition-transform duration-300 ${isExpanded ? 'w-[45vw] translate-x-0' : 'w-10 translate-x-[calc(100%-2.5rem)]'} ${isPinnedBookMarkFlyout ? '' : 'hover:w-[45vw] hover:translate-x-0'} border-l border-border-color`}
+      className={`fixed top-0 right-0 h-full z-50 transform transition-transform transition-colors duration-300 ${isExpanded ? 'w-[45vw] translate-x-0' : 'w-10 translate-x-[calc(100%-2.5rem)]'} ${isPinnedBookMarkFlyout ? '' : 'hover:w-[45vw] hover:translate-x-0'} bg-primary`}
       onMouseEnter={() => { if (!isPinnedBookMarkFlyout) setIsExpanded(true); }}
       onMouseLeave={() => { if (!isPinnedBookMarkFlyout) setIsExpanded(false); }}
     >
       {isExpanded ? (
         <div className="p-4 h-full flex flex-col">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-medium text-primary">Bookmarks</h2>
+            <h2 className="text-xl font-medium ">Bookmarks</h2>
             <button
               onClick={handlePinToggle}
-              className="p-2 rounded-full hover:bg-hover-bg text-primary"
+              className="p-2 rounded-full hover:bg-hover-bg "
               title={isPinnedBookMarkFlyout ? 'Unpin' : 'Pin'}
             >
-              <svg
+            {!isPinnedBookMarkFlyout &&(<svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={isPinnedBookMarkFlyout ? "M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" : "M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"}
+              />
+            </svg>)}
+
+            
+            {isPinnedBookMarkFlyout &&(<svg
                 className="w-5 h-5"
-                fill="none"
+                fill="currentColor"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -209,7 +224,7 @@ const BookmarksFlyout: React.FC = () => {
                   strokeWidth={2}
                   d={isPinnedBookMarkFlyout ? "M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" : "M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"}
                 />
-              </svg>
+              </svg>)}
             </button>
           </div>
           <div className="relative mb-4">
@@ -218,9 +233,8 @@ const BookmarksFlyout: React.FC = () => {
               placeholder="Search bookmarks..."
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
-              className="w-full p-2 pl-10 rounded-lg bg-surface text-primary border border-border-color"
+              className="w-full p-2 rounded-lg bg-surface  border border-border-color"
             />
-             <MagnifyingGlassIcon className="w-5 h-5 absolute left-3 top-2.5 text-secondary" />
           </div>
           
           <div className="overflow-y-auto flex-grow">
@@ -234,7 +248,7 @@ const BookmarksFlyout: React.FC = () => {
         </div>
       ) : (
         <div className="h-full flex items-center justify-center">
-          <span className="transform -rotate-90 whitespace-nowrap text-sm font-medium text-primary">
+          <span className="transform -rotate-90 whitespace-nowrap text-sm font-medium ">
             Bookmarks
           </span>
         </div>

@@ -9,7 +9,6 @@
   --primary: #1a73e8;
   --secondary: #185abc;
   --bg-secondary: #185abc77;
-  --bg-secondary: #185abc77;
   --text-primary: #1a1a1a;
   --text-secondary: #5f6368;
   --border-color: #c6dafc;
@@ -64,7 +63,7 @@
   --bg-secondary: #ad145777;
   --text-primary: #1a1a1a;
   --text-secondary: #5f6368;
-  --border-color: #f8bbd0;
+  --border-color: #fff;
   --hover-bg: #fce4ec;
   --shadow-color: rgba(216, 27, 96, 0.08);
 }
@@ -95,22 +94,8 @@
   --shadow-color: rgba(229, 57, 53, 0.08);
 }
 
-:root[data-theme='dark'] {
-  --bg-primary: #181a20;
-  --bg-surface: #23272f;
-  --primary: #8ab4f8;
-  --secondary: #5f6368;
-  --bg-secondary: #5f636877;
-  --text-primary: #ffffff;
-  --text-secondary: #b0b3b8;
-  --border-color: #23272f;
-  --hover-bg: #23272f;
-  --shadow-color: rgba(0, 0, 0, 0.16);
-}
-
 /* Default theme fallback */
 :root {
-  --bg-primary: #e3f2fd;
   --bg-surface: #ffffff;
   --primary: #1a73e8;
   --secondary: #185abc;
@@ -132,31 +117,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.bg-white,
-.bg-surface {
-  background-color: var(--bg-surface) !important;
-}
-
-.bg-gray-100 {
-  background-color: var(--bg-primary) !important;
-}
-
-.text-gray-600 {
-  color: var(--text-secondary) !important;
-}
-
-.text-gray-900 {
-  color: var(--text-primary) !important;
-}
-
-.border {
-  border-color: var(--border-color) !important;
-}
-
-.hover\:bg-gray-100:hover {
-  background-color: var(--hover-bg) !important;
 }
 
 /* Custom scrollbar */
@@ -181,28 +141,16 @@ body {
   color: var(--text-primary);
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #3c3c3c;
-    color: var(--bg-surface);
-  }
-
-  .card {
-    background-color: var(--bg-secondary);
-    color: var(--bg-surface);
-  }
-}
-
 .card:hover {
   box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 /* Modal styles */
 .modal {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   box-shadow: 0 4px 6px var(--shadow-color);
-  color: var(--text-primary);
+  color: var(--bg-surface);
 }
 
 .modal-overlay {
@@ -212,7 +160,8 @@ body {
 /* Input styles */
 input,
 textarea,
-select {
+select,
+option {
   background-color: var(--bg-surface);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
@@ -241,6 +190,10 @@ select:focus {
   color: var(--text-primary);
 }
 
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
 .btn-secondary:hover {
   background-color: var(--hover-bg);
 }
@@ -248,4 +201,32 @@ select:focus {
 .btn-close {
   background-color: red;
   color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border-color: #000000;
+  }
+
+  body {
+    background-color: #000;
+    color: var(--bg-surface);
+    color-scheme: dark;
+  }
+
+  input,
+  select {
+    background-color: #3c3c3c;
+    color: var(--bg-surface);
+  }
+
+  .bg-primary {
+    background-color: var(--bg-secondary);
+  }
+
+  .card {
+    background-color: var(--bg-secondary);
+    color: var(--bg-surface);
+    border-color: #000;
+  }
 }

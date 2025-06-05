@@ -1,6 +1,6 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
-import { Cog6ToothIcon, Bars3Icon } from '@heroicons/react/24/outline';
+import { Cog6ToothIcon, Bars3Icon, PencilIcon, PencilSquareIcon } from '@heroicons/react/24/outline';
 
 interface CardProps {
   id: string;
@@ -77,8 +77,8 @@ const Card: React.FC<CardProps> = ({
           ref={provided.innerRef}
           {...provided.dragHandleProps}
           {...provided.draggableProps}
-          className={`card relative p-4 rounded-lg cursor-pointer group flex flex-col min-w-[200px] transition-all duration-200 hover:shadow-lg ${backgroundColor ? '' : 'bg-primary'}`}
-          style={{ 
+          className={`card relative p-4 rounded-lg cursor-pointer group flex flex-col transition-all duration-200 hover:shadow-lg ${backgroundColor ? '' : 'bg-primary'}`}
+          style={{
             ...(backgroundColor ? { backgroundColor } : {}),
             ...provided.draggableProps.style,
             transform: provided.draggableProps.style?.transform,
@@ -88,30 +88,30 @@ const Card: React.FC<CardProps> = ({
           onClick={handleClick}
           tabIndex={0}
         >
-          <div className="flex justify-between">
-              {isEditMode && (
-                <div
-                  {...provided.dragHandleProps}
-                  title="Drag to reorder"
-                  className="cursor-move opacity-0 group-hover:opacity-100 transition-opacity text-primary hover:opacity-100"
-                  onClick={e => e.stopPropagation()}
-                >
-                  <Bars3Icon className="w-5 h-5" />
-                </div>
-              )}
-            <div className="flex">
-              <h3 className="text-lg font-medium text-primary">{title}</h3>
-            </div>
+          <div className="flex justify-between gap-4 overflow-hidden">
             {isEditMode && (
-              <button
-                className="p-1 rounded-full opacity-0 group-hover:opacity-100 hover:bg-surface transition-opacity border text-primary"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setShowMenu(!showMenu);
-                }}
+              <div
+                {...provided.dragHandleProps}
+                title="Drag to reorder"
+                className="cursor-move"
+                onClick={e => e.stopPropagation()}
               >
-                <Cog6ToothIcon className="w-5 h-5" />
-              </button>
+                <Bars3Icon className="w-5 h-5" />
+              </div>
+            )}
+              <h3 className="text-lg font-medium ">{title}</h3>
+            {isEditMode && (
+              <div>
+                <button
+                  className="p-1 rounded-full "
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setShowMenu(!showMenu);
+                  }}
+                >
+                  <PencilSquareIcon className="w-5 h-5" />
+                </button>
+              </div>
             )}
           </div>
 
@@ -123,19 +123,19 @@ const Card: React.FC<CardProps> = ({
             >
               <div className="py-1">
                 <button
-                  className="block w-full text-left px-4 py-2 text-sm hover:bg-hover-bg text-primary"
+                  className="block w-full text-left px-4 py-2 text-sm hover:bg-hover-bg "
                   onClick={() => onEdit(id)}
                 >
                   Edit
                 </button>
                 <button
-                  className="block w-full text-left px-4 py-2 text-sm hover:bg-hover-bg text-primary"
+                  className="block w-full text-left px-4 py-2 text-sm hover:bg-hover-bg "
                   onClick={() => onDelete(id)}
                 >
                   Delete
                 </button>
                 <div className="px-4 py-2 border-t border-border-color">
-                  <label className="block text-sm mb-1 text-primary">Background Color</label>
+                  <label className="block text-sm mb-1 ">Background Color</label>
                   <div className="flex gap-2">
                     <input
                       type="color"
