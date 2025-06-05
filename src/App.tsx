@@ -6,7 +6,8 @@ import { useSettingsStore } from './stores/settingsStore';
 import NotesPathSelector from './components/NotesPathSelector/NotesPathSelector';
 
 function App() {
-  const { theme, showQuickNotes, gridColumns, noteSettingsPath, showShortcuts, _hasHydrated } = useSettingsStore();
+  const { theme, showQuickNotes, gridColumns, noteSettingsPath, showShortcuts, _hasHydrated, loadFileSettings } = useSettingsStore();
+  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -14,9 +15,35 @@ function App() {
       document.documentElement.setAttribute('data-color-mode', 'dark')
   }, [theme]);
 
-  // Wait for the store to hydrate from local storage
-  if (!_hasHydrated) {
-    return <h1>Loading....</h1>; // Or a loading spinner
+  // Load notes data when the app starts
+  React.useEffect(() => {
+    const loadData = async () => {
+      if (_hasHydrated && noteSettingsPath) {
+        try {
+          await loadFileSettings();
+        } catch (error) {
+          console.error('Failed to load notes data:', error);
+        } finally {
+          setIsLoading(false);
+        }
+      } else {
+        setIsLoading(false);
+      }
+    };
+
+    loadData();
+  }, [_hasHydrated, noteSettingsPath, loadFileSettings]);
+
+  // Show loading state while data is being loaded
+  if (!_hasHydrated || isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <h1 className="text-xl">Loading...</h1>
+        </div>
+      </div>
+    );
   }
 
   // If no notes path is set, show the NotesPathSelector
