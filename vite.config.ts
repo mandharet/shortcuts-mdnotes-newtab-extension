@@ -8,8 +8,8 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        popup: resolve(__dirname, 'popup.html'),
+        main: resolve(__dirname, 'src/EntryPoint/index.html'),
+        popup: resolve(__dirname, 'src/EntryPoint/popup.html'),
       },
       output: {
         entryFileNames: (chunkInfo) => {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Droppable, DragDropContext, DropResult } from 'react-beautiful-dnd';
-import Card from '../Card/Card';
 import { PlusIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { logger } from '../../utils/logger';
+import Card from './Card/Card';
 
 export interface CardData {
   id: string;

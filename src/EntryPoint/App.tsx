@@ -1,9 +1,9 @@
 import React from 'react';
-import CardGrid from './components/Grid/CardGrid';
-import BookmarksFlyout from './components/BookmarksFlyout/BookmarksFlyout';
-import QuickNotes from './components/QuickNotes/QuickNotes';
-import { useSettingsStore } from './stores/settingsStore';
-import NotesPathSelector from './components/NotesPathSelector/NotesPathSelector';
+import CardGrid from '../components/Grid/CardGrid';
+import BookmarksFlyout from '../components/BookmarksFlyout/BookmarksFlyout';
+import QuickNotes from '../components/QuickNotes/QuickNotes';
+import { useSettingsStore } from '../stores/settingsStore';
+import NotesPathSelector from '../components/NotesPathSelector/NotesPathSelector';
 
 function App() {
   const { theme, showQuickNotes, gridColumns, noteSettingsPath, showShortcuts, _hasHydrated, loadFileSettings } = useSettingsStore();
