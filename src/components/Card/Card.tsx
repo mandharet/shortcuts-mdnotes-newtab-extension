@@ -1,6 +1,6 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
-import { Cog6ToothIcon, Bars3Icon, PencilIcon, PencilSquareIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, PencilSquareIcon } from '@heroicons/react/24/outline';
 
 interface CardProps {
   id: string;

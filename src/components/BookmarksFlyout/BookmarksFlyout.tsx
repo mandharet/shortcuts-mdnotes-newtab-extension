@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { FolderArrowDownIcon, FolderIcon, LinkIcon } from '@heroicons/react/24/outline';
-import { LinkSlashIcon } from '@heroicons/react/20/solid';
 
 interface Bookmark {
   id: string;
@@ -161,7 +160,7 @@ const BookmarksFlyout: React.FC = () => {
       <div key={folder.id} className="mb-4">
         <button
           onClick={() => toggleFolder(folder.id)}
-          className="flex items-center w-full px-4 py-2 text-sm hover:bg-hover-bg border rounded-md"
+          className="flex items-center w-full px-4 py-2 text-sm hover:bg-hover-bg rounded-md"
         >
           {isFolderExpanded ?
             <FolderArrowDownIcon className='w-4 h-4 mr-2' /> :

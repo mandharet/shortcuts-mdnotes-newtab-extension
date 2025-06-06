@@ -1,5 +1,5 @@
 import React from 'react';
-import { Droppable, DragDropContext, DropResult, Draggable } from 'react-beautiful-dnd';
+import { Droppable, DragDropContext, DropResult } from 'react-beautiful-dnd';
 import Card from '../Card/Card';
 import { PlusIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 import { useSettingsStore } from '../../stores/settingsStore';
@@ -90,15 +90,7 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
     setCards(updatedCards);
     await saveShortcuts(updatedCards);
   };
-
-  const handleColorChange = async (id: string, color: string) => {
-    const updatedCards = cards.map((card) =>
-      card.id === id ? { ...card, backgroundColor: color } : card
-    );
-    setCards(updatedCards);
-    await saveShortcuts(updatedCards);
-  };
-
+  
   const handleConfirmDeleteFromModal = async () => {
     if (editingCardId) {
       await handleDeleteCard(editingCardId);
