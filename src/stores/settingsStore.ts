@@ -106,7 +106,7 @@ const getHandleDb = (): Promise<IDBDatabase> => {
 
 const getDirectoryHandle = async (): Promise<FileSystemDirectoryHandle | undefined> => {
   if (!('indexedDB' in window)) {
-    console.warn('IndexedDB not available. Cannot retrieve directory handle.');
+    logger.warn('IndexedDB not available. Cannot retrieve directory handle.');
     return undefined;
   }
   try {
@@ -118,7 +118,7 @@ const getDirectoryHandle = async (): Promise<FileSystemDirectoryHandle | undefin
       request.onerror = () => reject(request.error);
     });
   } catch (error) {
-    console.error('Failed to get directory handle:', error);
+    logger.error('Failed to get directory handle:', error);
     return undefined;
   }
 };
@@ -131,35 +131,40 @@ const readSettingsFromFile = async (handle: FileSystemDirectoryHandle): Promise<
     return JSON.parse(contents);
   } catch (error: any) {
     if (error.name === 'NotFoundError') {
-      console.info('notesData.json not found.');
+      logger.info('notesData.json not found.');
       return null;
     } else if (error.name === 'NotReadableError') {
-      console.error('Permission denied to read notesData.json', error);
+      logger.error('Permission denied to read notesData.json', error);
       return null;
     }
-    console.error('Failed to read settings file:', error);
+    logger.error('Failed to read settings file:', error);
     return null;
   }
 };
 
 const writeSettingsToFile = async (handle: FileSystemDirectoryHandle, settings: FileSettings): Promise<void> => {
   try {
+    if (!settings.notes || Object.keys(settings.notes).length === 0 ) {
+      logger.warn('Attempted to write empty notes to file. Operation cancelled.');
+      return;
+    }
+
     const fileHandle = await handle.getFileHandle('notesData.json', { create: true });
     const writable = await fileHandle.createWritable();
     await writable.write(JSON.stringify(settings, null, 2));
     await writable.close();
   } catch (error: any) {
     if (error.name === 'NotAllowedError') {
-      console.error('Permission denied to write to notesData.json', error);
+      logger.error('Permission denied to write to notesData.json', error);
     } else {
-      console.error('Failed to write settings file:', error);
+      logger.error('Failed to write settings file:', error);
     }
   }
 };
 
 export const saveDirectoryHandle = async (handle: FileSystemDirectoryHandle): Promise<void> => {
   if (!('indexedDB' in window)) {
-    console.warn('IndexedDB not available. Directory handle not saved.');
+    logger.warn('IndexedDB not available. Directory handle not saved.');
     return;
   }
   try {
@@ -169,7 +174,7 @@ export const saveDirectoryHandle = async (handle: FileSystemDirectoryHandle): Pr
     await tx.commit();
     db.close();
   } catch (error) {
-    console.error('Failed to save directory handle:', error);
+    logger.error('Failed to save directory handle:', error);
   }
 };
 
@@ -185,7 +190,7 @@ const chromeStorage: PersistStorage<PersistedStateSubset> = {
             try {
               resolve(storedValue as StorageValue<PersistedStateSubset>);
             } catch (e) {
-              console.error(`Failed to retrieve or parse stored state for ${name}:`, e);
+              logger.error(`Failed to retrieve or parse stored state for ${name}:`, e);
               resolve(null);
             }
           } else {
@@ -194,7 +199,7 @@ const chromeStorage: PersistStorage<PersistedStateSubset> = {
         });
       });
     } else {
-      console.warn('chrome.storage.local not available.');
+      logger.warn('chrome.storage.local not available.');
       return null;
     }
   },
@@ -206,7 +211,7 @@ const chromeStorage: PersistStorage<PersistedStateSubset> = {
         });
       });
     } else {
-      console.warn('chrome.storage.local not available.');
+      logger.warn('chrome.storage.local not available.');
       return Promise.resolve();
     }
   },
@@ -218,7 +223,7 @@ const chromeStorage: PersistStorage<PersistedStateSubset> = {
         });
       });
     } else {
-      console.warn('chrome.storage.local not available.');
+      logger.warn('chrome.storage.local not available.');
       return Promise.resolve();
     }
   },
@@ -233,10 +238,12 @@ export const useSettingsStore = create<SettingsState>()(
       setNoteSettingsPath: (path: string) => set({ noteSettingsPath: path }),
       setTheme: (theme: string) => set({ theme }),
       setShowQuickNotes: (show: boolean) => {
+        logger.info('Setting showQuickNotes:', { 
+          show, 
+          currentNotes: get().notes,
+          stack: new Error().stack
+        });
         set({ showQuickNotes: show });
-        if(!show) {
-          set({ noteSettingsPath: undefined })
-        }
       },
       setShowShortcuts: (show: boolean) => set({ showShortcuts: show }),
       setGridColumns: (columns: number) => set({ gridColumns: columns }),
@@ -255,7 +262,13 @@ export const useSettingsStore = create<SettingsState>()(
         }
 
         const currentState = get();
-        logger.info('Current state before update:', currentState.notes);
+        logger.info('updateFileSettings called with:', {
+          settings,
+          currentStateNotes: currentState.notes,
+          hasNotesInSettings: !!settings.notes,
+          notesKeys: settings.notes ? Object.keys(settings.notes) : [],
+          stack: new Error().stack
+        });
 
         // Safety check: Don't overwrite notes with empty data
         if (settings.notes && Object.keys(settings.notes).length === 0) {
@@ -263,9 +276,9 @@ export const useSettingsStore = create<SettingsState>()(
           return;
         }
 
-        // Ensure notes data structure is correct
+        // Use the new notes data if provided, otherwise use current state
         const contentToWriteToFile: FileSettings = {
-          notes: currentState.notes
+          notes: settings.notes || currentState.notes
         };
 
         logger.info('Writing to file:', contentToWriteToFile);
@@ -299,15 +312,10 @@ export const useSettingsStore = create<SettingsState>()(
           state?._setHasHydrated(true);
         };
       },
-      partialize: (state) => ({
-        shortcuts: state.shortcuts,
-        theme: state.theme,
-        showQuickNotes: state.showQuickNotes,
-        showShortcuts: state.showShortcuts,
-        isPinnedBookMarkFlyout: state.isPinnedBookMarkFlyout,
-        gridColumns: state.gridColumns,
-        noteSettingsPath: state.noteSettingsPath,
-      }),
+      partialize: (state) => {
+        const { notes, ...uiSettings } = state;
+        return uiSettings;
+      },
       version: 1,
     }
   )

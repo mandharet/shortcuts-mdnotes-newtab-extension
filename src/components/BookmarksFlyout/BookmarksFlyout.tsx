@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { FolderArrowDownIcon, FolderIcon, LinkIcon } from '@heroicons/react/24/outline';
+import { logger } from '../../utils/logger';
 
 interface Bookmark {
   id: string;
@@ -69,7 +70,7 @@ const BookmarksFlyout: React.FC = () => {
         const foldersToExpand = getNonEmptyFolders(convertedBookmarks);
         setExpandedFolders(new Set(foldersToExpand.map(folder => folder.id)));
       } catch (error) {
-        console.error('Failed to load bookmarks:', error);
+        logger.error('Failed to load bookmarks:', error);
       }
     };
     loadBookmarks();

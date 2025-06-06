@@ -33,13 +33,13 @@ export const logger = {
           message,
           data
         }).catch(() => {
-          console.warn(`[WARN] ${message}`, data);
+          logger.warn(`[WARN] ${message}`, data);
         });
       } else {
-        console.warn(`[WARN] ${message}`, data);
+        logger.warn(`[WARN] ${message}`, data);
       }
     } catch (error) {
-      console.warn(`[WARN] ${message}`, data);
+      logger.warn(`[WARN] ${message}`, data);
     }
   },
   
@@ -53,13 +53,13 @@ export const logger = {
           message,
           error: error?.message || error
         }).catch(() => {
-          console.error(`[ERROR] ${message}`, error);
+          logger.error(`[ERROR] ${message}`, error);
         });
       } else {
-        console.error(`[ERROR] ${message}`, error);
+        logger.error(`[ERROR] ${message}`, error);
       }
     } catch (e) {
-      console.error(`[ERROR] ${message}`, error);
+      logger.error(`[ERROR] ${message}`, error);
     }
   }
 }; 

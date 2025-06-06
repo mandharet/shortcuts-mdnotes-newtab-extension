@@ -9,7 +9,7 @@ const SAVE_DEBOUNCE_MS = 2000;
 
 const QuickNotes: React.FC = () => {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
-  const { notes, setNotes, showShortcuts, updateFileSettings, noteSettingsPath, loadFileSettings, setNoteSettingsPath } = useSettingsStore();
+  const { notes, setNotes, showShortcuts, updateFileSettings, noteSettingsPath, loadFileSettings, setNoteSettingsPath, showQuickNotes } = useSettingsStore();
   const [saveStatus, setSaveStatus] = React.useState<{ type: 'success' | 'error' | 'autosaving' | null; message: string }>({ type: null, message: '✒️' });
   const [isLoading, setIsLoading] = React.useState(true);
   const saveTimeout = React.useRef<number | null>(null);
@@ -24,12 +24,12 @@ const QuickNotes: React.FC = () => {
           setIsLoading(false);
         })
         .catch(error => {
-          console.error('Failed to load notes:', error);
+          logger.error('Failed to load notes:', error);
           setSaveStatus({ type: 'error', message: 'Failed to load notes 🔴' });
           setIsLoading(false);
         });
     }
-  }, [noteSettingsPath, loadFileSettings]);
+  }, [noteSettingsPath, loadFileSettings, showQuickNotes]);
 
   // Update local editor content when selected date or notes change
   React.useEffect(() => {
@@ -53,7 +53,7 @@ const QuickNotes: React.FC = () => {
       setNoteSettingsPath('');
       setSaveStatus({ type: 'success', message: 'Reset successful 🟢' });
     } catch (error) {
-      console.error('Failed to reset:', error);
+      logger.error('Failed to reset:', error);
       setSaveStatus({ type: 'error', message: 'Failed to reset 🔴' });
     } finally {
       setIsLoading(false);
@@ -184,7 +184,6 @@ const QuickNotes: React.FC = () => {
         autoFocus={true}
         autoFocusEnd={true}
         height={showShortcuts ? "45vh" : "80vh"}
-        enableScroll={true}
         extraCommands={[
           {
             name: 'copy',

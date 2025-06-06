@@ -3,6 +3,7 @@ import { Droppable, DragDropContext, DropResult } from 'react-beautiful-dnd';
 import Card from '../Card/Card';
 import { PlusIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 import { useSettingsStore } from '../../stores/settingsStore';
+import { logger } from '../../utils/logger';
 
 export interface CardData {
   id: string;
@@ -33,7 +34,7 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
       setShortcuts(updatedCards);
       await updateFileSettings({ shortcuts: updatedCards });
     } catch (error) {
-      console.error('Failed to save cards (shortcuts) to settings:', error);
+      logger.error('Failed to save cards (shortcuts) to settings:', error);
     }
   };
 
