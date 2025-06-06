@@ -164,10 +164,6 @@ const chromeStorage: PersistStorage<PersistedStateSubset> = {
     if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local) {
       return new Promise((resolve) => {
         chrome.storage.local.set({ [name]: value }, () => {
-
-          if (chrome.runtime) {
-            chrome.runtime.sendMessage({ type: 'SETTINGS_UPDATED', data: value });
-          }
           resolve();
         });
       });

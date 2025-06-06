@@ -1,7 +1,7 @@
 import React from 'react';
-import MDEditor from '@uiw/react-md-editor';
+import MDEditor, { commands } from '@uiw/react-md-editor';
 import { useSettingsStore } from '../../stores/settingsStore';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { ChevronLeftIcon, ChevronRightIcon, Square2StackIcon } from '@heroicons/react/24/outline';
 
 interface NoteObject {
   notesdata: string;
@@ -28,7 +28,7 @@ const QuickNotes: React.FC = () => {
   }, [selectedDate, notes]);
 
   // Function to check if a note is locked
-  
+
   // Handle date change
   const changeDay = (days: number) => {
     if (saveStatus.type === 'autosaving' || saveStatus.type === 'error') {
@@ -66,14 +66,24 @@ const QuickNotes: React.FC = () => {
         setNotes(updatedNotes); // Update global store state
         await updateFileSettings({ notes: updatedNotes }); // Save to file
         setSaveStatus({ type: 'success', message: 'Saved 🟢' });
-        setTimeout(()=>setSaveStatus({ type: 'success', message: '🟢' }), 2000);
+        setTimeout(() => setSaveStatus({ type: 'success', message: '🟢' }), 2000);
       } catch (error) {
         setSaveStatus({ type: 'error', message: 'Failed to save 🔴' });
       }
     }, 1000);
   };
 
-  
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(editorContent);
+      setSaveStatus({ type: 'success', message: 'Copied to clipboard! 🟢' });
+      setTimeout(() => setSaveStatus({ type: 'success', message: '🟢' }), 2000);
+    } catch (err) {
+      setSaveStatus({ type: 'error', message: 'Failed to copy to clipboard 🟡' });
+    }
+  };
+
   if (!noteSettingsPath) return null;
 
   return (
@@ -117,13 +127,30 @@ const QuickNotes: React.FC = () => {
         </div>
       </div>
 
-        <MDEditor
-          value={editorContent} // Use local state for immediate editor value
-          height={"50vh"}
-          onChange={handleEditorChange}
-          autoFocus={true}
-          autoFocusEnd={true}
-        />
+      <MDEditor
+        value={editorContent}
+        height={"50vh"}
+        onChange={handleEditorChange}
+        autoFocus={true}
+        autoFocusEnd={true}
+        extraCommands={
+          [
+            {
+            name: 'copy',
+            keyCommand: 'copy',
+            buttonProps: { 'aria-label': 'Copy content' },
+            icon: (
+              <Square2StackIcon className='w-4 h-4' />
+            ),
+            execute: () => {
+              copyToClipboard();
+            }
+          },
+            commands.codeLive,
+            commands.codePreview,
+            commands.fullscreen,
+          ]}
+      />
     </div>
   );
 };

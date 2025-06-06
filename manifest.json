@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "Productivity New Tab",
+  "name": "Notes Shortcuts Tab",
   "version": "1.0",
   "description": "A customizable new tab page with URL cards, bookmarks, and quick notes",
+  "author": "Tejas Mandhare",
   "permissions": [
     "bookmarks",
-    "storage",
-    "tabs"
+    "storage"
   ],
   "chrome_url_overrides": {
     "newtab": "index.html"
@@ -23,5 +23,10 @@
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
-  }
+  },
+  "web_accessible_resources": [{
+    "resources": ["icons/*"],
+    "matches": ["<all_urls>"]
+  }],
+  "homepage_url": "https://tejas.mandhare.com"
 } 
