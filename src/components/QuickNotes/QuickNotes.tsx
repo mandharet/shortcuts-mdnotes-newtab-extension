@@ -1,21 +1,11 @@
 import React from 'react';
 import MDEditor, { commands } from '@uiw/react-md-editor';
-import { useSettingsStore } from '../../stores/settingsStore';
+import { useSettingsStore, getNote, setNote } from '../../stores/settingsStore';
 import { ChevronLeftIcon, ChevronRightIcon, Square2StackIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 import NotesPathSelector from '../NotesPathSelector/NotesPathSelector';
+import { logger } from '../../utils/logger';
 
-interface NoteObject {
-  notesdata: string;
-  lastModified: string;
-  characterCount: number;
-}
-
-interface NoteData {
-  content: string;
-  date: string;
-}
-
-const SAVE_DEBOUNCE_MS = 2000; // Increased from 1000ms to 2000ms
+const SAVE_DEBOUNCE_MS = 2000;
 
 const QuickNotes: React.FC = () => {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
@@ -43,14 +33,24 @@ const QuickNotes: React.FC = () => {
 
   // Update local editor content when selected date or notes change
   React.useEffect(() => {
-    const date = selectedDate.toISOString().split('T')[0];
-    setEditorContent(notes[date]?.content || '');
+    const dateStr = selectedDate.toISOString().split('T')[0];
+    logger.info('Current notes state:', notes);
+    const note = getNote(notes, dateStr);
+    logger.info('Retrieved note for date:', { date: dateStr, note });
+    setEditorContent(note?.content || '');
   }, [selectedDate, notes]);
 
   const handleReset = async () => {
+    // Show confirmation dialog
+    const confirmed = window.confirm('Are you sure you want to reset the notes path?');
+    if (!confirmed) return;
+
     try {
       setIsLoading(true);
-      setNoteSettingsPath(''); // This will trigger NotesPathSelector
+      // First read current data to ensure we don't lose it
+      await loadFileSettings();
+      // Then clear the path
+      setNoteSettingsPath('');
       setSaveStatus({ type: 'success', message: 'Reset successful 🟢' });
     } catch (error) {
       console.error('Failed to reset:', error);
@@ -85,18 +85,20 @@ const QuickNotes: React.FC = () => {
 
     saveTimeout.current = window.setTimeout(async () => {
       try {
-        const updatedNotes = {
-          ...notes,
-          [selectedDate.toISOString().split('T')[0]]: {
-            content: value || '',
-            date: selectedDate.toISOString().split('T')[0]
-          }
-        };
+        const dateStr = selectedDate.toISOString().split('T')[0];
+        logger.info('Current notes before update:', notes);
+        const updatedNotes = setNote(notes, dateStr, {
+          content: value || '',
+          date: dateStr
+        });
+        logger.info('Updated notes:', updatedNotes);
+        
         setNotes(updatedNotes);
         await updateFileSettings({ notes: updatedNotes });
         setSaveStatus({ type: 'success', message: 'Saved 🟢' });
         setTimeout(() => setSaveStatus({ type: 'success', message: '🟢' }), 2000);
       } catch (error) {
+        logger.error('Error saving notes:', error);
         setSaveStatus({ type: 'error', message: 'Failed to save 🔴' });
       }
     }, SAVE_DEBOUNCE_MS);

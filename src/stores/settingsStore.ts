@@ -1,11 +1,27 @@
 import { create } from 'zustand';
 import { persist, PersistStorage, StorageValue } from 'zustand/middleware';
+import { logger } from '../utils/logger';
 
-
-export interface FileSettings {
-  notes: any;
+export interface NoteData {
+  content: string;
+  date: string;
 }
 
+export interface DayNotes {
+  [day: string]: NoteData;
+}
+
+export interface MonthNotes {
+  [month: string]: DayNotes;
+}
+
+export interface YearNotes {
+  [year: string]: MonthNotes;
+}
+
+export interface FileSettings {
+  notes: YearNotes;
+}
 
 export interface PersistedSettings {
   shortcuts: any[];
@@ -17,16 +33,14 @@ export interface PersistedSettings {
   noteSettingsPath: string;
 }
 
-
 export interface SettingsState extends PersistedSettings, FileSettings {
-
   setNoteSettingsPath: (path: string) => void;
   setTheme: (theme: string) => void;
   setShowQuickNotes: (show: boolean) => void;
   setShowShortcuts: (show: boolean) => void;
   setGridColumns: (columns: number) => void;
   setIsPinnedBookMarkFlyout: (isPinned: boolean) => void;
-  setNotes: (notes: any) => void;
+  setNotes: (notes: YearNotes) => void;
   setShortcuts: (shortcuts: any[]) => void;
   updateFileSettings: (settings: Partial<PersistedSettings & FileSettings>) => Promise<void>;
   loadFileSettings: () => Promise<void>;
@@ -35,7 +49,6 @@ export interface SettingsState extends PersistedSettings, FileSettings {
 }
 
 const DEFAULT_DATA_SETTINGS: PersistedSettings & FileSettings = {
-
   shortcuts: [],
   theme: 'google-blue',
   showQuickNotes: true,
@@ -46,7 +59,36 @@ const DEFAULT_DATA_SETTINGS: PersistedSettings & FileSettings = {
   notes: {},
 };
 
+// Helper function to parse date into year, month, day
+export const parseDate = (dateStr: string) => {
+  const date = new Date(dateStr);
+  return {
+    year: date.getFullYear().toString(),
+    month: (date.getMonth() + 1).toString().padStart(2, '0'),
+    day: date.getDate().toString().padStart(2, '0')
+  };
+};
 
+// Helper function to get note from hierarchical structure
+export const getNote = (notes: YearNotes, dateStr: string): NoteData | undefined => {
+  const { year, month, day } = parseDate(dateStr);
+  return notes[year]?.[month]?.[day];
+};
+
+// Helper function to set note in hierarchical structure
+export const setNote = (notes: YearNotes, dateStr: string, noteData: NoteData): YearNotes => {
+  const { year, month, day } = parseDate(dateStr);
+  return {
+    ...notes,
+    [year]: {
+      ...notes[year],
+      [month]: {
+        ...notes[year]?.[month],
+        [day]: noteData
+      }
+    }
+  };
+};
 
 const getHandleDb = (): Promise<IDBDatabase> => {
   return new Promise((resolve, reject) => {
@@ -115,7 +157,6 @@ const writeSettingsToFile = async (handle: FileSystemDirectoryHandle, settings: 
   }
 };
 
-
 export const saveDirectoryHandle = async (handle: FileSystemDirectoryHandle): Promise<void> => {
   if (!('indexedDB' in window)) {
     console.warn('IndexedDB not available. Directory handle not saved.');
@@ -132,9 +173,7 @@ export const saveDirectoryHandle = async (handle: FileSystemDirectoryHandle): Pr
   }
 };
 
-
 type PersistedStateSubset = PersistedSettings;
-
 
 const chromeStorage: PersistStorage<PersistedStateSubset> = {
   getItem: async (name: string): Promise<StorageValue<PersistedStateSubset> | null> => {
@@ -191,7 +230,6 @@ export const useSettingsStore = create<SettingsState>()(
       ...DEFAULT_DATA_SETTINGS,
       _hasHydrated: false,
 
-
       setNoteSettingsPath: (path: string) => set({ noteSettingsPath: path }),
       setTheme: (theme: string) => set({ theme }),
       setShowQuickNotes: (show: boolean) => {
@@ -203,57 +241,53 @@ export const useSettingsStore = create<SettingsState>()(
       setShowShortcuts: (show: boolean) => set({ showShortcuts: show }),
       setGridColumns: (columns: number) => set({ gridColumns: columns }),
       setIsPinnedBookMarkFlyout: (isPinned: boolean) => set({ isPinnedBookMarkFlyout: isPinned }),
-      setNotes: (notes: any) => set({ notes }),
+      setNotes: (notes: YearNotes) => set({ notes }),
       setShortcuts: (shortcuts: any[]) => set({ shortcuts }),
 
-
       _setHasHydrated: (hydrated: boolean) => set({ _hasHydrated: hydrated }),
-
-
 
       updateFileSettings: async (settings: Partial<PersistedSettings & FileSettings>) => {
         const handle = await getDirectoryHandle();
         if (!handle) {
-          console.warn('Directory handle not available. File settings not saved.');
-
+          logger.warn('Directory handle not available. File settings not saved.');
           set(settings);
           return;
         }
 
-
         const currentState = get();
+        logger.info('Current state before update:', currentState.notes);
 
+        // Safety check: Don't overwrite notes with empty data
+        if (settings.notes && Object.keys(settings.notes).length === 0) {
+          logger.warn('Attempted to save empty notes data. Operation cancelled.');
+          return;
+        }
 
-
-
+        // Ensure notes data structure is correct
         const contentToWriteToFile: FileSettings = {
-          notes: currentState.notes,
+          notes: currentState.notes
         };
 
+        logger.info('Writing to file:', contentToWriteToFile);
         await writeSettingsToFile(handle, contentToWriteToFile);
-
-
       },
-
-
 
       loadFileSettings: async () => {
         const handle = await getDirectoryHandle();
         if (!handle) {
-          console.warn('Directory handle not available. Cannot load file settings.');
+          logger.warn('Directory handle not available. Cannot load file settings.');
           return;
         }
 
         const content = await readSettingsFromFile(handle);
-        if (content) {
+        logger.info('Loaded content:', content);
 
-
-
-          if (content.hasOwnProperty('notes')) {
-            set({ notes: content.notes });
-          }
-
-
+        if (content?.notes) {
+          // Directly use the notes from the file
+          set({ notes: content.notes });
+          logger.info('Updated state with notes:', content.notes);
+        } else {
+          logger.warn('No notes found in the loaded content');
         }
       },
     }),
@@ -279,13 +313,11 @@ export const useSettingsStore = create<SettingsState>()(
   )
 );
 
-
 if (typeof chrome !== 'undefined' && chrome.runtime) {
   chrome.runtime.onMessage.addListener((message) => {
     if (message.type === 'SETTINGS_UPDATED') {
       const store = useSettingsStore.getState();
       store._setHasHydrated(true);
-
     }
   });
 } 
