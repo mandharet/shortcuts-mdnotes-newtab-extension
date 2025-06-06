@@ -43,7 +43,6 @@ const DEFAULT_DATA_SETTINGS: PersistedSettings & FileSettings = {
   isPinnedBookMarkFlyout: false,
   gridColumns: 4,
   noteSettingsPath: '',
-
   notes: {},
 };
 
@@ -84,16 +83,16 @@ const getDirectoryHandle = async (): Promise<FileSystemDirectoryHandle | undefin
 
 const readSettingsFromFile = async (handle: FileSystemDirectoryHandle): Promise<Partial<PersistedSettings & FileSettings> | null> => {
   try {
-    const fileHandle = await handle.getFileHandle('noteSettings.json', { create: false });
+    const fileHandle = await handle.getFileHandle('notesData.json', { create: false });
     const file = await fileHandle.getFile();
     const contents = await file.text();
     return JSON.parse(contents);
   } catch (error: any) {
     if (error.name === 'NotFoundError') {
-      console.info('noteSettings.json not found.');
+      console.info('notesData.json not found.');
       return null;
     } else if (error.name === 'NotReadableError') {
-      console.error('Permission denied to read noteSettings.json', error);
+      console.error('Permission denied to read notesData.json', error);
       return null;
     }
     console.error('Failed to read settings file:', error);
@@ -101,15 +100,15 @@ const readSettingsFromFile = async (handle: FileSystemDirectoryHandle): Promise<
   }
 };
 
-const writeSettingsToFile = async (handle: FileSystemDirectoryHandle, settings: PersistedSettings & FileSettings): Promise<void> => {
+const writeSettingsToFile = async (handle: FileSystemDirectoryHandle, settings: FileSettings): Promise<void> => {
   try {
-    const fileHandle = await handle.getFileHandle('noteSettings.json', { create: true });
+    const fileHandle = await handle.getFileHandle('notesData.json', { create: true });
     const writable = await fileHandle.createWritable();
     await writable.write(JSON.stringify(settings, null, 2));
     await writable.close();
   } catch (error: any) {
     if (error.name === 'NotAllowedError') {
-      console.error('Permission denied to write to noteSettings.json', error);
+      console.error('Permission denied to write to notesData.json', error);
     } else {
       console.error('Failed to write settings file:', error);
     }
@@ -195,7 +194,12 @@ export const useSettingsStore = create<SettingsState>()(
 
       setNoteSettingsPath: (path: string) => set({ noteSettingsPath: path }),
       setTheme: (theme: string) => set({ theme }),
-      setShowQuickNotes: (show: boolean) => set({ showQuickNotes: show }),
+      setShowQuickNotes: (show: boolean) => {
+        set({ showQuickNotes: show });
+        if(!show) {
+          set({ noteSettingsPath: undefined })
+        }
+      },
       setShowShortcuts: (show: boolean) => set({ showShortcuts: show }),
       setGridColumns: (columns: number) => set({ gridColumns: columns }),
       setIsPinnedBookMarkFlyout: (isPinned: boolean) => set({ isPinnedBookMarkFlyout: isPinned }),
@@ -222,18 +226,8 @@ export const useSettingsStore = create<SettingsState>()(
 
 
 
-        const contentToWriteToFile: PersistedSettings & FileSettings = {
-
-          shortcuts: currentState.shortcuts,
-          theme: currentState.theme,
-          showQuickNotes: currentState.showQuickNotes,
-          showShortcuts: currentState.showShortcuts,
-          isPinnedBookMarkFlyout: currentState.isPinnedBookMarkFlyout,
-          gridColumns: currentState.gridColumns,
-          noteSettingsPath: currentState.noteSettingsPath,
+        const contentToWriteToFile: FileSettings = {
           notes: currentState.notes,
-
-          ...settings,
         };
 
         await writeSettingsToFile(handle, contentToWriteToFile);

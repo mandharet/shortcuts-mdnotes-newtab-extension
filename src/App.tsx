@@ -35,7 +35,7 @@ function App() {
   }, [_hasHydrated, noteSettingsPath, loadFileSettings]);
 
   // Show loading state while data is being loaded
-  if (!_hasHydrated || isLoading) {
+  if (!_hasHydrated && isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -47,7 +47,7 @@ function App() {
   }
 
   // If no notes path is set, show the NotesPathSelector
-  if (!noteSettingsPath) {
+  if (!noteSettingsPath && showQuickNotes) {
     return <NotesPathSelector />;
   }
 

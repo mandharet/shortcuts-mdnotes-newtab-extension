@@ -1,7 +1,8 @@
 import React from 'react';
 import MDEditor, { commands } from '@uiw/react-md-editor';
 import { useSettingsStore } from '../../stores/settingsStore';
-import { ChevronLeftIcon, ChevronRightIcon, Square2StackIcon } from '@heroicons/react/24/outline';
+import { ChevronLeftIcon, ChevronRightIcon, Square2StackIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
+import NotesPathSelector from '../NotesPathSelector/NotesPathSelector';
 
 interface NoteObject {
   notesdata: string;
@@ -14,12 +15,31 @@ interface NoteData {
   date: string;
 }
 
+const SAVE_DEBOUNCE_MS = 2000; // Increased from 1000ms to 2000ms
+
 const QuickNotes: React.FC = () => {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
-  const { notes, setNotes, showShortcuts, updateFileSettings, noteSettingsPath } = useSettingsStore();
+  const { notes, setNotes, showShortcuts, updateFileSettings, noteSettingsPath, loadFileSettings, setNoteSettingsPath } = useSettingsStore();
   const [saveStatus, setSaveStatus] = React.useState<{ type: 'success' | 'error' | 'autosaving' | null; message: string }>({ type: null, message: '✒️' });
+  const [isLoading, setIsLoading] = React.useState(true);
   const saveTimeout = React.useRef<number | null>(null);
-  const [editorContent, setEditorContent] = React.useState<string>(''); // Local state for editor content
+  const [editorContent, setEditorContent] = React.useState<string>('');
+
+  // Load notes data when component mounts or noteSettingsPath changes
+  React.useEffect(() => {
+    if (noteSettingsPath) {
+      setIsLoading(true);
+      loadFileSettings()
+        .then(() => {
+          setIsLoading(false);
+        })
+        .catch(error => {
+          console.error('Failed to load notes:', error);
+          setSaveStatus({ type: 'error', message: 'Failed to load notes 🔴' });
+          setIsLoading(false);
+        });
+    }
+  }, [noteSettingsPath, loadFileSettings]);
 
   // Update local editor content when selected date or notes change
   React.useEffect(() => {
@@ -27,7 +47,18 @@ const QuickNotes: React.FC = () => {
     setEditorContent(notes[date]?.content || '');
   }, [selectedDate, notes]);
 
-  // Function to check if a note is locked
+  const handleReset = async () => {
+    try {
+      setIsLoading(true);
+      setNoteSettingsPath(''); // This will trigger NotesPathSelector
+      setSaveStatus({ type: 'success', message: 'Reset successful 🟢' });
+    } catch (error) {
+      console.error('Failed to reset:', error);
+      setSaveStatus({ type: 'error', message: 'Failed to reset 🔴' });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   // Handle date change
   const changeDay = (days: number) => {
@@ -46,8 +77,6 @@ const QuickNotes: React.FC = () => {
 
     if (!noteSettingsPath) return;
 
-    const date = selectedDate.toISOString().split('T')[0];
-
     setSaveStatus({ type: 'autosaving', message: '✒️' });
 
     if (saveTimeout.current) {
@@ -58,21 +87,20 @@ const QuickNotes: React.FC = () => {
       try {
         const updatedNotes = {
           ...notes,
-          [date]: {
-            content: value || '', // Save the debounced value
-            date: date
+          [selectedDate.toISOString().split('T')[0]]: {
+            content: value || '',
+            date: selectedDate.toISOString().split('T')[0]
           }
         };
-        setNotes(updatedNotes); // Update global store state
-        await updateFileSettings({ notes: updatedNotes }); // Save to file
+        setNotes(updatedNotes);
+        await updateFileSettings({ notes: updatedNotes });
         setSaveStatus({ type: 'success', message: 'Saved 🟢' });
         setTimeout(() => setSaveStatus({ type: 'success', message: '🟢' }), 2000);
       } catch (error) {
         setSaveStatus({ type: 'error', message: 'Failed to save 🔴' });
       }
-    }, 1000);
+    }, SAVE_DEBOUNCE_MS);
   };
-
 
   const copyToClipboard = async () => {
     try {
@@ -84,7 +112,21 @@ const QuickNotes: React.FC = () => {
     }
   };
 
-  if (!noteSettingsPath) return null;
+  // Show NotesPathSelector if no path is set
+  if (!noteSettingsPath) {
+    return <NotesPathSelector />;
+  }
+
+  if (isLoading) {
+    return (
+      <div className="max-w-5xl mx-auto mb-2 flex items-center justify-center h-[45vh]">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 dark:border-white mx-auto mb-2"></div>
+          <p className="text-sm text-gray-600 dark:text-gray-400">Loading notes...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-5xl mx-auto mb-2">
@@ -119,6 +161,13 @@ const QuickNotes: React.FC = () => {
           >
             <ChevronRightIcon className="w-5 h-5" />
           </button>
+          <button
+            onClick={handleReset}
+            className="p-2 rounded border border-border-color hover:bg-gray-100 dark:hover:bg-gray-700"
+            title="Reset Notes Path"
+          >
+            <ArrowPathIcon className="w-5 h-5" />
+          </button>
         </div>
         <div className="flex items-center gap-4">
           <span className={`text-sm ${saveStatus.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
@@ -132,7 +181,7 @@ const QuickNotes: React.FC = () => {
         onChange={handleEditorChange}
         autoFocus={true}
         autoFocusEnd={true}
-        height={showShortcuts ? "45vh": "80vh"}
+        height={showShortcuts ? "45vh" : "80vh"}
         enableScroll={true}
         extraCommands={[
           {

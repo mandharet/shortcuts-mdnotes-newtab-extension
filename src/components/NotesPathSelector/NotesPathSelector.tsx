@@ -31,11 +31,11 @@ const NotesPathSelector: React.FC = () => {
         <div className="fixed inset-0 bg-surface/50 backdrop-blur-md flex items-center justify-center">
             <div className="bg-surface/80 p-8 rounded-lg shadow-lg max-w-md w-full mx-4 border border-surface/20">
                 <div className="text-center space-y-6">
-                    <h2 className="text-2xl font-medium">Welcome to Quick Notes</h2>
+                    <h2 className="text-2xl font-medium">Welcome to Shortcusts & Notes</h2>
                     
                     <div className="space-y-4">
                         <p className="opacity-70">
-                            Please select a folder to store your notes and settings.
+                            Please select a folder to store your notes
                         </p>
                         
                         <button
@@ -50,7 +50,7 @@ const NotesPathSelector: React.FC = () => {
                         )}
 
                         <p className="text-sm">
-                            Your notes and settings will be saved in a 'noteSettings.json' file within the selected directory.
+                            Your notes will be saved in a 'notesData.json' file within the selected directory.
                         </p>
                     </div>
                 </div>
