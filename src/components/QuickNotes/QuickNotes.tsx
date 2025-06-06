@@ -16,7 +16,7 @@ interface NoteData {
 
 const QuickNotes: React.FC = () => {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
-  const { notes, setNotes, updateFileSettings, noteSettingsPath } = useSettingsStore();
+  const { notes, setNotes, showShortcuts, updateFileSettings, noteSettingsPath } = useSettingsStore();
   const [saveStatus, setSaveStatus] = React.useState<{ type: 'success' | 'error' | 'autosaving' | null; message: string }>({ type: null, message: '✒️' });
   const saveTimeout = React.useRef<number | null>(null);
   const [editorContent, setEditorContent] = React.useState<string>(''); // Local state for editor content
@@ -129,13 +129,13 @@ const QuickNotes: React.FC = () => {
 
       <MDEditor
         value={editorContent}
-        height={"50vh"}
         onChange={handleEditorChange}
         autoFocus={true}
         autoFocusEnd={true}
-        extraCommands={
-          [
-            {
+        height={showShortcuts ? "45vh": "80vh"}
+        enableScroll={true}
+        extraCommands={[
+          {
             name: 'copy',
             keyCommand: 'copy',
             buttonProps: { 'aria-label': 'Copy content' },
@@ -146,10 +146,11 @@ const QuickNotes: React.FC = () => {
               copyToClipboard();
             }
           },
-            commands.codeLive,
-            commands.codePreview,
-            commands.fullscreen,
-          ]}
+          commands.codeLive,
+          commands.codeEdit,
+          commands.codePreview,
+          commands.fullscreen,
+        ]}
       />
     </div>
   );
