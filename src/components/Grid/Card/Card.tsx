@@ -30,14 +30,15 @@ const Card: React.FC<CardProps> = ({
   };
 
   const handleClick = (e?: React.MouseEvent) => {
-    // Open URL on click if not in edit mode
-    if (!isEditMode && url) {
-      const safeUrl = getSafeUrl(url);
-      window.location.href = safeUrl; // Open in the same window
-    }
-    // Prevent opening URL if in edit mode or no URL exists
     if (isEditMode || !url) {
       e?.preventDefault();
+      return;
+    }
+    const safeUrl = getSafeUrl(url);
+    if (e?.ctrlKey) {
+      window.open(safeUrl, '_blank', 'noopener,noreferrer');
+    } else {
+      window.open(safeUrl, '_self', 'noopener,noreferrer');
     }
   };
 
@@ -77,7 +78,7 @@ const Card: React.FC<CardProps> = ({
                 <Bars3Icon className="w-5 h-5" />
               </div>
             )}
-              <h3 className="text-lg font-medium ">{title}</h3>
+            <h3 className="text-lg font-medium ">{title}</h3>
             {isEditMode && (
               <div>
                 <button
