@@ -17,10 +17,12 @@ const SettingsPage: React.FC = () => {
         showQuickNotes,
         showShortcuts,
         gridColumns,
+        layoutOrder,
         setTheme,
         setShowQuickNotes,
         setShowShortcuts,
         setGridColumns,
+        setLayoutOrder,
         updateFileSettings,
     } = useSettingsStore();
 
@@ -42,6 +44,11 @@ const SettingsPage: React.FC = () => {
     const handleGridColumnsChange = async (value: number) => {
         setGridColumns(value);
         await updateFileSettings({ gridColumns: value });
+    };
+
+    const handleLayoutOrderChange = async (newOrder: "notes-first" | "shortcuts-first") => {
+        setLayoutOrder(newOrder);
+        await updateFileSettings({ layoutOrder: newOrder });
     };
 
     return (
@@ -84,6 +91,21 @@ const SettingsPage: React.FC = () => {
                         className="w-full p-2 border border-white/20 rounded-lg bg-white/10 "
                     />
                 </div>)}
+                
+
+                {showQuickNotes && showShortcuts && (
+                        <div>
+                            <label className="flex items-center gap-2">
+                                <input
+                                    type="checkbox"
+                                    checked={layoutOrder === "shortcuts-first"}
+                                    onChange={(e) => handleLayoutOrderChange(e.target.checked ? "shortcuts-first" : "notes-first")}
+                                    className=""
+                                />
+                                Show Shortcuts First
+                            </label>
+                        </div>
+                )}
                 <div>
                     <label className="block mb-2 ">Theme</label>
                     <select

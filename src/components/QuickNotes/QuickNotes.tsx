@@ -92,7 +92,7 @@ const QuickNotes: React.FC = () => {
           date: dateStr
         });
         logger.info('Updated notes:', updatedNotes);
-        
+
         setNotes(updatedNotes);
         await updateFileSettings({ notes: updatedNotes });
         setSaveStatus({ type: 'success', message: 'Saved 🟢' });
@@ -131,7 +131,7 @@ const QuickNotes: React.FC = () => {
   }
 
   return (
-    <div className="max-w-5xl mx-auto mb-2">
+    <div className="w-full mx-auto mb-2">
       <div className="flex items-center justify-between mb-4">
         <div className="relative flex items-center gap-2">
           <button
@@ -163,13 +163,6 @@ const QuickNotes: React.FC = () => {
           >
             <ChevronRightIcon className="w-5 h-5" />
           </button>
-          <button
-            onClick={handleReset}
-            className="p-2 rounded border border-border-color hover:bg-gray-100 dark:hover:bg-gray-700"
-            title="Reset Notes Path"
-          >
-            <ArrowPathIcon className="w-5 h-5" />
-          </button>
         </div>
         <div className="flex items-center gap-4">
           <span className={`text-sm ${saveStatus.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
@@ -184,21 +177,59 @@ const QuickNotes: React.FC = () => {
         autoFocus={true}
         autoFocusEnd={true}
         height={showShortcuts ? "45vh" : "80vh"}
+        commands={
+          [
+            commands.checkedListCommand,
+            commands.title,
+            commands.divider,
+            commands.bold,
+            commands.italic,
+            commands.strikethrough,
+            commands.hr,
+            commands.divider,
+            commands.codeBlock,
+            commands.code,
+            commands.divider,
+            commands.link,
+            commands.quote,
+            commands.divider,
+            commands.table,
+            commands.divider,
+            commands.unorderedListCommand,
+            commands.orderedListCommand,
+            commands.divider,
+            commands.divider,
+            {
+              name: 'copy',
+              keyCommand: 'copy',
+              buttonProps: { 'aria-label': 'Copy content' },
+              icon: (
+                <Square2StackIcon className='w-4 h-4' />
+              ),
+              execute: () => {
+                copyToClipboard();
+              }
+            },
+            {
+              name: 'Reset Path',
+              keyCommand: 'ResetPath',
+              buttonProps: { 'aria-label': 'Reset Path' },
+              icon: (
+                <ArrowPathIcon className='w-4 h-4' />
+              ),
+              execute: () => {
+                handleReset();
+              }
+            },
+          ]
+        }
         extraCommands={[
-          {
-            name: 'copy',
-            keyCommand: 'copy',
-            buttonProps: { 'aria-label': 'Copy content' },
-            icon: (
-              <Square2StackIcon className='w-4 h-4' />
-            ),
-            execute: () => {
-              copyToClipboard();
-            }
-          },
+          commands.help,
+          commands.divider,
           commands.codeLive,
           commands.codeEdit,
           commands.codePreview,
+          commands.divider,
           commands.fullscreen,
         ]}
       />

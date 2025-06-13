@@ -31,6 +31,7 @@ export interface PersistedSettings {
   isPinnedBookMarkFlyout: boolean;
   gridColumns: number;
   noteSettingsPath: string;
+  layoutOrder: 'notes-first' | 'shortcuts-first';
 }
 
 export interface SettingsState extends PersistedSettings, FileSettings {
@@ -46,6 +47,7 @@ export interface SettingsState extends PersistedSettings, FileSettings {
   loadFileSettings: () => Promise<void>;
   _hasHydrated: boolean;
   _setHasHydrated: (hydrated: boolean) => void;
+  setLayoutOrder: (layout: 'notes-first' | 'shortcuts-first') => void;
 }
 
 const DEFAULT_DATA_SETTINGS: PersistedSettings & FileSettings = {
@@ -57,6 +59,7 @@ const DEFAULT_DATA_SETTINGS: PersistedSettings & FileSettings = {
   gridColumns: 4,
   noteSettingsPath: '',
   notes: {},
+  layoutOrder: 'shortcuts-first'
 };
 
 // Helper function to parse date into year, month, day
@@ -144,7 +147,7 @@ const readSettingsFromFile = async (handle: FileSystemDirectoryHandle): Promise<
 
 const writeSettingsToFile = async (handle: FileSystemDirectoryHandle, settings: FileSettings): Promise<void> => {
   try {
-    if (!settings.notes || Object.keys(settings.notes).length === 0 ) {
+    if (!settings.notes || Object.keys(settings.notes).length === 0) {
       logger.warn('Attempted to write empty notes to file. Operation cancelled.');
       return;
     }
@@ -238,8 +241,8 @@ export const useSettingsStore = create<SettingsState>()(
       setNoteSettingsPath: (path: string) => set({ noteSettingsPath: path }),
       setTheme: (theme: string) => set({ theme }),
       setShowQuickNotes: (show: boolean) => {
-        logger.info('Setting showQuickNotes:', { 
-          show, 
+        logger.info('Setting showQuickNotes:', {
+          show,
           currentNotes: get().notes,
           stack: new Error().stack
         });
@@ -252,6 +255,7 @@ export const useSettingsStore = create<SettingsState>()(
       setShortcuts: (shortcuts: any[]) => set({ shortcuts }),
 
       _setHasHydrated: (hydrated: boolean) => set({ _hasHydrated: hydrated }),
+      setLayoutOrder: (layout: 'notes-first' | 'shortcuts-first') => set({ layoutOrder: layout }),
 
       updateFileSettings: async (settings: Partial<PersistedSettings & FileSettings>) => {
         const handle = await getDirectoryHandle();

@@ -6,7 +6,7 @@ import { useSettingsStore } from '../stores/settingsStore';
 import NotesPathSelector from '../components/NotesPathSelector/NotesPathSelector';
 
 function App() {
-  const { theme, showQuickNotes, gridColumns, noteSettingsPath, showShortcuts, _hasHydrated, loadFileSettings } = useSettingsStore();
+  const { theme, showQuickNotes, gridColumns, noteSettingsPath, showShortcuts, _hasHydrated, loadFileSettings, layoutOrder } = useSettingsStore();
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -54,10 +54,11 @@ function App() {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto px-4 py-2">
-
-        {showShortcuts && <CardGrid columns={gridColumns} />}
+      <div className={`layout-container ${layoutOrder === "shortcuts-first" ? "reverse" : ""}`}>
         {showQuickNotes && <QuickNotes />}
+        {showShortcuts && <CardGrid columns={gridColumns} />}
         <BookmarksFlyout />
+      </div>
       </div>
     </div>
   );

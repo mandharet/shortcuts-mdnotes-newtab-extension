@@ -119,6 +119,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.layout-container.reverse {
+  flex-direction: column-reverse;
+}
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
