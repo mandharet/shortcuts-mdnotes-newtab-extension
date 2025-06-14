@@ -53,8 +53,11 @@ const SettingsPage: React.FC = () => {
 
     return (
         <div className="p-6" style={{minWidth: "250px"}}>
-            <h2 className="text-xl font-medium mb-4 ">Settings</h2>
 
+            <div className="flex items-center justify-between mb-4">
+            <h2 className='text-xl font-medium '>Settings</h2>
+            <a href="https://github.com/mandharet/shortcuts-mdnotes-newtab-extension/issues/new" target="_blank">Report Issue</a>
+          </div>
             <div className="space-y-4">
                 <div>
                     <label className="flex items-center gap-2 ">

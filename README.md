@@ -1,14 +1,22 @@
 # Shortcuts and md notes new tab - Chrome Extension
 
-A powerful and customizable Chrome extension that transforms your new tab page into a productivity hub with URL cards, bookmarks, and quick notes functionality.
+Transform your new tab into a productivity powerhouse with quick access to your favorite sites, bookmarks, and markdown notes - all in one beautiful, customizable interface.
 
 ## Features
 
-- **Customizable New Tab Page**: Replace your default new tab with a personalized productivity dashboard
-- **URL Cards**: Quick access to your frequently visited websites
-- **Bookmarks Integration**: Seamless access to your Chrome bookmarks
-- **Quick Notes**: Built-in markdown editor for taking quick notes
-- **Drag and Drop Interface**: Intuitive organization of your cards and notes
+### 🎯 Quick Access
+- **URL Cards**: Create and organize quick-access cards for your most-used websites
+- **Smart Bookmarks**: Seamless integration with Chrome bookmarks
+- **Drag & Drop**: Intuitive organization of all your shortcuts and notes
+
+### 📝 Markdown Notes
+- **Built-in Editor**: Write and edit notes with full markdown support
+- **Auto-save**: Never lose your work with automatic saving
+- **Date-based Organization**: Notes are automatically organized by date
+
+### 🎨 Customization
+- **Themes**: Choose from multiple color themes
+- **Layout Control**: Customize the number of columns and component order
 - **Responsive Design**: Works beautifully on all screen sizes
 
 ## Installation
@@ -108,7 +116,6 @@ productivity-extension/
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
 
 ## Author
 
