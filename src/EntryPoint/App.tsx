@@ -6,12 +6,12 @@ import { useSettingsStore } from '../stores/settingsStore';
 import NotesPathSelector from '../components/NotesPathSelector/NotesPathSelector';
 
 function App() {
-  const { theme, showQuickNotes, gridColumns, noteSettingsPath, showShortcuts, _hasHydrated, loadFileSettings, layoutOrder } = useSettingsStore();
+  const { theme, showQuickNotes, gridColumns, noteSettingsPath, showShortcuts, _hasHydrated, loadFileSettings, layoutOrder, isPinnedBookMarkFlyout } = useSettingsStore();
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    if(theme === 'dark')
+    if (theme === 'dark')
       document.documentElement.setAttribute('data-color-mode', 'dark')
   }, [theme]);
 
@@ -53,12 +53,12 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-2">
-      <div className={`layout-container ${layoutOrder === "shortcuts-first" ? "reverse" : ""}`}>
-        {showQuickNotes && <QuickNotes />}
-        {showShortcuts && <CardGrid columns={gridColumns} />}
-        <BookmarksFlyout />
-      </div>
+      <div className={`container px-4 py-2 ${isPinnedBookMarkFlyout ? 'max-w-[60vw]' : 'mx-auto'}`}>
+        <div className={`layout-container ${layoutOrder === "shortcuts-first" ? "reverse" : ""}`}>
+          {showQuickNotes && <QuickNotes />}
+          {showShortcuts && <CardGrid columns={gridColumns} />}
+          <BookmarksFlyout />
+        </div>
       </div>
     </div>
   );
