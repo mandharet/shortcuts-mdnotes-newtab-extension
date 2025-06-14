@@ -129,15 +129,17 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
   return (
     <div className="container mx-auto p-4">
       <DragDropContext onDragEnd={handleDragEnd}>
-        <Droppable droppableId="card-grid" direction="horizontal">
+        <Droppable droppableId="card-grid" direction="vertical">
           {(provided, snapshot) => (
             <div
               ref={provided.innerRef}
               {...provided.droppableProps}
               className={`grid gap-4 transition-colors duration-200 ${snapshot.isDraggingOver ? 'bg-surface/20' : ''}`}
               style={{
-                gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-                minHeight: '50px'
+                gridTemplateColumns: isEditMode ? '1fr' : `repeat(${columns}, minmax(0, 1fr))`,
+                minHeight: '50px',
+                maxWidth: isEditMode ? '30vw' : 'none',
+                margin: isEditMode ? '0 auto' : '0'
               }}
             >
               {
