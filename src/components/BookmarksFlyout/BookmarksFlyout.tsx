@@ -26,6 +26,7 @@ const BookmarksFlyout: React.FC = () => {
   const [expandedFolders, setExpandedFolders] = React.useState<Set<string>>(new Set());
   const [isExpanded, setIsExpanded] = React.useState(false);
   const { isPinnedBookMarkFlyout, setIsPinnedBookMarkFlyout, updateFileSettings } = useSettingsStore();
+  const searchInputRef = React.useRef<HTMLInputElement>(null);
 
   const convertBookmarkNode = (node: chrome.bookmarks.BookmarkTreeNode): Bookmark | BookmarkFolder => {
     if (node.url) {
@@ -86,6 +87,13 @@ const BookmarksFlyout: React.FC = () => {
       setIsExpanded(false); // Collapse when unpinned
     }
   }, [isPinnedBookMarkFlyout, bookmarks]);
+
+  React.useEffect(() => {
+    // Focus search input when flyout is expanded
+    if (isExpanded && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [isExpanded]);
 
   const handlePinToggle = async () => {
     const newPinnedState = !isPinnedBookMarkFlyout;
@@ -228,11 +236,12 @@ const BookmarksFlyout: React.FC = () => {
           </div>
           <div className="relative mb-4">
             <input
+              ref={searchInputRef}
               type="text"
               placeholder="Search bookmarks..."
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
-              className="w-full p-2 rounded-lg bg-surface  border border-border-color"
+              className="w-full p-2 rounded-lg bg-surface border border-border-color"
             />
           </div>
 
