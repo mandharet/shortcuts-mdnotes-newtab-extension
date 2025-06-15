@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* Material/Google color themes */
-:root[data-theme='google-blue'] {
+:root[data-theme='blue'] {
   --bg-primary: #e3f2fd;
   --bg-surface: #ffffff;
   --primary: #1a73e8;
@@ -16,7 +16,7 @@
   --shadow-color: rgba(26, 115, 232, 0.08);
 }
 
-:root[data-theme='deep-purple'] {
+:root[data-theme='purple'] {
   --bg-primary: #ede7f6;
   --bg-surface: #ffffff;
   --primary: #673ab7;

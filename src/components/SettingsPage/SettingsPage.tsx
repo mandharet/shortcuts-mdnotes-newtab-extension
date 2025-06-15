@@ -2,8 +2,8 @@ import React from 'react';
 import { useSettingsStore } from '../../stores/settingsStore';
 
 const MATERIAL_THEMES = [
-    { value: 'google-blue', label: 'Google Blue' },
-    { value: 'deep-purple', label: 'Deep Purple' },
+    { value: 'blue', label: 'Blue' },
+    { value: 'purple', label: 'Purple' },
     { value: 'teal', label: 'Teal' },
     { value: 'orange', label: 'Orange' },
     { value: 'pink', label: 'Pink' },
