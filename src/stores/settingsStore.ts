@@ -1,66 +1,7 @@
 import { create } from 'zustand';
 import { persist, PersistStorage, StorageValue } from 'zustand/middleware';
 import { logger } from '../utils/logger';
-
-export interface NoteData {
-  content: string;
-  date: string;
-}
-
-export interface DayNotes {
-  [day: string]: NoteData;
-}
-
-export interface MonthNotes {
-  [month: string]: DayNotes;
-}
-
-export interface YearNotes {
-  [year: string]: MonthNotes;
-}
-
-export interface FileSettings {
-  notes: YearNotes;
-}
-
-export interface PersistedSettings {
-  shortcuts: any[];
-  theme: string;
-  showQuickNotes: boolean;
-  showShortcuts: boolean;
-  isPinnedBookMarkFlyout: boolean;
-  gridColumns: number;
-  noteSettingsPath: string;
-  layoutOrder: 'notes-first' | 'shortcuts-first';
-}
-
-export interface SettingsState extends PersistedSettings, FileSettings {
-  setNoteSettingsPath: (path: string) => void;
-  setTheme: (theme: string) => void;
-  setShowQuickNotes: (show: boolean) => void;
-  setShowShortcuts: (show: boolean) => void;
-  setGridColumns: (columns: number) => void;
-  setIsPinnedBookMarkFlyout: (isPinned: boolean) => void;
-  setNotes: (notes: YearNotes) => void;
-  setShortcuts: (shortcuts: any[]) => void;
-  updateFileSettings: (settings: Partial<PersistedSettings & FileSettings>) => Promise<void>;
-  loadFileSettings: () => Promise<void>;
-  _hasHydrated: boolean;
-  _setHasHydrated: (hydrated: boolean) => void;
-  setLayoutOrder: (layout: 'notes-first' | 'shortcuts-first') => void;
-}
-
-const DEFAULT_DATA_SETTINGS: PersistedSettings & FileSettings = {
-  shortcuts: [],
-  theme: 'google-blue',
-  showQuickNotes: true,
-  showShortcuts: true,
-  isPinnedBookMarkFlyout: false,
-  gridColumns: 4,
-  noteSettingsPath: '',
-  notes: {},
-  layoutOrder: 'shortcuts-first'
-};
+import { DEFAULT_DATA_SETTINGS, FileSettings, NoteData, PersistedSettings, SettingsState, YearNotes } from './types';
 
 // Helper function to parse date into year, month, day
 export const parseDate = (dateStr: string) => {
