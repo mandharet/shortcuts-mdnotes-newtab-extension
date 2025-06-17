@@ -22,7 +22,7 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
   const [isEditMode, setIsEditMode] = React.useState(false);
   const [newCard, setNewCard] = React.useState<Partial<CardData>>({});
   const [editingCardId, setEditingCardId] = React.useState<string | null>(null);
-  const { shortcuts, setShortcuts, updateFileSettings } = useSettingsStore();
+  const { shortcuts, setShortcuts, updateFileSettings, isPinnedBookMarkFlyout } = useSettingsStore();
 
   // Load shortcuts on mount
   React.useEffect(() => {
@@ -91,7 +91,7 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
     setCards(updatedCards);
     await saveShortcuts(updatedCards);
   };
-  
+
   const handleConfirmDeleteFromModal = async () => {
     if (editingCardId) {
       await handleDeleteCard(editingCardId);
@@ -183,7 +183,7 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
       </DragDropContext>
 
       {isAddingCard && (
-        <div className="fixed inset-0 modal-overlay flex items-center justify-center z-50">
+        <div className={`fixed inset-0 modal-overlay flex items-center justify-center z-50 ${isPinnedBookMarkFlyout ? 'max-w-[60vw]' : 'mx-auto'}`}>
           <div id="add-edit-card-modal" className="modal p-6 rounded-lg w-96">
             <input
               type="text"
@@ -195,7 +195,7 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
             />
             <input
               type="url"
-              placeholder="URL"
+              placeholder="some.URL.com"
               value={newCard.url || ''}
               onChange={(e) => setNewCard({ ...newCard, url: e.target.value })}
               className="w-full mb-4 p-2 border rounded"
@@ -210,25 +210,27 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
                 className="w-full mb-4 border rounded"
               />
             </div>
-            <div className="flex justify-end gap-2">
+            <div className="flex justify-between gap-2">
               {editingCardId && <button
                 onClick={handleConfirmDeleteFromModal}
-                className="px-4 py-2 rounded btn-close"
+                className="px-4 py-2 rounded btn-delete"
               >
                 Delete
               </button>}
-              <button
-                onClick={() => setIsAddingCard(false)}
-                className="px-4 py-2 rounded"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleAddOrEditCard}
-                className="px-4 py-2 rounded card"
-              >
-                {editingCardId ? 'Save' : 'Add'}
-              </button>
+              <div>
+                <button
+                  onClick={() => setIsAddingCard(false)}
+                  className="px-4 py-2 rounded"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleAddOrEditCard}
+                  className="px-4 py-2 rounded card"
+                >
+                  {editingCardId ? 'Save' : 'Add'}
+                </button>
+              </div>
             </div>
           </div>
         </div>

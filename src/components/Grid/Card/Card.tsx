@@ -1,6 +1,6 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
-import { Bars3Icon, PencilSquareIcon } from '@heroicons/react/24/outline';
+import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/outline';
 
 interface CardProps {
   id: string;
@@ -87,7 +87,7 @@ const Card: React.FC<CardProps> = ({
             )}
             <h3 className="text-lg font-medium ">{title}</h3>
             {isEditMode && (
-              <div>
+              <div className='flex gap-2'>
                 <button
                   className="p-1 rounded-full "
                   onClick={(e) => {
@@ -96,6 +96,15 @@ const Card: React.FC<CardProps> = ({
                   }}
                 >
                   <PencilSquareIcon className="w-5 h-5" />
+                </button>
+                <button
+                  className="p-1 rounded-full"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onEdit(id);
+                  }}
+                >
+                  <TrashIcon className='w-5 h-5' />
                 </button>
               </div>
             )}

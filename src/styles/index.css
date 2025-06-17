@@ -8,7 +8,6 @@
   --bg-surface: #ffffff;
   --primary: #1a73e8;
   --secondary: #185abc0c;
-  --bg-secondary: #384963;
   --text-primary: #1a1a1a;
   --text-secondary: #5f6368;
   --border-color: #c6dafc;
@@ -21,7 +20,6 @@
   --bg-surface: #ffffff;
   --primary: #673ab7;
   --secondary: #512da8;
-  --bg-secondary: #512da877;
   --text-primary: #1a1a1a;
   --text-secondary: #5f6368;
   --border-color: #d1c4e9;
@@ -34,7 +32,6 @@
   --bg-surface: #ffffff;
   --primary: #009688;
   --secondary: #00796b;
-  --bg-secondary: #00796b77;
   --text-primary: #1a1a1a;
   --text-secondary: #5f6368;
   --border-color: #b2dfdb;
@@ -42,25 +39,11 @@
   --shadow-color: rgba(0, 150, 136, 0.08);
 }
 
-:root[data-theme='orange'] {
-  --bg-primary: #fff3e0;
-  --bg-surface: #ffffff;
-  --primary: #fb8c00;
-  --secondary: #ef6c00;
-  --bg-secondary: #ef6c0077;
-  --text-primary: #1a1a1a;
-  --text-secondary: #5f6368;
-  --border-color: #ffe0b2;
-  --hover-bg: #ffe0b2;
-  --shadow-color: rgba(251, 140, 0, 0.08);
-}
-
 :root[data-theme='pink'] {
   --bg-primary: #fce4ec;
   --bg-surface: #ffffff;
   --primary: #d81b60;
   --secondary: #ad1457;
-  --bg-secondary: #ad145777;
   --text-primary: #1a1a1a;
   --text-secondary: #5f6368;
   --border-color: #fff;
@@ -73,7 +56,6 @@
   --bg-surface: #ffffff;
   --primary: #43a047;
   --secondary: #2e7d32;
-  --bg-secondary: #2e7d3277;
   --text-primary: #1a1a1a;
   --text-secondary: #5f6368;
   --border-color: #c8e6c9;
@@ -86,7 +68,6 @@
   --bg-surface: #ffffff;
   --primary: #e53935;
   --secondary: #b71c1c;
-  --bg-secondary: #b71c1c77;
   --text-primary: #1a1a1a;
   --text-secondary: #5f6368;
   --border-color: #ffcdd2;
@@ -99,7 +80,6 @@
   --bg-surface: #ffffff;
   --primary: #1a73e8;
   --secondary: #185abc;
-  --bg-secondary: #185abc77;
   --text-primary: #1a1a1a;
   --text-secondary: #5f6368;
   --border-color: #c6dafc;
@@ -128,6 +108,7 @@ body {
 .layout-container.reverse {
   flex-direction: column-reverse;
 }
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -156,10 +137,10 @@ body {
 
 /* Modal styles */
 .modal {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary);
   border: 1px solid var(--border-color);
   box-shadow: 0 4px 6px var(--shadow-color);
-  color: var(--bg-surface);
+  color: var(--text-primary);
 }
 
 .modal-overlay {
@@ -207,35 +188,73 @@ select:focus {
   background-color: var(--hover-bg);
 }
 
-.btn-close {
+.btn-delete {
   background-color: red;
   color: #fff;
 }
 
+/* Dark theme overrides */
 @media (prefers-color-scheme: dark) {
+  :root[data-theme='blue'] {
+    --bg-primary: #1a1f2e;
+    --bg-surface: #121212;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border-color: #2a2a2a;
+    --hover-bg: #2a2f3e;
+  }
+
+  :root[data-theme='purple'] {
+    --bg-primary: #1e1a2e;
+    --bg-surface: #121212;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border-color: #2a2a2a;
+    --hover-bg: #2e2a3e;
+  }
+
+  :root[data-theme='teal'] {
+    --bg-primary: #1a2e2e;
+    --bg-surface: #121212;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border-color: #2a2a2a;
+    --hover-bg: #2a3e3e;
+  }
+
+
+  :root[data-theme='pink'] {
+    --bg-primary: #2e1a2e;
+    --bg-surface: #121212;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border-color: #2a2a2a;
+    --hover-bg: #3e2a3e;
+  }
+
+  :root[data-theme='green'] {
+    --bg-primary: #1a2e1a;
+    --bg-surface: #121212;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border-color: #2a2a2a;
+    --hover-bg: #2a3e2a;
+  }
+
+  :root[data-theme='red'] {
+    --bg-primary: #2e1a1a;
+    --bg-surface: #121212;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border-color: #2a2a2a;
+    --hover-bg: #3e2a2a;
+  }
+
+  /* Default dark theme */
   :root {
-    --border-color: #000000;
-  }
-
-  body {
-    background-color: #000;
-    color: var(--bg-surface);
-    color-scheme: dark;
-  }
-
-  input,
-  select {
-    background-color: #3c3c3c;
-    color: var(--bg-surface);
-  }
-
-  .bg-primary {
-    background-color: var(--bg-secondary);
-  }
-
-  .card {
-    background-color: var(--bg-secondary);
-    color: var(--bg-surface);
-    border-color: #000;
+    --bg-surface: #121212;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border-color: #2a2a2a;
   }
 }

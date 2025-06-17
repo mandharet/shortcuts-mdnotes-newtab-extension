@@ -5,9 +5,8 @@ const MATERIAL_THEMES = [
     { value: 'blue', label: 'Blue' },
     { value: 'purple', label: 'Purple' },
     { value: 'teal', label: 'Teal' },
-    { value: 'orange', label: 'Orange' },
-    { value: 'pink', label: 'Pink' },
     { value: 'green', label: 'Green' },
+    { value: 'pink', label: 'Pink' },
     { value: 'red', label: 'Red' },
 ];
 
