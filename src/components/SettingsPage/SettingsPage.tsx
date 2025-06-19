@@ -51,12 +51,12 @@ const SettingsPage: React.FC = () => {
     };
 
     return (
-        <div className="p-6" style={{minWidth: "250px"}}>
+        <div className="p-6" style={{ minWidth: "250px" }}>
 
             <div className="flex items-center justify-between mb-4">
-            <h2 className='text-xl font-medium '>Settings</h2>
-            <a href="https://github.com/mandharet/shortcuts-mdnotes-newtab-extension/issues/new" target="_blank">Report Issue</a>
-          </div>
+                <h2 className='text-xl font-medium '>Settings</h2>
+                <a href="https://github.com/mandharet/shortcuts-mdnotes-newtab-extension/issues/new" target="_blank">Report Issue</a>
+            </div>
             <div className="space-y-4">
                 <div>
                     <label className="flex items-center gap-2 ">
@@ -93,21 +93,22 @@ const SettingsPage: React.FC = () => {
                         className="w-full p-2 border border-white/20 rounded-lg bg-white/10 "
                     />
                 </div>)}
-                
+
 
                 {showQuickNotes && showShortcuts && (
-                        <div>
-                            <label className="flex items-center gap-2">
-                                <input
-                                    type="checkbox"
-                                    checked={layoutOrder === "shortcuts-first"}
-                                    onChange={(e) => handleLayoutOrderChange(e.target.checked ? "shortcuts-first" : "notes-first")}
-                                    className=""
-                                />
-                                Show Shortcuts First
-                            </label>
-                        </div>
+                    <div>
+                        <label className="flex items-center gap-2">
+                            <input
+                                type="checkbox"
+                                checked={layoutOrder === "shortcuts-first"}
+                                onChange={(e) => handleLayoutOrderChange(e.target.checked ? "shortcuts-first" : "notes-first")}
+                                className=""
+                            />
+                            Show Shortcuts First
+                        </label>
+                    </div>
                 )}
+
                 <div>
                     <label className="block mb-2 ">Theme</label>
                     <select
