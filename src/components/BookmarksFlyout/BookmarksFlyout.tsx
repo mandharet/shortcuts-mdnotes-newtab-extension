@@ -60,6 +60,15 @@ const BookmarksFlyout: React.FC = () => {
     return folders;
   };
 
+  // Helper to sort folders before bookmarks and alphabetically by title
+  function sortFoldersLast(items: (Bookmark | BookmarkFolder)[]) {
+    return [...items].sort((a, b) => {
+      if (isBookmark(a) && !isBookmark(b)) return -1;
+      if (!isBookmark(a) && isBookmark(b)) return 1;
+      return a.title.localeCompare(b.title);
+    });
+  }
+
   React.useEffect(() => {
     const loadBookmarks = async () => {
       try {
@@ -162,8 +171,9 @@ const BookmarksFlyout: React.FC = () => {
         );
       }
     });
+    const sortedChildren = sortFoldersLast(filteredChildren);
 
-    if (searchQuery && filteredChildren.length === 0 && !folder.title.toLowerCase().includes(searchQuery.toLowerCase())) {
+    if (searchQuery && sortedChildren.length === 0 && !folder.title.toLowerCase().includes(searchQuery.toLowerCase())) {
       return null; // Hide folder if searching and no children match and folder title doesn't match
     }
 
@@ -178,9 +188,9 @@ const BookmarksFlyout: React.FC = () => {
             <FolderIcon className='w-4 h-4 mr-2' />}
           {folder.title}
         </button>
-        {isFolderExpanded && filteredChildren.length > 0 && (
+        {isFolderExpanded && sortedChildren.length > 0 && (
           <div className="ml-4">
-            {filteredChildren.map(child =>
+            {sortedChildren.map(child =>
               isBookmark(child) ? renderBookmark(child) : renderFolder(child)
             )}
           </div>
@@ -246,7 +256,7 @@ const BookmarksFlyout: React.FC = () => {
           </div>
 
           <div className="overflow-y-auto flex-grow">
-            {bookmarks.map(bookmark =>
+            {sortFoldersLast(bookmarks).map(bookmark =>
               isBookmark(bookmark) ? renderBookmark(bookmark) : renderFolder(bookmark)
             )}
           </div>

@@ -49,7 +49,6 @@ export interface SettingsState extends PersistedSettings, FileSettings {
 // Add color scheme detection
 const getColorScheme = () => {
     if (typeof window === 'undefined') return 'light';
-    console.log("ThemeTM::", window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 };
 

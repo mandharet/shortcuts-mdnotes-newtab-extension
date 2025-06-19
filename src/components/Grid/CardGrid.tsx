@@ -1,6 +1,6 @@
 import React from 'react';
 import { Droppable, DragDropContext, DropResult } from 'react-beautiful-dnd';
-import { PlusIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
+import { PlusIcon, Cog6ToothIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { logger } from '../../utils/logger';
 import Card from './Card/Card';
@@ -166,10 +166,11 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
                       {(totalCards > 0 &&
                         <div
                           key={`empty-${index}`}
-                          className={`h-16 text-lg cursor-pointer border border-dashed rounded flex items-center justify-center ${snapshot.isDraggingOver ? 'bg-surface/10' : ''}`}
+                          className={`h-16 text-lg cursor-pointer border border-dashed rounded flex items-center justify-center ${isEditMode ? 'btn-primary' : ''}`}
                           onClick={() => setIsEditMode(!isEditMode)}
                         >
-                          <Cog6ToothIcon className="w-6 h-6" />&nbsp;&nbsp;
+                          {isEditMode ? <XMarkIcon className="w-6 h-6" /> : <Cog6ToothIcon className="w-6 h-6" />}
+                          &nbsp;&nbsp;
                           Settings
                         </div>)}
                     </>
