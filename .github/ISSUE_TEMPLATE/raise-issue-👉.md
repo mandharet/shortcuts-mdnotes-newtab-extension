@@ -1,7 +1,7 @@
 ---
-name: Issue template
+name: "Raise issue \U0001F449"
 about: General Issue template
-title: "[BUG] / [Feature]"
+title: "[BUG]"
 labels: ''
 assignees: mandharet
 
