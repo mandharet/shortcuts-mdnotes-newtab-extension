@@ -55,7 +55,7 @@ const SettingsPage: React.FC = () => {
 
             <div className="flex items-center justify-between mb-4">
                 <h2 className='text-xl font-medium '>Settings</h2>
-                <a href="https://github.com/mandharet/shortcuts-mdnotes-newtab-extension/issues/new" target="_blank">Report Issue</a>
+                <a href="https://github.com/mandharet/shortcuts-mdnotes-newtab-extension/issues/new/choose" target="_blank">Report Issue</a>
             </div>
             <div className="space-y-4">
                 <div>
