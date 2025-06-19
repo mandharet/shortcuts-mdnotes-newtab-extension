@@ -146,11 +146,19 @@ const QuickNotes: React.FC = () => {
               type="date"
               value={selectedDate.toISOString().split('T')[0]}
               onChange={(e) => {
+                
+                if (!e.target.value) return;
+                const newDate = new Date(e.target.value);
+                if (isNaN(newDate.getTime())) {
+                  setSaveStatus({ type: 'error', message: 'Invalid date 🟡' });
+                  setTimeout(() => setSaveStatus({ type: null, message: '✒️' }), 2000);
+                  setSelectedDate(new Date());
+                  return;
+                }
                 if (saveStatus.type === 'autosaving' || saveStatus.type === 'error') {
                   setSaveStatus({ type: 'error', message: 'Please wait for save to complete or fix errors before changing date 🟡' });
                   return;
                 }
-                const newDate = new Date(e.target.value);
                 setSelectedDate(newDate);
               }}
               className="w-full p-2 rounded-lg border border-border-color"
