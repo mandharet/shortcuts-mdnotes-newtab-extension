@@ -176,7 +176,7 @@ const QuickNotes: React.FC = () => {
         onChange={handleEditorChange}
         autoFocus={true}
         autoFocusEnd={true}
-        height={showShortcuts ? "45vh" : "80vh"}
+        height={showShortcuts ? "55vh" : "80vh"}
         commands={
           [
             commands.checkedListCommand,
@@ -226,8 +226,8 @@ const QuickNotes: React.FC = () => {
         extraCommands={[
           commands.help,
           commands.divider,
-          commands.codeLive,
           commands.codeEdit,
+          commands.codeLive,
           commands.codePreview,
           commands.divider,
           commands.fullscreen,
