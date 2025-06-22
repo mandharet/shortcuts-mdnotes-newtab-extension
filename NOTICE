@@ -1,0 +1,22 @@
+NOTICE
+
+This product includes software developed by third parties.
+
+Main licenses used by dependencies:
+- MIT License
+- ISC License
+- Apache License 2.0
+- BSD 2-Clause and 3-Clause Licenses
+- BlueOak-1.0.0 License
+- CC-BY-4.0 (for caniuse-lite data)
+
+---
+
+Attribution for caniuse-lite:
+"This product includes data from caniuse-lite (https://github.com/browserslist/caniuse-lite), licensed under CC-BY-4.0."
+
+---
+
+A full list of third-party packages and their licenses can be generated using the `npx license-checker` tool. All dependencies are used in accordance with their respective licenses.
+
+If you have questions about a specific dependency's license, please refer to the LICENSE file included in its package directory or the project's repository. 
