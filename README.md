@@ -1,4 +1,4 @@
-# Shortcuts and md notes new tab - Chrome Extension
+# Shortcuts and notes tab - Chrome Extension
 
 Transform your new tab into a productivity powerhouse with quick access to your favorite sites, bookmarks, and markdown notes - all in one beautiful, customizable interface.
 
