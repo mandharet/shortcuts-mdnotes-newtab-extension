@@ -1,0 +1,2731 @@
+{
+  "@alloc/quick-lru@5.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/quick-lru",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@alloc\\quick-lru",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@alloc\\quick-lru\\license"
+  },
+  "@ampproject/remapping@2.3.0": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/ampproject/remapping",
+    "publisher": "Justin Ridgewell",
+    "email": "jridgewell@google.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@ampproject\\remapping",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@ampproject\\remapping\\LICENSE"
+  },
+  "@babel/code-frame@7.27.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\code-frame",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\code-frame\\LICENSE"
+  },
+  "@babel/compat-data@7.27.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\compat-data",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\compat-data\\LICENSE"
+  },
+  "@babel/core@7.27.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\core",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\core\\LICENSE"
+  },
+  "@babel/generator@7.27.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\generator",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\generator\\LICENSE"
+  },
+  "@babel/helper-compilation-targets@7.27.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-compilation-targets",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-compilation-targets\\LICENSE"
+  },
+  "@babel/helper-module-imports@7.27.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-module-imports",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-module-imports\\LICENSE"
+  },
+  "@babel/helper-module-transforms@7.27.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-module-transforms",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-module-transforms\\LICENSE"
+  },
+  "@babel/helper-plugin-utils@7.27.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-plugin-utils",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-plugin-utils\\LICENSE"
+  },
+  "@babel/helper-string-parser@7.27.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-string-parser",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-string-parser\\LICENSE"
+  },
+  "@babel/helper-validator-identifier@7.27.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-validator-identifier",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-validator-identifier\\LICENSE"
+  },
+  "@babel/helper-validator-option@7.27.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-validator-option",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helper-validator-option\\LICENSE"
+  },
+  "@babel/helpers@7.27.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helpers",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\helpers\\LICENSE"
+  },
+  "@babel/parser@7.27.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\parser",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\parser\\LICENSE"
+  },
+  "@babel/plugin-transform-react-jsx-self@7.27.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\plugin-transform-react-jsx-self",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\plugin-transform-react-jsx-self\\LICENSE"
+  },
+  "@babel/plugin-transform-react-jsx-source@7.27.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\plugin-transform-react-jsx-source",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\plugin-transform-react-jsx-source\\LICENSE"
+  },
+  "@babel/runtime@7.27.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\runtime",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\runtime\\LICENSE"
+  },
+  "@babel/template@7.27.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\template",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\template\\LICENSE"
+  },
+  "@babel/traverse@7.27.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\traverse",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\traverse\\LICENSE"
+  },
+  "@babel/types@7.27.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/babel/babel",
+    "publisher": "The Babel Team",
+    "url": "https://babel.dev/team",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\types",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@babel\\types\\LICENSE"
+  },
+  "@esbuild/win32-x64@0.21.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/evanw/esbuild",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@esbuild\\win32-x64",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@esbuild\\win32-x64\\README.md"
+  },
+  "@heroicons/react@2.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/tailwindlabs/heroicons",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@heroicons\\react",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@heroicons\\react\\LICENSE"
+  },
+  "@isaacs/cliui@8.0.2": {
+    "licenses": "ISC",
+    "repository": "https://github.com/yargs/cliui",
+    "publisher": "Ben Coe",
+    "email": "ben@npmjs.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@isaacs\\cliui",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@isaacs\\cliui\\LICENSE.txt"
+  },
+  "@jridgewell/gen-mapping@0.3.8": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jridgewell/gen-mapping",
+    "publisher": "Justin Ridgewell",
+    "email": "justin@ridgewell.name",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@jridgewell\\gen-mapping",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@jridgewell\\gen-mapping\\LICENSE"
+  },
+  "@jridgewell/resolve-uri@3.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jridgewell/resolve-uri",
+    "publisher": "Justin Ridgewell",
+    "email": "justin@ridgewell.name",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@jridgewell\\resolve-uri",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@jridgewell\\resolve-uri\\LICENSE"
+  },
+  "@jridgewell/set-array@1.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jridgewell/set-array",
+    "publisher": "Justin Ridgewell",
+    "email": "justin@ridgewell.name",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@jridgewell\\set-array",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@jridgewell\\set-array\\LICENSE"
+  },
+  "@jridgewell/sourcemap-codec@1.5.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jridgewell/sourcemap-codec",
+    "publisher": "Rich Harris",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@jridgewell\\sourcemap-codec",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@jridgewell\\sourcemap-codec\\LICENSE"
+  },
+  "@jridgewell/trace-mapping@0.3.25": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jridgewell/trace-mapping",
+    "publisher": "Justin Ridgewell",
+    "email": "justin@ridgewell.name",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@jridgewell\\trace-mapping",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@jridgewell\\trace-mapping\\LICENSE"
+  },
+  "@nodelib/fs.scandir@2.1.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@nodelib\\fs.scandir",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@nodelib\\fs.scandir\\LICENSE"
+  },
+  "@nodelib/fs.stat@2.0.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.stat",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@nodelib\\fs.stat",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@nodelib\\fs.stat\\LICENSE"
+  },
+  "@nodelib/fs.walk@1.2.8": {
+    "licenses": "MIT",
+    "repository": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.walk",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@nodelib\\fs.walk",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@nodelib\\fs.walk\\LICENSE"
+  },
+  "@pkgjs/parseargs@0.11.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/pkgjs/parseargs",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@pkgjs\\parseargs",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@pkgjs\\parseargs\\LICENSE"
+  },
+  "@rolldown/pluginutils@1.0.0-beta.11": {
+    "licenses": "MIT",
+    "repository": "https://github.com/rolldown/rolldown",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@rolldown\\pluginutils",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@rolldown\\pluginutils\\LICENSE"
+  },
+  "@rollup/rollup-win32-x64-msvc@4.43.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/rollup/rollup",
+    "publisher": "Lukas Taegert-Atkinson",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@rollup\\rollup-win32-x64-msvc",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@rollup\\rollup-win32-x64-msvc\\README.md"
+  },
+  "@types/babel__core@7.20.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\babel__core",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\babel__core\\LICENSE"
+  },
+  "@types/babel__generator@7.27.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\babel__generator",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\babel__generator\\LICENSE"
+  },
+  "@types/babel__template@7.4.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\babel__template",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\babel__template\\LICENSE"
+  },
+  "@types/babel__traverse@7.20.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\babel__traverse",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\babel__traverse\\LICENSE"
+  },
+  "@types/chrome@0.0.260": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\chrome",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\chrome\\LICENSE"
+  },
+  "@types/debug@4.1.12": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\debug",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\debug\\LICENSE"
+  },
+  "@types/estree-jsx@1.0.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\estree-jsx",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\estree-jsx\\LICENSE"
+  },
+  "@types/estree@1.0.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rollup\\node_modules\\@types\\estree",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rollup\\node_modules\\@types\\estree\\LICENSE"
+  },
+  "@types/estree@1.0.8": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\estree",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\estree\\LICENSE"
+  },
+  "@types/filesystem@0.0.36": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\filesystem",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\filesystem\\LICENSE"
+  },
+  "@types/filewriter@0.0.33": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\filewriter",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\filewriter\\LICENSE"
+  },
+  "@types/har-format@1.2.16": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\har-format",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\har-format\\LICENSE"
+  },
+  "@types/hast@2.3.10": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\refractor\\node_modules\\@types\\hast",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\refractor\\node_modules\\@types\\hast\\LICENSE"
+  },
+  "@types/hast@3.0.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\hast",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\hast\\LICENSE"
+  },
+  "@types/hoist-non-react-statics@3.3.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\hoist-non-react-statics",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\hoist-non-react-statics\\LICENSE"
+  },
+  "@types/mdast@4.0.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\mdast",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\mdast\\LICENSE"
+  },
+  "@types/ms@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\ms",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\ms\\LICENSE"
+  },
+  "@types/node@22.15.31": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\node",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\node\\LICENSE"
+  },
+  "@types/prismjs@1.26.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\prismjs",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\prismjs\\LICENSE"
+  },
+  "@types/prop-types@15.7.15": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\prop-types",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\prop-types\\LICENSE"
+  },
+  "@types/react-beautiful-dnd@13.1.8": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\react-beautiful-dnd",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\react-beautiful-dnd\\LICENSE"
+  },
+  "@types/react-dom@18.3.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\react-dom",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\react-dom\\LICENSE"
+  },
+  "@types/react-redux@7.1.34": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\react-redux",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\react-redux\\LICENSE"
+  },
+  "@types/react@18.3.23": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\react",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\react\\LICENSE"
+  },
+  "@types/unist@2.0.11": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\parse-entities\\node_modules\\@types\\unist",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\parse-entities\\node_modules\\@types\\unist\\LICENSE"
+  },
+  "@types/unist@3.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\unist",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@types\\unist\\LICENSE"
+  },
+  "@uiw/copy-to-clipboard@1.0.17": {
+    "licenses": "MIT",
+    "repository": "https://github.com/uiwjs/copy-to-clipboard",
+    "publisher": "Kenny Wang",
+    "email": "wowohoo@qq.com",
+    "url": "https://wangchujiang.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@uiw\\copy-to-clipboard",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@uiw\\copy-to-clipboard\\LICENSE"
+  },
+  "@uiw/react-markdown-preview@5.1.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/uiwjs/react-markdown-preview",
+    "publisher": "kenny wang",
+    "email": "wowohoo@qq.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@uiw\\react-markdown-preview",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@uiw\\react-markdown-preview\\README.md"
+  },
+  "@uiw/react-md-editor@4.0.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/uiwjs/react-md-editor",
+    "publisher": "kenny wang",
+    "email": "wowohoo@qq.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@uiw\\react-md-editor",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@uiw\\react-md-editor\\README.md"
+  },
+  "@ungap/structured-clone@1.3.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/ungap/structured-clone",
+    "publisher": "Andrea Giammarchi",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@ungap\\structured-clone",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@ungap\\structured-clone\\LICENSE"
+  },
+  "@vitejs/plugin-react@4.5.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/vitejs/vite-plugin-react",
+    "publisher": "Evan You",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@vitejs\\plugin-react",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@vitejs\\plugin-react\\LICENSE"
+  },
+  "ansi-regex@5.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chalk/ansi-regex",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\string-width-cjs\\node_modules\\ansi-regex",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\string-width-cjs\\node_modules\\ansi-regex\\license"
+  },
+  "ansi-regex@6.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chalk/ansi-regex",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\ansi-regex",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\ansi-regex\\license"
+  },
+  "ansi-styles@4.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chalk/ansi-styles",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\wrap-ansi-cjs\\node_modules\\ansi-styles",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\wrap-ansi-cjs\\node_modules\\ansi-styles\\license"
+  },
+  "ansi-styles@6.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chalk/ansi-styles",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\ansi-styles",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\ansi-styles\\license"
+  },
+  "any-promise@1.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/kevinbeaty/any-promise",
+    "publisher": "Kevin Beaty",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\any-promise",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\any-promise\\LICENSE"
+  },
+  "anymatch@3.1.3": {
+    "licenses": "ISC",
+    "repository": "https://github.com/micromatch/anymatch",
+    "publisher": "Elan Shanker",
+    "url": "https://github.com/es128",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\anymatch",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\anymatch\\LICENSE"
+  },
+  "arg@5.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/vercel/arg",
+    "publisher": "Josh Junon",
+    "email": "junon@wavetilt.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\arg",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\arg\\LICENSE.md"
+  },
+  "autoprefixer@10.4.21": {
+    "licenses": "MIT",
+    "repository": "https://github.com/postcss/autoprefixer",
+    "publisher": "Andrey Sitnik",
+    "email": "andrey@sitnik.ru",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\autoprefixer",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\autoprefixer\\LICENSE"
+  },
+  "bail@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/bail",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\bail",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\bail\\license"
+  },
+  "balanced-match@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/juliangruber/balanced-match",
+    "publisher": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\balanced-match",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\balanced-match\\LICENSE.md"
+  },
+  "bcp-47-match@2.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/bcp-47-match",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\bcp-47-match",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\bcp-47-match\\license"
+  },
+  "binary-extensions@2.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/binary-extensions",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\binary-extensions",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\binary-extensions\\license"
+  },
+  "boolbase@1.0.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/fb55/boolbase",
+    "publisher": "Felix Boehm",
+    "email": "me@feedic.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\boolbase",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\boolbase\\README.md"
+  },
+  "brace-expansion@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/juliangruber/brace-expansion",
+    "publisher": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\brace-expansion",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\brace-expansion\\LICENSE"
+  },
+  "braces@3.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromatch/braces",
+    "publisher": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\braces",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\braces\\LICENSE"
+  },
+  "browserslist@4.25.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/browserslist/browserslist",
+    "publisher": "Andrey Sitnik",
+    "email": "andrey@sitnik.ru",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\browserslist",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\browserslist\\LICENSE"
+  },
+  "camelcase-css@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/stevenvachon/camelcase-css",
+    "publisher": "Steven Vachon",
+    "email": "contact@svachon.com",
+    "url": "https://www.svachon.com/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\camelcase-css",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\camelcase-css\\license"
+  },
+  "caniuse-lite@1.0.30001723": {
+    "licenses": "CC-BY-4.0",
+    "repository": "https://github.com/browserslist/caniuse-lite",
+    "publisher": "Ben Briggs",
+    "email": "beneb.info@gmail.com",
+    "url": "http://beneb.info",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\caniuse-lite",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\caniuse-lite\\LICENSE"
+  },
+  "ccount@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/ccount",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\ccount",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\ccount\\license"
+  },
+  "character-entities-html4@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/character-entities-html4",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\character-entities-html4",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\character-entities-html4\\license"
+  },
+  "character-entities-legacy@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/character-entities-legacy",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\character-entities-legacy",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\character-entities-legacy\\license"
+  },
+  "character-entities@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/character-entities",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\character-entities",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\character-entities\\license"
+  },
+  "character-reference-invalid@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/character-reference-invalid",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\character-reference-invalid",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\character-reference-invalid\\license"
+  },
+  "chokidar@3.6.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/paulmillr/chokidar",
+    "publisher": "Paul Miller",
+    "url": "https://paulmillr.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\chokidar",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\chokidar\\LICENSE"
+  },
+  "color-convert@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/Qix-/color-convert",
+    "publisher": "Heather Arthur",
+    "email": "fayearthur@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\color-convert",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\color-convert\\LICENSE"
+  },
+  "color-name@1.1.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/colorjs/color-name",
+    "publisher": "DY",
+    "email": "dfcreative@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\color-name",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\color-name\\LICENSE"
+  },
+  "comma-separated-tokens@2.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/comma-separated-tokens",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\comma-separated-tokens",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\comma-separated-tokens\\license"
+  },
+  "commander@4.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/tj/commander.js",
+    "publisher": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\commander",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\commander\\LICENSE"
+  },
+  "convert-source-map@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/thlorenz/convert-source-map",
+    "publisher": "Thorsten Lorenz",
+    "email": "thlorenz@gmx.de",
+    "url": "http://thlorenz.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\convert-source-map",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\convert-source-map\\LICENSE"
+  },
+  "cross-spawn@7.0.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/moxystudio/node-cross-spawn",
+    "publisher": "André Cruz",
+    "email": "andre@moxy.studio",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\cross-spawn",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\cross-spawn\\LICENSE"
+  },
+  "css-box-model@1.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/alexreardon/css-box-model",
+    "publisher": "Alex Reardon",
+    "email": "alexreardon@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\css-box-model",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\css-box-model\\LICENSE"
+  },
+  "css-selector-parser@3.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mdevils/css-selector-parser",
+    "publisher": "Marat Dulin",
+    "email": "mdevils@yandex.ru",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\css-selector-parser",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\css-selector-parser\\LICENSE"
+  },
+  "cssesc@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mathiasbynens/cssesc",
+    "publisher": "Mathias Bynens",
+    "url": "https://mathiasbynens.be/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\cssesc",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\cssesc\\LICENSE-MIT.txt"
+  },
+  "csstype@3.1.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/frenic/csstype",
+    "publisher": "Fredrik Nicol",
+    "email": "fredrik.nicol@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\csstype",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\csstype\\LICENSE"
+  },
+  "debug@4.4.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/debug-js/debug",
+    "publisher": "Josh Junon",
+    "url": "https://github.com/qix-",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\debug",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\debug\\LICENSE"
+  },
+  "decode-named-character-reference@1.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/decode-named-character-reference",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\decode-named-character-reference",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\decode-named-character-reference\\license"
+  },
+  "dequal@2.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lukeed/dequal",
+    "publisher": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\dequal",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\dequal\\license"
+  },
+  "devlop@1.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/devlop",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\devlop",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\devlop\\license"
+  },
+  "didyoumean@1.2.2": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/dcporter/didyoumean.js",
+    "publisher": "Dave Porter",
+    "email": "dcporter@gmail.com",
+    "url": "http://dcporter.net/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\didyoumean",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\didyoumean\\LICENSE"
+  },
+  "direction@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/direction",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\direction",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\direction\\license"
+  },
+  "dlv@1.1.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/developit/dlv",
+    "publisher": "Jason Miller",
+    "email": "jason@developit.ca",
+    "url": "http://jasonformat.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\dlv",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\dlv\\README.md"
+  },
+  "eastasianwidth@0.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/komagata/eastasianwidth",
+    "publisher": "Masaki Komagata",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\eastasianwidth",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\eastasianwidth\\README.md"
+  },
+  "electron-to-chromium@1.5.167": {
+    "licenses": "ISC",
+    "repository": "https://github.com/kilian/electron-to-chromium",
+    "publisher": "Kilian Valkhof",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\electron-to-chromium",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\electron-to-chromium\\LICENSE"
+  },
+  "emoji-regex@8.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mathiasbynens/emoji-regex",
+    "publisher": "Mathias Bynens",
+    "url": "https://mathiasbynens.be/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\string-width-cjs\\node_modules\\emoji-regex",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\string-width-cjs\\node_modules\\emoji-regex\\LICENSE-MIT.txt"
+  },
+  "emoji-regex@9.2.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mathiasbynens/emoji-regex",
+    "publisher": "Mathias Bynens",
+    "url": "https://mathiasbynens.be/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\emoji-regex",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\emoji-regex\\LICENSE-MIT.txt"
+  },
+  "entities@6.0.1": {
+    "licenses": "BSD-2-Clause",
+    "repository": "https://github.com/fb55/entities",
+    "publisher": "Felix Boehm",
+    "email": "me@feedic.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\parse5\\node_modules\\entities",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\parse5\\node_modules\\entities\\LICENSE"
+  },
+  "esbuild@0.21.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/evanw/esbuild",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\esbuild",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\esbuild\\LICENSE.md"
+  },
+  "escalade@3.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lukeed/escalade",
+    "publisher": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\escalade",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\escalade\\license"
+  },
+  "escape-string-regexp@5.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/escape-string-regexp",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\escape-string-regexp",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\escape-string-regexp\\license"
+  },
+  "estree-util-is-identifier-name@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/estree-util-is-identifier-name",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\estree-util-is-identifier-name",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\estree-util-is-identifier-name\\license"
+  },
+  "extend@3.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/justmoon/node-extend",
+    "publisher": "Stefan Thomas",
+    "email": "justmoon@members.fsf.org",
+    "url": "http://www.justmoon.net",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\extend",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\extend\\LICENSE"
+  },
+  "fast-glob@3.3.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mrmlnc/fast-glob",
+    "publisher": "Denis Malinochkin",
+    "url": "https://mrmlnc.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\fast-glob",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\fast-glob\\LICENSE"
+  },
+  "fastq@1.19.1": {
+    "licenses": "ISC",
+    "repository": "https://github.com/mcollina/fastq",
+    "publisher": "Matteo Collina",
+    "email": "hello@matteocollina.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\fastq",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\fastq\\LICENSE"
+  },
+  "fill-range@7.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jonschlinkert/fill-range",
+    "publisher": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\fill-range",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\fill-range\\LICENSE"
+  },
+  "foreground-child@3.3.1": {
+    "licenses": "ISC",
+    "repository": "https://github.com/tapjs/foreground-child",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\foreground-child",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\foreground-child\\LICENSE"
+  },
+  "fraction.js@4.3.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/rawify/Fraction.js",
+    "publisher": "Robert Eisele",
+    "email": "robert@raw.org",
+    "url": "https://raw.org/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\fraction.js",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\fraction.js\\LICENSE"
+  },
+  "function-bind@1.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/Raynos/function-bind",
+    "publisher": "Raynos",
+    "email": "raynos2@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\function-bind",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\function-bind\\LICENSE"
+  },
+  "gensync@1.0.0-beta.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/loganfsmyth/gensync",
+    "publisher": "Logan Smyth",
+    "email": "loganfsmyth@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\gensync",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\gensync\\LICENSE"
+  },
+  "github-slugger@2.0.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/Flet/github-slugger",
+    "publisher": "Dan Flettre",
+    "email": "flettre@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\github-slugger",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\github-slugger\\LICENSE"
+  },
+  "glob-parent@5.1.2": {
+    "licenses": "ISC",
+    "repository": "https://github.com/gulpjs/glob-parent",
+    "publisher": "Gulp Team",
+    "email": "team@gulpjs.com",
+    "url": "https://gulpjs.com/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\chokidar\\node_modules\\glob-parent",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\chokidar\\node_modules\\glob-parent\\LICENSE"
+  },
+  "glob-parent@6.0.2": {
+    "licenses": "ISC",
+    "repository": "https://github.com/gulpjs/glob-parent",
+    "publisher": "Gulp Team",
+    "email": "team@gulpjs.com",
+    "url": "https://gulpjs.com/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\glob-parent",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\glob-parent\\LICENSE"
+  },
+  "glob@10.4.5": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/node-glob",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "https://blog.izs.me/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\glob",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\glob\\LICENSE"
+  },
+  "globals@11.12.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/globals",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\globals",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\globals\\license"
+  },
+  "hasown@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/inspect-js/hasOwn",
+    "publisher": "Jordan Harband",
+    "email": "ljharb@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hasown",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hasown\\LICENSE"
+  },
+  "hast-util-from-html@2.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-from-html",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-from-html",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-from-html\\license"
+  },
+  "hast-util-from-parse5@8.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-from-parse5",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-from-parse5",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-from-parse5\\license"
+  },
+  "hast-util-has-property@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-has-property",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-has-property",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-has-property\\license"
+  },
+  "hast-util-heading-rank@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-heading-rank",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-heading-rank",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-heading-rank\\license"
+  },
+  "hast-util-is-element@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-is-element",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-is-element",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-is-element\\license"
+  },
+  "hast-util-parse-selector@3.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-parse-selector",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\refractor\\node_modules\\hast-util-parse-selector",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\refractor\\node_modules\\hast-util-parse-selector\\license"
+  },
+  "hast-util-parse-selector@4.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-parse-selector",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-parse-selector",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-parse-selector\\license"
+  },
+  "hast-util-raw@9.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-raw",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-raw",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-raw\\license"
+  },
+  "hast-util-select@6.0.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-select",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-select",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-select\\license"
+  },
+  "hast-util-to-html@9.0.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-to-html",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-to-html",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-to-html\\license"
+  },
+  "hast-util-to-jsx-runtime@2.3.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-to-jsx-runtime",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-to-jsx-runtime",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-to-jsx-runtime\\license"
+  },
+  "hast-util-to-parse5@8.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-to-parse5",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-to-parse5",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-to-parse5\\license"
+  },
+  "hast-util-to-string@3.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/rehypejs/rehype-minify/tree/main/packages/hast-util-to-string",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-to-string",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-to-string\\license"
+  },
+  "hast-util-whitespace@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-whitespace",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-whitespace",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hast-util-whitespace\\license"
+  },
+  "hastscript@7.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hastscript",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\refractor\\node_modules\\hastscript",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\refractor\\node_modules\\hastscript\\license"
+  },
+  "hastscript@9.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hastscript",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hastscript",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hastscript\\license"
+  },
+  "hoist-non-react-statics@3.3.2": {
+    "licenses": "BSD-3-Clause",
+    "repository": "https://github.com/mridgway/hoist-non-react-statics",
+    "publisher": "Michael Ridgway",
+    "email": "mcridgway@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hoist-non-react-statics",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hoist-non-react-statics\\LICENSE.md"
+  },
+  "html-url-attributes@3.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/rehypejs/rehype-minify/tree/main/packages/html-url-attributes",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\html-url-attributes",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\html-url-attributes\\license"
+  },
+  "html-void-elements@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/html-void-elements",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\html-void-elements",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\html-void-elements\\license"
+  },
+  "inline-style-parser@0.2.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/remarkablemark/inline-style-parser",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\inline-style-parser",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\inline-style-parser\\LICENSE"
+  },
+  "is-alphabetical@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/is-alphabetical",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-alphabetical",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-alphabetical\\license"
+  },
+  "is-alphanumerical@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/is-alphanumerical",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-alphanumerical",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-alphanumerical\\license"
+  },
+  "is-binary-path@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/is-binary-path",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-binary-path",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-binary-path\\license"
+  },
+  "is-core-module@2.16.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/inspect-js/is-core-module",
+    "publisher": "Jordan Harband",
+    "email": "ljharb@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-core-module",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-core-module\\LICENSE"
+  },
+  "is-decimal@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/is-decimal",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-decimal",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-decimal\\license"
+  },
+  "is-extglob@2.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jonschlinkert/is-extglob",
+    "publisher": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-extglob",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-extglob\\LICENSE"
+  },
+  "is-fullwidth-code-point@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/is-fullwidth-code-point",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-fullwidth-code-point",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-fullwidth-code-point\\license"
+  },
+  "is-glob@4.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromatch/is-glob",
+    "publisher": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-glob",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-glob\\LICENSE"
+  },
+  "is-hexadecimal@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/is-hexadecimal",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-hexadecimal",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-hexadecimal\\license"
+  },
+  "is-number@7.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jonschlinkert/is-number",
+    "publisher": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-number",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-number\\LICENSE"
+  },
+  "is-plain-obj@4.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/is-plain-obj",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-plain-obj",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\is-plain-obj\\license"
+  },
+  "isexe@2.0.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/isexe",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\isexe",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\isexe\\LICENSE"
+  },
+  "jackspeak@3.4.3": {
+    "licenses": "BlueOak-1.0.0",
+    "repository": "https://github.com/isaacs/jackspeak",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\jackspeak",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\jackspeak\\LICENSE.md"
+  },
+  "jiti@1.21.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/unjs/jiti",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\jiti",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\jiti\\LICENSE"
+  },
+  "js-tokens@4.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lydell/js-tokens",
+    "publisher": "Simon Lydell",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\js-tokens",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\js-tokens\\LICENSE"
+  },
+  "jsesc@3.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mathiasbynens/jsesc",
+    "publisher": "Mathias Bynens",
+    "url": "https://mathiasbynens.be/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\jsesc",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\jsesc\\LICENSE-MIT.txt"
+  },
+  "json5@2.2.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/json5/json5",
+    "publisher": "Aseem Kishore",
+    "email": "aseem.kishore@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\json5",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\json5\\LICENSE.md"
+  },
+  "lilconfig@3.1.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/antonk52/lilconfig",
+    "publisher": "antonk52",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\lilconfig",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\lilconfig\\LICENSE"
+  },
+  "lines-and-columns@1.2.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/eventualbuddha/lines-and-columns",
+    "publisher": "Brian Donovan",
+    "email": "brian@donovans.cc",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\lines-and-columns",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\lines-and-columns\\LICENSE"
+  },
+  "longest-streak@3.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/longest-streak",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\longest-streak",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\longest-streak\\license"
+  },
+  "loose-envify@1.4.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/zertosh/loose-envify",
+    "publisher": "Andres Suarez",
+    "email": "zertosh@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\loose-envify",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\loose-envify\\LICENSE"
+  },
+  "lru-cache@10.4.3": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/node-lru-cache",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\path-scurry\\node_modules\\lru-cache",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\path-scurry\\node_modules\\lru-cache\\LICENSE"
+  },
+  "lru-cache@5.1.1": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/node-lru-cache",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\lru-cache",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\lru-cache\\LICENSE"
+  },
+  "markdown-table@3.0.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/markdown-table",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\markdown-table",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\markdown-table\\license"
+  },
+  "mdast-util-find-and-replace@3.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-find-and-replace",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-find-and-replace",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-find-and-replace\\license"
+  },
+  "mdast-util-from-markdown@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-from-markdown",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-from-markdown",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-from-markdown\\license"
+  },
+  "mdast-util-gfm-autolink-literal@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-gfm-autolink-literal",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-gfm-autolink-literal",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-gfm-autolink-literal\\license"
+  },
+  "mdast-util-gfm-footnote@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-gfm-footnote",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-gfm-footnote",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-gfm-footnote\\license"
+  },
+  "mdast-util-gfm-strikethrough@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-gfm-strikethrough",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-gfm-strikethrough",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-gfm-strikethrough\\license"
+  },
+  "mdast-util-gfm-table@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-gfm-table",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-gfm-table",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-gfm-table\\license"
+  },
+  "mdast-util-gfm-task-list-item@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-gfm-task-list-item",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-gfm-task-list-item",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-gfm-task-list-item\\license"
+  },
+  "mdast-util-gfm@3.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-gfm",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-gfm",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-gfm\\license"
+  },
+  "mdast-util-mdx-expression@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-mdx-expression",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-mdx-expression",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-mdx-expression\\license"
+  },
+  "mdast-util-mdx-jsx@3.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-mdx-jsx",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-mdx-jsx",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-mdx-jsx\\license"
+  },
+  "mdast-util-mdxjs-esm@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-mdxjs-esm",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-mdxjs-esm",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-mdxjs-esm\\license"
+  },
+  "mdast-util-phrasing@4.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-phrasing",
+    "publisher": "Victor Felder",
+    "email": "victor@draft.li",
+    "url": "https://draft.li",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-phrasing",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-phrasing\\license"
+  },
+  "mdast-util-to-hast@13.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-to-hast",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-to-hast",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-to-hast\\license"
+  },
+  "mdast-util-to-markdown@2.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-to-markdown",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-to-markdown",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-to-markdown\\license"
+  },
+  "mdast-util-to-string@4.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-to-string",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-to-string",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mdast-util-to-string\\license"
+  },
+  "memoize-one@5.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/alexreardon/memoize-one",
+    "publisher": "Alex Reardon",
+    "email": "alexreardon@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\memoize-one",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\memoize-one\\LICENSE"
+  },
+  "merge2@1.4.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/teambition/merge2",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\merge2",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\merge2\\LICENSE"
+  },
+  "micromark-core-commonmark@2.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-core-commonmark",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-core-commonmark",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-core-commonmark\\license"
+  },
+  "micromark-extension-gfm-autolink-literal@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-gfm-autolink-literal",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm-autolink-literal",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm-autolink-literal\\license"
+  },
+  "micromark-extension-gfm-footnote@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-gfm-footnote",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm-footnote",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm-footnote\\license"
+  },
+  "micromark-extension-gfm-strikethrough@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-gfm-strikethrough",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm-strikethrough",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm-strikethrough\\license"
+  },
+  "micromark-extension-gfm-table@2.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-gfm-table",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm-table",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm-table\\license"
+  },
+  "micromark-extension-gfm-tagfilter@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-gfm-tagfilter",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm-tagfilter",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm-tagfilter\\license"
+  },
+  "micromark-extension-gfm-task-list-item@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-gfm-task-list-item",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm-task-list-item",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm-task-list-item\\license"
+  },
+  "micromark-extension-gfm@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-gfm",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-extension-gfm\\license"
+  },
+  "micromark-factory-destination@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-factory-destination",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-factory-destination",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-factory-destination\\license"
+  },
+  "micromark-factory-label@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-factory-label",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-factory-label",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-factory-label\\license"
+  },
+  "micromark-factory-space@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-factory-space",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-factory-space",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-factory-space\\license"
+  },
+  "micromark-factory-title@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-factory-title",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-factory-title",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-factory-title\\license"
+  },
+  "micromark-factory-whitespace@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-factory-whitespace",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-factory-whitespace",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-factory-whitespace\\license"
+  },
+  "micromark-util-character@2.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-character",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-character",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-character\\license"
+  },
+  "micromark-util-chunked@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-chunked",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-chunked",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-chunked\\license"
+  },
+  "micromark-util-classify-character@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-classify-character",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-classify-character",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-classify-character\\license"
+  },
+  "micromark-util-combine-extensions@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-combine-extensions",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-combine-extensions",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-combine-extensions\\license"
+  },
+  "micromark-util-decode-numeric-character-reference@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-decode-numeric-character-reference",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-decode-numeric-character-reference",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-decode-numeric-character-reference\\license"
+  },
+  "micromark-util-decode-string@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-decode-string",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-decode-string",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-decode-string\\license"
+  },
+  "micromark-util-encode@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-encode",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-encode",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-encode\\license"
+  },
+  "micromark-util-html-tag-name@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-html-tag-name",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-html-tag-name",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-html-tag-name\\license"
+  },
+  "micromark-util-normalize-identifier@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-normalize-identifier",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-normalize-identifier",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-normalize-identifier\\license"
+  },
+  "micromark-util-resolve-all@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-resolve-all",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-resolve-all",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-resolve-all\\license"
+  },
+  "micromark-util-sanitize-uri@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-sanitize-uri",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-sanitize-uri",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-sanitize-uri\\license"
+  },
+  "micromark-util-subtokenize@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-subtokenize",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-subtokenize",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-subtokenize\\license"
+  },
+  "micromark-util-symbol@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-symbol",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-symbol",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-symbol\\license"
+  },
+  "micromark-util-types@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-types",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-types",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark-util-types\\license"
+  },
+  "micromark@4.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromark\\license"
+  },
+  "micromatch@4.0.8": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromatch/micromatch",
+    "publisher": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromatch",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\micromatch\\LICENSE"
+  },
+  "minimatch@9.0.5": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/minimatch",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\minimatch",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\minimatch\\LICENSE"
+  },
+  "minipass@7.1.2": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/minipass",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\minipass",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\minipass\\LICENSE"
+  },
+  "ms@2.1.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/vercel/ms",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\ms",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\ms\\license.md"
+  },
+  "mz@2.7.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/normalize/mz",
+    "publisher": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mz",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\mz\\LICENSE"
+  },
+  "nanoid@3.3.11": {
+    "licenses": "MIT",
+    "repository": "https://github.com/ai/nanoid",
+    "publisher": "Andrey Sitnik",
+    "email": "andrey@sitnik.ru",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\nanoid",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\nanoid\\LICENSE"
+  },
+  "node-releases@2.0.19": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chicoxyzzy/node-releases",
+    "publisher": "Sergey Rubanov",
+    "email": "chi187@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\node-releases",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\node-releases\\LICENSE"
+  },
+  "normalize-path@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jonschlinkert/normalize-path",
+    "publisher": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\normalize-path",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\normalize-path\\LICENSE"
+  },
+  "normalize-range@0.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jamestalmage/normalize-range",
+    "publisher": "James Talmage",
+    "email": "james@talmage.io",
+    "url": "github.com/jamestalmage",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\normalize-range",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\normalize-range\\license"
+  },
+  "nth-check@2.1.1": {
+    "licenses": "BSD-2-Clause",
+    "repository": "https://github.com/fb55/nth-check",
+    "publisher": "Felix Boehm",
+    "email": "me@feedic.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\nth-check",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\nth-check\\LICENSE"
+  },
+  "object-assign@4.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/object-assign",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\object-assign",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\object-assign\\license"
+  },
+  "object-hash@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/puleos/object-hash",
+    "publisher": "Scott Puleo",
+    "email": "puleos@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\object-hash",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\object-hash\\LICENSE"
+  },
+  "package-json-from-dist@1.0.1": {
+    "licenses": "BlueOak-1.0.0",
+    "repository": "https://github.com/isaacs/package-json-from-dist",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "https://izs.me",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\package-json-from-dist",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\package-json-from-dist\\LICENSE.md"
+  },
+  "parse-entities@4.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/parse-entities",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\parse-entities",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\parse-entities\\license"
+  },
+  "parse-numeric-range@1.3.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/euank/node-parse-numeric-range",
+    "publisher": "Euan Kemp",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\parse-numeric-range",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\parse-numeric-range\\LICENSE"
+  },
+  "parse5@7.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/inikulin/parse5",
+    "publisher": "Ivan Nikulin",
+    "email": "ifaaan@gmail.com",
+    "url": "https://github.com/inikulin",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\parse5",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\parse5\\LICENSE"
+  },
+  "path-key@3.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/path-key",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\path-key",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\path-key\\license"
+  },
+  "path-parse@1.0.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jbgutierrez/path-parse",
+    "publisher": "Javier Blanco",
+    "email": "http://jbgutierrez.info",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\path-parse",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\path-parse\\LICENSE"
+  },
+  "path-scurry@1.11.1": {
+    "licenses": "BlueOak-1.0.0",
+    "repository": "https://github.com/isaacs/path-scurry",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "https://blog.izs.me",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\path-scurry",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\path-scurry\\LICENSE.md"
+  },
+  "picocolors@1.1.1": {
+    "licenses": "ISC",
+    "repository": "https://github.com/alexeyraspopov/picocolors",
+    "publisher": "Alexey Raspopov",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\picocolors",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\picocolors\\LICENSE"
+  },
+  "picomatch@2.3.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromatch/picomatch",
+    "publisher": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\picomatch",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\picomatch\\LICENSE"
+  },
+  "pify@2.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/pify",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\pify",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\pify\\license"
+  },
+  "pirates@4.0.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/danez/pirates",
+    "publisher": "Ari Porad",
+    "email": "ari@ariporad.com",
+    "url": "http://ariporad.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\pirates",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\pirates\\LICENSE"
+  },
+  "postcss-import@15.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/postcss/postcss-import",
+    "publisher": "Maxime Thirouin",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss-import",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss-import\\LICENSE"
+  },
+  "postcss-js@4.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/postcss/postcss-js",
+    "publisher": "Andrey Sitnik",
+    "email": "andrey@sitnik.ru",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss-js",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss-js\\LICENSE"
+  },
+  "postcss-load-config@4.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/postcss/postcss-load-config",
+    "publisher": "Michael Ciniawky",
+    "email": "michael.ciniawsky@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss-load-config",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss-load-config\\LICENSE"
+  },
+  "postcss-nested@6.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/postcss/postcss-nested",
+    "publisher": "Andrey Sitnik",
+    "email": "andrey@sitnik.ru",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss-nested",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss-nested\\LICENSE"
+  },
+  "postcss-selector-parser@6.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/postcss/postcss-selector-parser",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss-selector-parser",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss-selector-parser\\LICENSE-MIT"
+  },
+  "postcss-value-parser@4.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/TrySound/postcss-value-parser",
+    "publisher": "Bogdan Chadkin",
+    "email": "trysound@yandex.ru",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss-value-parser",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss-value-parser\\LICENSE"
+  },
+  "postcss@8.5.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/postcss/postcss",
+    "publisher": "Andrey Sitnik",
+    "email": "andrey@sitnik.ru",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\postcss\\LICENSE"
+  },
+  "productivity-extension@1.0.0": {
+    "licenses": "Undefined",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\license-info.json"
+  },
+  "prop-types@15.8.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/prop-types",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\prop-types",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\prop-types\\LICENSE"
+  },
+  "property-information@6.5.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/property-information",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\refractor\\node_modules\\property-information",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\refractor\\node_modules\\property-information\\license"
+  },
+  "property-information@7.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/property-information",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\property-information",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\property-information\\license"
+  },
+  "queue-microtask@1.2.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/feross/queue-microtask",
+    "publisher": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "https://feross.org",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\queue-microtask",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\queue-microtask\\LICENSE"
+  },
+  "raf-schd@4.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/alexreardon/raf-schd",
+    "publisher": "Alex Reardon",
+    "email": "alexreardon@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\raf-schd",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\raf-schd\\LICENSE"
+  },
+  "react-beautiful-dnd@13.1.1": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/atlassian/react-beautiful-dnd",
+    "publisher": "Alex Reardon",
+    "email": "areardon@atlassian.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\react-beautiful-dnd",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\react-beautiful-dnd\\LICENSE"
+  },
+  "react-dom@18.3.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\react-dom",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\react-dom\\LICENSE"
+  },
+  "react-is@16.13.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hoist-non-react-statics\\node_modules\\react-is",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\hoist-non-react-statics\\node_modules\\react-is\\LICENSE"
+  },
+  "react-is@17.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\react-is",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\react-is\\LICENSE"
+  },
+  "react-markdown@9.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/remarkjs/react-markdown",
+    "publisher": "Espen Hovlandsdal",
+    "email": "espen@hovlandsdal.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@uiw\\react-markdown-preview\\node_modules\\react-markdown",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@uiw\\react-markdown-preview\\node_modules\\react-markdown\\license"
+  },
+  "react-redux@7.2.9": {
+    "licenses": "MIT",
+    "repository": "https://github.com/reduxjs/react-redux",
+    "publisher": "Dan Abramov",
+    "email": "dan.abramov@me.com",
+    "url": "https://github.com/gaearon",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\react-redux",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\react-redux\\LICENSE.md"
+  },
+  "react-refresh@0.17.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\react-refresh",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\react-refresh\\LICENSE"
+  },
+  "react@18.3.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\react",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\react\\LICENSE"
+  },
+  "read-cache@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/TrySound/read-cache",
+    "publisher": "Bogdan Chadkin",
+    "email": "trysound@yandex.ru",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\read-cache",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\read-cache\\LICENSE"
+  },
+  "readdirp@3.6.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/paulmillr/readdirp",
+    "publisher": "Thorsten Lorenz",
+    "email": "thlorenz@gmx.de",
+    "url": "thlorenz.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\readdirp",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\readdirp\\LICENSE"
+  },
+  "redux@4.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/reduxjs/redux",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\redux",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\redux\\LICENSE.md"
+  },
+  "refractor@4.9.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/refractor",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\refractor",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\refractor\\license"
+  },
+  "rehype-attr@3.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jaywcjlove/rehype-attr",
+    "publisher": "Kenny Wong",
+    "email": "wowohoo@qq.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-attr",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-attr\\LICENSE"
+  },
+  "rehype-autolink-headings@7.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/rehypejs/rehype-autolink-headings",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-autolink-headings",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-autolink-headings\\license"
+  },
+  "rehype-ignore@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jaywcjlove/rehype-ignore",
+    "publisher": "Kenny Wong",
+    "email": "wowohoo@qq.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-ignore",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-ignore\\LICENSE"
+  },
+  "rehype-parse@9.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/rehypejs/rehype/tree/main/packages/rehype-parse",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-parse",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-parse\\license"
+  },
+  "rehype-prism-plus@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/timlrx/rehype-prism-plus",
+    "publisher": "Timothy Lin",
+    "email": "timothy0336@hotmail.com",
+    "url": "https://timlrx.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@uiw\\react-markdown-preview\\node_modules\\rehype-prism-plus",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\@uiw\\react-markdown-preview\\node_modules\\rehype-prism-plus\\LICENSE"
+  },
+  "rehype-prism-plus@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/timlrx/rehype-prism-plus",
+    "publisher": "Timothy Lin",
+    "email": "timothy0336@hotmail.com",
+    "url": "https://timlrx.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-prism-plus",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-prism-plus\\LICENSE"
+  },
+  "rehype-raw@7.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/rehypejs/rehype-raw",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-raw",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-raw\\license"
+  },
+  "rehype-rewrite@4.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jaywcjlove/rehype-rewrite",
+    "publisher": "Kenny Wong",
+    "email": "wowohoo@qq.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-rewrite",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-rewrite\\LICENSE"
+  },
+  "rehype-slug@6.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/rehypejs/rehype-slug",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-slug",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-slug\\license"
+  },
+  "rehype-stringify@10.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/rehypejs/rehype/tree/main/packages/rehype-stringify",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-stringify",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype-stringify\\license"
+  },
+  "rehype@13.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/rehypejs/rehype/tree/main/packages/rehype",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rehype\\license"
+  },
+  "remark-gfm@4.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/remarkjs/remark-gfm",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\remark-gfm",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\remark-gfm\\license"
+  },
+  "remark-github-blockquote-alert@1.3.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jaywcjlove/remark-github-blockquote-alert",
+    "publisher": "Kenny Wong",
+    "email": "wowohoo@qq.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\remark-github-blockquote-alert",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\remark-github-blockquote-alert\\README.md"
+  },
+  "remark-parse@11.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/remarkjs/remark/tree/main/packages/remark-parse",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\remark-parse",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\remark-parse\\license"
+  },
+  "remark-rehype@11.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/remarkjs/remark-rehype",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\remark-rehype",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\remark-rehype\\license"
+  },
+  "remark-stringify@11.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/remarkjs/remark/tree/main/packages/remark-stringify",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\remark-stringify",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\remark-stringify\\license"
+  },
+  "resolve@1.22.10": {
+    "licenses": "MIT",
+    "repository": "https://github.com/browserify/resolve",
+    "publisher": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\resolve",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\resolve\\LICENSE"
+  },
+  "reusify@1.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mcollina/reusify",
+    "publisher": "Matteo Collina",
+    "email": "hello@matteocollina.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\reusify",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\reusify\\LICENSE"
+  },
+  "rollup@4.43.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/rollup/rollup",
+    "publisher": "Rich Harris",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rollup",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\rollup\\LICENSE.md"
+  },
+  "run-parallel@1.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/feross/run-parallel",
+    "publisher": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "https://feross.org",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\run-parallel",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\run-parallel\\LICENSE"
+  },
+  "scheduler@0.23.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/facebook/react",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\scheduler",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\scheduler\\LICENSE"
+  },
+  "semver@6.3.1": {
+    "licenses": "ISC",
+    "repository": "https://github.com/npm/node-semver",
+    "publisher": "GitHub Inc.",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\semver",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\semver\\LICENSE"
+  },
+  "shebang-command@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/kevva/shebang-command",
+    "publisher": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "github.com/kevva",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\shebang-command",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\shebang-command\\license"
+  },
+  "shebang-regex@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/shebang-regex",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\shebang-regex",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\shebang-regex\\license"
+  },
+  "signal-exit@4.1.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/tapjs/signal-exit",
+    "publisher": "Ben Coe",
+    "email": "ben@npmjs.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\signal-exit",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\signal-exit\\LICENSE.txt"
+  },
+  "source-map-js@1.2.1": {
+    "licenses": "BSD-3-Clause",
+    "repository": "https://github.com/7rulnik/source-map-js",
+    "publisher": "Valentin 7rulnik Semirulnik",
+    "email": "v7rulnik@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\source-map-js",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\source-map-js\\LICENSE"
+  },
+  "space-separated-tokens@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/space-separated-tokens",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\space-separated-tokens",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\space-separated-tokens\\license"
+  },
+  "string-width@4.2.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/string-width",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\string-width-cjs",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\string-width-cjs\\license"
+  },
+  "string-width@5.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/string-width",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\string-width",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\string-width\\license"
+  },
+  "stringify-entities@4.0.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/stringify-entities",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\stringify-entities",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\stringify-entities\\license"
+  },
+  "strip-ansi@6.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chalk/strip-ansi",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\string-width-cjs\\node_modules\\strip-ansi",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\string-width-cjs\\node_modules\\strip-ansi\\license"
+  },
+  "strip-ansi@7.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chalk/strip-ansi",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\strip-ansi",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\strip-ansi\\license"
+  },
+  "style-to-js@1.1.16": {
+    "licenses": "MIT",
+    "repository": "https://github.com/remarkablemark/style-to-js",
+    "publisher": "Mark",
+    "email": "mark@remarkablemark.org",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\style-to-js",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\style-to-js\\LICENSE"
+  },
+  "style-to-object@1.0.8": {
+    "licenses": "MIT",
+    "repository": "https://github.com/remarkablemark/style-to-object",
+    "publisher": "Mark",
+    "email": "mark@remarkablemark.org",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\style-to-object",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\style-to-object\\LICENSE"
+  },
+  "sucrase@3.35.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/alangpierce/sucrase",
+    "publisher": "Alan Pierce",
+    "email": "alangpierce@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\sucrase",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\sucrase\\LICENSE"
+  },
+  "supports-preserve-symlinks-flag@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/inspect-js/node-supports-preserve-symlinks-flag",
+    "publisher": "Jordan Harband",
+    "email": "ljharb@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\supports-preserve-symlinks-flag",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\supports-preserve-symlinks-flag\\LICENSE"
+  },
+  "tailwindcss@3.4.17": {
+    "licenses": "MIT",
+    "repository": "https://github.com/tailwindlabs/tailwindcss",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\tailwindcss",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\tailwindcss\\LICENSE"
+  },
+  "thenify-all@1.6.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/thenables/thenify-all",
+    "publisher": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\thenify-all",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\thenify-all\\LICENSE"
+  },
+  "thenify@3.3.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/thenables/thenify",
+    "publisher": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\thenify",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\thenify\\LICENSE"
+  },
+  "tiny-invariant@1.3.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/alexreardon/tiny-invariant",
+    "publisher": "Alex Reardon",
+    "email": "alexreardon@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\tiny-invariant",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\tiny-invariant\\LICENSE"
+  },
+  "to-regex-range@5.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromatch/to-regex-range",
+    "publisher": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\to-regex-range",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\to-regex-range\\LICENSE"
+  },
+  "trim-lines@3.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/trim-lines",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\trim-lines",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\trim-lines\\license"
+  },
+  "trough@2.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/trough",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\trough",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\trough\\license"
+  },
+  "ts-interface-checker@0.1.13": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/gristlabs/ts-interface-checker",
+    "publisher": "Dmitry S, Grist Labs",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\ts-interface-checker",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\ts-interface-checker\\LICENSE"
+  },
+  "typescript@5.8.3": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/microsoft/TypeScript",
+    "publisher": "Microsoft Corp.",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\typescript",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\typescript\\LICENSE.txt"
+  },
+  "undici-types@6.21.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/nodejs/undici",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\undici-types",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\undici-types\\LICENSE"
+  },
+  "unified@11.0.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/unifiedjs/unified",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unified",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unified\\license"
+  },
+  "unist-util-filter@5.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-filter",
+    "publisher": "Eugene Sharygin",
+    "email": "eush77@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unist-util-filter",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unist-util-filter\\license"
+  },
+  "unist-util-is@6.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-is",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unist-util-is",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unist-util-is\\license"
+  },
+  "unist-util-position@5.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-position",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unist-util-position",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unist-util-position\\license"
+  },
+  "unist-util-stringify-position@4.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-stringify-position",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unist-util-stringify-position",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unist-util-stringify-position\\license"
+  },
+  "unist-util-visit-parents@6.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-visit-parents",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unist-util-visit-parents",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unist-util-visit-parents\\license"
+  },
+  "unist-util-visit@5.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-visit",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unist-util-visit",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\unist-util-visit\\license"
+  },
+  "update-browserslist-db@1.1.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/browserslist/update-db",
+    "publisher": "Andrey Sitnik",
+    "email": "andrey@sitnik.ru",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\update-browserslist-db",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\update-browserslist-db\\LICENSE"
+  },
+  "use-memo-one@1.1.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/alexreardon/use-memo-one",
+    "publisher": "Alex Reardon",
+    "email": "alexreardon@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\use-memo-one",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\use-memo-one\\LICENSE"
+  },
+  "util-deprecate@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/TooTallNate/util-deprecate",
+    "publisher": "Nathan Rajlich",
+    "email": "nathan@tootallnate.net",
+    "url": "http://n8.io/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\util-deprecate",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\util-deprecate\\LICENSE"
+  },
+  "vfile-location@5.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/vfile/vfile-location",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\vfile-location",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\vfile-location\\license"
+  },
+  "vfile-message@4.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/vfile/vfile-message",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\vfile-message",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\vfile-message\\license"
+  },
+  "vfile@6.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/vfile/vfile",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\vfile",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\vfile\\license"
+  },
+  "vite@5.4.19": {
+    "licenses": "MIT",
+    "repository": "https://github.com/vitejs/vite",
+    "publisher": "Evan You",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\vite",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\vite\\LICENSE.md"
+  },
+  "web-namespaces@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/web-namespaces",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\web-namespaces",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\web-namespaces\\license"
+  },
+  "which@2.0.2": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/node-which",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\which",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\which\\LICENSE"
+  },
+  "wrap-ansi@7.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chalk/wrap-ansi",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\wrap-ansi-cjs",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\wrap-ansi-cjs\\license"
+  },
+  "wrap-ansi@8.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chalk/wrap-ansi",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\wrap-ansi",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\wrap-ansi\\license"
+  },
+  "yallist@3.1.1": {
+    "licenses": "ISC",
+    "repository": "https://github.com/isaacs/yallist",
+    "publisher": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\yallist",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\yallist\\LICENSE"
+  },
+  "yaml@2.8.0": {
+    "licenses": "ISC",
+    "repository": "https://github.com/eemeli/yaml",
+    "publisher": "Eemeli Aro",
+    "email": "eemeli@gmail.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\yaml",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\yaml\\LICENSE"
+  },
+  "zustand@5.0.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/pmndrs/zustand",
+    "publisher": "Paul Henschel",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\zustand",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\zustand\\LICENSE"
+  },
+  "zwitch@2.0.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/zwitch",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com",
+    "path": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\zwitch",
+    "licenseFile": "D:\\Dev\\shortcuts-mdnotes-newtab-extension\\node_modules\\zwitch\\license"
+  }
+}
+
