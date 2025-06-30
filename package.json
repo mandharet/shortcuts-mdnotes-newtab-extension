@@ -1,6 +1,6 @@
 {
   "name": "productivity-extension",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A customizable new tab page with URL cards, bookmarks, and quick notes",
   "type": "module",
   "scripts": {
