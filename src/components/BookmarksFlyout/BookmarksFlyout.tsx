@@ -153,7 +153,7 @@ const BookmarksFlyout: React.FC = () => {
     >
       <LinkIcon className='w-4 h-4 mr-2' />
       <div>
-        {bookmark.title}
+        {bookmark.title && bookmark.title.trim() !== '' ? bookmark.title : bookmark.url}
       </div>
     </a>
   );
