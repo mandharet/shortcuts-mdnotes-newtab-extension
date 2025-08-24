@@ -4,6 +4,8 @@ import { PlusIcon, Cog6ToothIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useSettingsStore } from '../../stores/settingsStore';
 import { logger } from '../../utils/logger';
 import Card from './Card/Card';
+import ImportBookmarksModal from '../ImportBookmarksModal';
+import type { BookmarkOption } from '../ImportBookmarksModal';
 
 export interface CardData {
   id: string;
@@ -23,6 +25,9 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
   const [newCard, setNewCard] = React.useState<Partial<CardData>>({});
   const [editingCardId, setEditingCardId] = React.useState<string | null>(null);
   const { shortcuts, setShortcuts, updateFileSettings, isPinnedBookMarkFlyout } = useSettingsStore();
+
+  // Import bookmarks modal state and logic
+  const [showImportModal, setShowImportModal] = React.useState(false);
 
   // Load shortcuts on mount
   React.useEffect(() => {
@@ -126,6 +131,17 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
   const totalCells = cards.length + 1;//maxRows * cellsPerRow;
   const gridItems = Array.from({ length: totalCells }, (_, i) => cards[i] || null);
 
+  const handleAddShortcut = async (shortcut: BookmarkOption) => {
+    const card = {
+      ...shortcut,
+      backgroundColor: shortcut.backgroundColor || '',
+    };
+    const updated = [...(cards || []), card];
+    setCards(updated);
+    setShortcuts(updated);
+    await updateFileSettings({ shortcuts: updated });
+  };
+
   return (
     <div className="container mx-auto p-4">
       <DragDropContext onDragEnd={handleDragEnd}>
@@ -153,6 +169,7 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
                       url={card.url}
                       backgroundColor={card.backgroundColor}
                       onEdit={handleEditCard}
+                      onDelete={handleDeleteCard}
                       isEditMode={isEditMode}
                     />
                   ) : (
@@ -173,6 +190,15 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
                           &nbsp;&nbsp;
                           Settings
                         </div>)}
+
+                      {(totalCards === 0 || isEditMode) && (
+                        <div
+                        key={`empty-${index}`}
+                        className={`h-16 text-lg cursor-pointer border border-dashed rounded flex items-center justify-center ${isEditMode ? 'btn-primary' : ''}`}
+                        onClick={() => setShowImportModal(true)}
+                      >
+                        Import Bookmarks as Shortcuts
+                      </div>)}
                     </>
                   )
                 )
@@ -183,6 +209,17 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
         </Droppable>
       </DragDropContext>
 
+      <ImportBookmarksModal
+        open={showImportModal}
+        onClose={() => setShowImportModal(false)}
+        existingShortcuts={cards}
+        onImportShortcuts={(updatedShortcuts) => {
+          const cardsWithColor = updatedShortcuts.map(s => ({ ...s, backgroundColor: s.backgroundColor || '' }));
+          setCards(cardsWithColor);
+          setShortcuts(cardsWithColor);
+          updateFileSettings({ shortcuts: cardsWithColor });
+        }}
+      />
       {isAddingCard && (
         <div className={`fixed inset-0 modal-overlay flex items-center justify-center z-50 ${isPinnedBookMarkFlyout ? 'max-w-[60vw]' : 'mx-auto'}`}>
           <div id="add-edit-card-modal" className="modal p-6 rounded-lg w-96">
@@ -235,7 +272,6 @@ const CardGrid: React.FC<CardGridProps> = ({ columns }) => {
             </div>
           </div>
         </div>
-
       )}
     </div>
   );

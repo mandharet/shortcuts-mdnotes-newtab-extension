@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Shortcuts and notes tab",
-  "version": "1.1.0",
+  "name": "Quick Shortcuts tab",
+  "version": "1.2.0",
   "description": "A customizable new tab page with URL cards, bookmarks, and quick notes",
   "author": "Tejas Mandhare",
   "permissions": [

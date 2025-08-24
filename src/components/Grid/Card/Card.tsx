@@ -9,6 +9,7 @@ interface CardProps {
   url: string;
   backgroundColor: string;
   onEdit: (id: string) => void;
+  onDelete: (id: string) => void;
   isEditMode: boolean;
 }
 
@@ -19,6 +20,7 @@ const Card: React.FC<CardProps> = ({
   url,
   backgroundColor,
   onEdit,
+  onDelete,
   isEditMode,
 }) => {
 
@@ -85,7 +87,9 @@ const Card: React.FC<CardProps> = ({
                 </svg>
               </div>
             )}
-            <h3 className="text-lg font-medium ">{title}</h3>
+            <h3 className="text-lg font-medium " title={title}>
+              {title.length > 30 ? title.slice(0, 30) + '…' : title}
+            </h3>
             {isEditMode && (
               <div className='flex gap-2'>
                 <button
@@ -101,7 +105,7 @@ const Card: React.FC<CardProps> = ({
                   className="p-1 rounded-full"
                   onClick={(e) => {
                     e.stopPropagation();
-                    onEdit(id);
+                    onDelete(id);
                   }}
                 >
                   <TrashIcon className='w-5 h-5' />
