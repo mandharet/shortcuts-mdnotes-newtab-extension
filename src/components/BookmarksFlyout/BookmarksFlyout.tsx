@@ -201,7 +201,7 @@ const BookmarksFlyout: React.FC = () => {
 
   return (
     <div
-      className={`fixed top-0 right-0 h-full z-50 transform transition-transform transition-colors duration-300 ${isExpanded ? 'w-[40vw] translate-x-0' : 'w-10 translate-x-[calc(100%-2.5rem)]'} ${isPinnedBookMarkFlyout ? '' : 'hover:w-[40vw] hover:translate-x-0'} bg-primary`}
+      className={`fixed top-0 right-0 h-full z-50 transform transition-transform transition-colors duration-300 ${isExpanded ? 'w-[35vw] translate-x-0' : 'w-10 translate-x-[calc(100%-2.5rem)]'} ${isPinnedBookMarkFlyout ? '' : 'hover:w-[40vw] hover:translate-x-0'} bg-primary`}
       onMouseEnter={() => { if (!isPinnedBookMarkFlyout) setIsExpanded(true); }}
       onMouseLeave={() => { if (!isPinnedBookMarkFlyout) setIsExpanded(false); }}
     >

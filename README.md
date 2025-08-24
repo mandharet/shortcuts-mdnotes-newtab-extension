@@ -1,6 +1,6 @@
-# Shortcuts and notes tab - Chrome Extension
+# Quick Shortcuts tab - Chrome Extension
 
-Transform your new tab into a productivity powerhouse with quick access to your favorite sites, bookmarks, and markdown notes - all in one beautiful, customizable interface.
+Transform your new tab into a productivity powerhouse with quick access to your favorite sites, bookmarks - all in one beautiful, customizable interface.
 
 ## Features
 
@@ -8,11 +8,6 @@ Transform your new tab into a productivity powerhouse with quick access to your 
 - **URL Cards**: Create and organize quick-access cards for your most-used websites
 - **Smart Bookmarks**: Seamless integration with Chrome bookmarks
 - **Drag & Drop**: Intuitive organization of all your shortcuts and notes
-
-### 📝 Markdown Notes
-- **Built-in Editor**: Write and edit notes with full markdown support
-- **Auto-save**: Never lose your work with automatic saving
-- **Date-based Organization**: Notes are automatically organized by date
 
 ### 🎨 Customization
 - **Themes**: Choose from multiple color themes

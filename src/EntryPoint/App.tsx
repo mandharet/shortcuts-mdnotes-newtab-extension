@@ -47,15 +47,15 @@ function App() {
   }
 
   // If no notes path is set, show the NotesPathSelector
-  if (!noteSettingsPath && showQuickNotes) {
-    return <NotesPathSelector />;
-  }
+  // if (!noteSettingsPath && showQuickNotes) {
+  //   return <NotesPathSelector />;
+  // }
 
   return (
     <div className="min-h-screen">
-      <div className={`container px-4 py-2 ${isPinnedBookMarkFlyout ? 'max-w-[60vw]' : 'mx-auto'}`}>
+      <div className={`container px-4 py-2 ${isPinnedBookMarkFlyout ? 'max-w-[65vw]' : 'mx-auto'}`}>
         <div className={`layout-container ${layoutOrder === "shortcuts-first" ? "reverse" : ""}`}>
-          {showQuickNotes && <QuickNotes />}
+          {/* {showQuickNotes && <QuickNotes />} */}
           {showShortcuts && <CardGrid columns={gridColumns} />}
           <BookmarksFlyout />
         </div>

@@ -63,7 +63,7 @@ const SettingsPage: React.FC = () => {
                 <a href="https://github.com/mandharet/shortcuts-mdnotes-newtab-extension/issues/new/choose" target="_blank">Report Issue</a>
             </div>
             <div className="space-y-4">
-                <div>
+                {/* <div>
                     <label className="flex items-center gap-2 ">
                         <input
                             type="checkbox"
@@ -73,8 +73,8 @@ const SettingsPage: React.FC = () => {
                         />
                         Enable Quick Notes
                     </label>
-                </div>
-
+                </div> */}
+{/* 
                 <div>
                     <label className="flex items-center gap-2 ">
                         <input
@@ -85,7 +85,7 @@ const SettingsPage: React.FC = () => {
                         />
                         Enable Shortcuts
                     </label>
-                </div>
+                </div> */}
 
                 {showShortcuts && (
                     <div>
@@ -110,7 +110,7 @@ const SettingsPage: React.FC = () => {
                             className="w-full p-2 border border-white/20 rounded-lg bg-white/10 "
                         />
                     </div>)}
-
+{/* 
 
                 {showQuickNotes && showShortcuts && (
                     <div>
@@ -124,7 +124,7 @@ const SettingsPage: React.FC = () => {
                             Show Shortcuts First
                         </label>
                     </div>
-                )}
+                )} */}
 
                 <div>
                     <label className="block mb-2 ">Theme</label>
