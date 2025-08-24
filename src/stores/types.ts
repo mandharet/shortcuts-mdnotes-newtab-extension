@@ -50,9 +50,9 @@ export interface SettingsState extends PersistedSettings, FileSettings {
 export const DEFAULT_DATA_SETTINGS: PersistedSettings & FileSettings = {
     shortcuts: [],
     theme: 'purple',
-    showQuickNotes: true,
+    showQuickNotes: false,
     showShortcuts: true,
-    isPinnedBookMarkFlyout: false,
+    isPinnedBookMarkFlyout: true,
     gridColumns: 4,
     noteSettingsPath: '',
     notes: {},
